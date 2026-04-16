@@ -1,0 +1,87 @@
+{
+  "nodo_inicial": "root",
+  "nodos": {
+    "root": {
+      "titulo": "Entrada Principal",
+      "yaw_inicio": -90,
+      "imagen_url": "/assets/ESFM/root.webp",
+      "contexto_ia": "¡Hola! Soy Jasper... Nos encontramos en la entrada principal del edificio de la Escuela Superior de Física y Matemáticas.",
+      "hotspots": [
+        { "destino": "pas1", "texto": "Pasillo", "pitch": -2.5, "yaw": 90, "yaw_llegada": -90 }
+      ]
+    },
+    "pas1": {
+      "titulo": "Pasillo",
+      "imagen_url": "/assets/ESFM/root_ext2.webp",
+      "hotspots": [
+        { "destino": "ent", "texto": "Entrada al Laboratorio", "pitch": -2, "yaw": 90, "yaw_llegada": -90 },
+        { "destino": "root", "texto": "Entrada Principal", "pitch": -3.5, "yaw": -95, "yaw_llegada": 0 }
+      ]
+    },
+    "ent": {
+      "titulo": "Entrada al Laboratorio",
+      "imagen_url": "/assets/ESFM/root_ext1.webp",
+      "hotspots": [
+        { "destino": "pas1", "texto": "Pasillo", "pitch": -15, "yaw": 180, "yaw_llegada": 0 },
+        { "destino": "rep", "texto": "Recepción Principal", "pitch": -15, "yaw": 0, "yaw_llegada": 0 }
+      ]
+    },
+    "rep": {
+      "titulo": "Recepción Principal",
+      "imagen_url": "/assets/ESFM/ext1_res.webp",
+      "hotspots": [
+        { "destino": "ent", "texto": "Entrada al Laboratorio", "pitch": -15, "yaw": 180 },
+        { "destino": "res", "texto": "Pasillo Laboratorio", "pitch": -15, "yaw": 0 }
+      ]
+    },
+    "res": {
+      "titulo": "Pasillo Laboratorio",
+      "imagen_url": "/assets/ESFM/res_pas.webp",
+      "hotspots": [
+        { "destino": "rep", "texto": "Recepción Principal", "pitch": -15, "yaw": 180 },
+        { "destino": "pasTemp", "texto": "Laboratorio de Temperatura", "pitch": -15, "yaw": 0 },
+        { "destino": "pasGal", "texto": "Pasillo Laboratorio Gravedad", "pitch": -15, "yaw": 90 }
+      ]
+    },
+    "pasTemp": {
+      "titulo": "Pasillo Laboratorio de Temperatura",
+      "imagen_url": "/assets/ESFM/pas_antLabTemp.webp",
+      "hotspots": [
+        { "destino": "res", "texto": "Pasillo Laboratorio", "pitch": -15, "yaw": 180 },
+        { "destino": "labTemp", "texto": "Laboratorio de Temperatura", "pitch": -15, "yaw": 0 },
+        { "destino": "mainTemp", "texto": "Calibración de Temperatura", "pitch": -15, "yaw": 90 }
+      ]
+    },
+    "labTemp": {
+      "titulo": "Laboratorio de Temperatura",
+      "imagen_url": "/assets/ESFM/mainLabTemp_CaliLabTemp.webp",
+      "hotspots": [
+        { "destino": "pasTemp", "texto": "Pasillo Laboratorio", "pitch": -15, "yaw": 180 },
+        { "destino": "mainTemp", "texto": "Calibración de Temperatura", "pitch": -15, "yaw": 0 }
+      ]
+    },
+    "mainTemp": {
+      "titulo": "Calibración de Temperatura",
+      "imagen_url": "/assets/ESFM/antLabTemp_mainLabTemp.webp",
+      "hotspots": [
+        { "destino": "labTemp", "texto": "Laboratorio de Temperatura", "pitch": -15, "yaw": 180 },
+        { "destino": "pasTemp", "texto": "Pasillo Laboratorio", "pitch": -15, "yaw": 0 }
+      ]
+    },
+    "pasGal": {
+      "titulo": "Pasillo Laboratorio Gravedad",
+      "imagen_url": "/assets/ESFM/pas_antLabGrav.webp",
+      "hotspots": [
+        { "destino": "res", "texto": "Pasillo Laboratorio", "pitch": -15, "yaw": 180 },
+        { "destino": "labGal", "texto": "Laboratorio de Gravedad", "pitch": -15, "yaw": 0 }
+      ]
+    },
+    "labGal": {
+      "titulo": "Laboratorio de Gravedad",
+      "imagen_url": "/assets/ESFM/antLabGrav_labGrav.webp",
+      "hotspots": [
+        { "destino": "pasGal", "texto": "Pasillo Laboratorio Gravedad", "pitch": -15, "yaw": 180 }
+      ]
+    }
+  }
+}

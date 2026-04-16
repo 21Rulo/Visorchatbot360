@@ -1,0 +1,50 @@
+{
+  "nodo_inicial": "exterior",
+  "nodos": {
+    "exterior": {
+      "titulo": "Exterior",
+      "yaw_inicio": -60,
+      "imagen_url": "/assets/LANTA/Exte_antenas.webp",
+      "contexto_ia": "¡Hola! Soy Jasper... Nos encontramos en el exterior del edificio principal.",
+      "hotspots": [
+        { "destino": "recepcion", "texto": "Dentro", "pitch": -11.28, "yaw": 98.19, "yaw_llegada":240 }
+      ]
+    },
+    "recepcion": {
+      "titulo": "Recepción",
+      "imagen_url": "/assets/LANTA/Recep_antenas.webp",
+      "contexto_ia": "Te encuentras en la recepción del Laboratorio Nacional de Telecomunicaciones y Antenas...",
+      "hotspots": [
+        
+        { "destino": "oficina", "texto": "Oficina", "pitch": -5.32, "yaw": 122.30, "yaw_llegada":0 },
+        { "destino": "exterior", "texto": "Fuera", "pitch": -20.09, "yaw": -54.92, "yaw_llegada":120 },
+        { "destino": "antesalaCamNec", "texto": "Antesala", "pitch": -9.75, "yaw": -156.85, "yaw_llegada":100 }
+      ]
+    },
+    "oficina": {
+      "titulo": "Oficina",
+      "imagen_url": "/assets/LANTA/Equipo_antenas.webp",
+      "contexto_ia": "Estás en la oficina técnica del laboratorio...",
+      "hotspots": [
+        { "destino": "recepcion", "texto": "Recepción", "pitch": -8.35, "yaw": 179.28, "yaw_llegada":60 }
+      ]
+    },
+    "antesalaCamNec": {
+      "titulo": "Antesala Cámara Anecoica",
+      "imagen_url": "/assets/LANTA/Ant_Antenas.webp",
+      "contexto_ia": "Ahora estás en la antesala de la cámara anecoica...",
+      "hotspots": [
+        { "destino": "recepcion", "texto": "Recepción", "pitch": -12.51, "yaw": 84.26, "yaw_llegada":-35 },
+        { "destino": "labCamNec", "texto": "Cámara Anecoica", "pitch": -9.23, "yaw": 175.17, "yaw_llegada":-90 }
+      ]
+    },
+    "labCamNec": {
+      "titulo": "Cámara Anecoica",
+      "imagen_url": "/assets/LANTA/Lab_antenas.webp",
+      "contexto_ia": "Has ingresado a la cámara anecoica, un recinto diseñado para eliminar reflexiones...",
+      "hotspots": [
+        { "destino": "antesalaCamNec", "texto": "Antesala", "pitch": -8.33, "yaw": -91.75, "yaw_llegada":10 }
+      ]
+    }
+  }
+}

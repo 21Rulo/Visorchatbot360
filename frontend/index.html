@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visor 360 Institucional - IPN</title>
+    <link rel="icon" href="data:,">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="./css/style.css">
+    
+  </head>
+  <body>
+    <div id="cortinilla-transicion"></div>
+    
+    <div id="panel-controles">
+      <button class="btn-control" id="btn-zoom-in">
+        <span class="material-symbols-outlined">zoom_in</span>
+      </button>
+      <button class="btn-control" id="btn-zoom-out">
+        <span class="material-symbols-outlined">zoom_out</span>
+      </button>
+      <button class="btn-control" id="btn-fullscreen">
+        <span class="material-symbols-outlined">fullscreen</span>
+      </button>
+    </div>
+    
+    <div id="contenedor-brujula">
+        <span class="material-symbols-outlined" id="icono-brujula">explore</span>
+    </div>
+
+    <div id="contenedor-info-escena">
+      <h1 id="titulo-ubicacion">Cargando...</h1>
+    </div>
+
+    <div id="tooltip-hotspot" class="oculto"></div>
+
+    <script type="module" src="/js/app.js"></script>
+  </body>
+</html>
