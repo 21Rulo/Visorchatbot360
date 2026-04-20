@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
-from app.agents.agente_guia import obtener_respuesta_guia
+from app.agents.agente_control import procesar_mensaje
 
 router = APIRouter()
 
@@ -10,5 +10,5 @@ class MensajeChat(BaseModel):
 
 @router.post("/chat")
 async def endpoint_chat(datos: MensajeChat):
-    respuesta = obtener_respuesta_guia(datos.mensaje, datos.contexto)
+    respuesta = procesar_mensaje(datos.mensaje, datos.contexto)
     return {"respuesta": respuesta}
