@@ -38,5 +38,24 @@
     <div id="tooltip-hotspot" class="oculto"></div>
 
     <script type="module" src="/js/app.js"></script>
+    <button id="btn-chat-toggle" class="btn-control" style="position: absolute; right: 20px; bottom: 90px; z-index: 20; border-radius: 50%; width: 55px; height: 55px;">
+        <span class="material-symbols-outlined">chat</span>
+    </button>
+
+    <div id="chat-container" class="oculto">
+        <div id="chat-header">
+            <strong>Jasper - Asistente IPN</strong>
+            <button id="btn-chat-close" style="background:none; border:none; color:white; cursor:pointer;">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <div id="chat-messages">
+            <div class="msg agente">¡Hola! Soy Jasper. Da un recorrido o hazme una pregunta.</div>
+        </div>
+        <div id="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Pregúntale a Jasper...">
+            <button id="btn-chat-send"><span class="material-symbols-outlined">send</span></button>
+        </div>
+    </div>
   </body>
 </html>

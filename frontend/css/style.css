@@ -132,6 +132,97 @@
 
       .oculto { opacity: 0; }
 
+      /* ====== ESTILOS DEL CHATBOT ====== */
+      #chat-container {
+          position: absolute;
+          right: 20px;
+          bottom: 90px;
+          width: 320px;
+          height: 450px;
+          background: rgba(251, 246, 246, 0.9);
+          backdrop-filter: blur(8px);
+          border-radius: 12px;
+          display: flex;
+          flex-direction: column;
+          box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+          z-index: 25;
+          overflow: hidden;
+          transition: transform 0.3s, opacity 0.3s;
+          font-family: 'Montserrat', sans-serif;
+      }
+
+      #chat-container.oculto {
+          transform: translateY(20px);
+          opacity: 0;
+          pointer-events: none;
+      }
+
+      #chat-header {
+          background: #6c1c34;
+          color: white;
+          padding: 12px 15px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      }
+
+      #chat-messages {
+          flex: 1;
+          padding: 15px;
+          overflow-y: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+      }
+
+      .msg {
+          padding: 10px 12px;
+          border-radius: 8px;
+          max-width: 85%;
+          font-size: 14px;
+          line-height: 1.4;
+      }
+
+      .msg.agente {
+          background: #e0e0e0;
+          color: #333;
+          align-self: flex-start;
+          border-bottom-left-radius: 2px;
+      }
+
+      .msg.usuario {
+          background: #6c1c34;
+          color: white;
+          align-self: flex-end;
+          border-bottom-right-radius: 2px;
+      }
+
+      #chat-input-area {
+          display: flex;
+          padding: 10px;
+          border-top: 1px solid rgba(0,0,0,0.1);
+          background: white;
+      }
+
+      #chat-input {
+          flex: 1;
+          padding: 8px 12px;
+          border: 1px solid #ccc;
+          border-radius: 20px;
+          outline: none;
+          font-family: 'Montserrat', sans-serif;
+      }
+
+      #btn-chat-send {
+          background: none;
+          border: none;
+          color: #6c1c34;
+          cursor: pointer;
+          margin-left: 5px;
+          display: flex;
+          align-items: center;
+      }
+
 
       @media (max-width: 600px) {
         #titulo-ubicacion {

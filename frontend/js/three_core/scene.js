@@ -114,6 +114,8 @@ export function iniciarVisor(mapa) {
         const nodoData = mapa.nodos[idNodo];
         if (!nodoData) return;
         tituloUI.innerText = nodoData.titulo;
+        
+        window.contextoActual = nodoData.contexto_ia || `Estás en ${nodoData.titulo}`;
 
         // LÓGICA DE GIRO: Si hay yawLlegada (clic), lo usamos. Si es null (inicio), usamos el yaw_inicio del JSON (o 0 si no existe).
         const anguloGiro = yawLlegada !== null ? yawLlegada : (nodoData.yaw_inicio || 0);
