@@ -1,34 +1,44 @@
 import { iniciarVisor } from './three_core/scene.js';
 
-async function arrancarAplicacion() {
+// Contexto inicial de Jasper antes de entrar a un recorrido
+window.contextoActual = "El usuario está en el Lobby Principal de la aplicación. Aún no ha iniciado ningún recorrido. Dale la bienvenida al IPN Virtual 360 e invítalo a seleccionar un laboratorio en el menú principal de su pantalla.";
+
+const menuInicio = document.getElementById('menu-inicio');
+const botonesRecorrido = document.querySelectorAll('.btn-recorrido');
+
+// Escuchamos los clics en los botones del menú
+botonesRecorrido.forEach(boton => {
+    boton.addEventListener('click', () => {
+        const labSeleccionado = boton.getAttribute('data-lab');
+        cargarRecorrido(labSeleccionado);
+    });
+});
+
+let visorActual = null;
+
+async function cargarRecorrido(nombreLab) {
     try {
-        const params = new URLSearchParams(window.location.search);
-        const nombreLab = params.get('lab') || 'lanta';
+        if (visorActual && visorActual.destruirVisor) {
+            visorActual.destruirVisor();
+        }
+        
+        // Cambiamos el texto temporalmente para que el usuario sepa que está cargando
+        document.querySelector('.titulo-main').innerText = "Cargando recorrido...";
+        
         const respuesta = await fetch(`/data/${nombreLab}.json`);
         if (!respuesta.ok) throw new Error("Laboratorio no encontrado");
 
         const mapa = await respuesta.json();
-        const visorController = iniciarVisor(mapa);
+        visorActual = iniciarVisor(mapa);
+
+        const chatContainer = document.getElementById('chat-container');
+        chatContainer.classList.add('oculto');
         
-        // Zoom
-        document.getElementById('btn-zoom-in').addEventListener('click', () => {
-            visorController.hacerZoom(-10); // Reducir FOV = Acercar
-        });
-
-        document.getElementById('btn-zoom-out').addEventListener('click', () => {
-            visorController.hacerZoom(10); // Aumentar FOV = Alejar
-        });
-
-        // Pantalla Completa
-        document.getElementById('btn-fullscreen').addEventListener('click', () => {
-            if (!document.fullscreenElement) {
-                document.body.requestFullscreen().catch(err => {
-                    console.error("Error al intentar entrar a pantalla completa:", err);
-                });
-            } else {
-                document.exitFullscreen();
-            }
-        });
+        // Ocultamos el menú inicial con una animación
+        menuInicio.style.opacity = '0';
+        setTimeout(() => {
+            menuInicio.style.display = 'none';
+        }, 500);
         
     } catch (error) {
         console.error("Error al arrancar:", error);
@@ -36,14 +46,57 @@ async function arrancarAplicacion() {
     }
 }
 
-arrancarAplicacion();
+// --- CONTROLES DE VISOR ---
+// Registrados una sola vez, delegan en visorActual para evitar listeners duplicados
 
+document.getElementById('btn-zoom-in').addEventListener('click', () => {
+    if (visorActual) visorActual.hacerZoom(-10); // Reducir FOV = Acercar
+});
+
+document.getElementById('btn-zoom-out').addEventListener('click', () => {
+    if (visorActual) visorActual.hacerZoom(10); // Aumentar FOV = Alejar
+});
+
+document.getElementById('btn-fullscreen').addEventListener('click', () => {
+    if (!document.fullscreenElement) {
+        document.body.requestFullscreen().catch(err => {
+            console.error("Error al intentar entrar a pantalla completa:", err);
+        });
+    } else {
+        document.exitFullscreen();
+    }
+});
+
+// --- BOTÓN HOME ---
+const btnHome = document.getElementById('btn-home');
 const btnToggle = document.getElementById('btn-chat-toggle');
 const btnClose = document.getElementById('btn-chat-close');
 const chatContainer = document.getElementById('chat-container');
 const btnSend = document.getElementById('btn-chat-send');
 const inputChat = document.getElementById('chat-input');
 const messagesDiv = document.getElementById('chat-messages');
+
+btnHome.addEventListener('click', () => {
+    // 1. Mostrar el menú de inicio con animación
+    const menuInicio = document.getElementById('menu-inicio');
+    menuInicio.style.display = 'flex';
+
+    setTimeout(() => {
+        menuInicio.style.opacity = '1';
+    }, 10);
+
+    // 2. Mostrar el chat automáticamente
+    document.getElementById('chat-container').classList.remove('oculto');
+
+    // 3. Actualizar el contexto
+    window.contextoActual = "El usuario ha regresado al Lobby Principal. Invítalo de nuevo a seleccionar un laboratorio.";
+
+    // 4. Mensaje automático de Jasper
+    agregarMensajeUI(
+        "Has vuelto al menú principal. ¿A qué otra escuela te gustaría ir?",
+        "agente"
+    );
+});
 
 function toggleChat() {
     chatContainer.classList.toggle('oculto');

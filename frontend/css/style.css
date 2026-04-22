@@ -4,6 +4,72 @@
         -webkit-font-smoothing: antialiased; 
       }
 
+      /* ====== ESTILOS DEL MENÚ DE INICIO ====== */
+      #menu-inicio {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: #6c1c34;
+          z-index: 50;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: opacity 0.5s ease-in-out;
+      }
+
+      .menu-contenido {
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          padding: 40px;
+          border-radius: 15px;
+          text-align: center;
+          color: white;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+          max-width: 600px;
+      }
+
+      .titulo-main {
+          font-size: 32px;
+          margin-bottom: 10px;
+      }
+
+      .subtitulo {
+          font-size: 16px;
+          margin-bottom: 30px;
+          opacity: 0.9;
+      }
+
+      .opciones-recorrido {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+      }
+
+      .btn-recorrido {
+          background: white;
+          color: #6c1c34;
+          border: none;
+          padding: 15px 20px;
+          border-radius: 8px;
+          font-size: 16px;
+          font-weight: 600;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          transition: transform 0.2s, background 0.2s;
+          font-family: 'Montserrat', sans-serif;
+      }
+
+      .btn-recorrido:hover {
+          background: #f0f0f0;
+          transform: scale(1.02);
+      }
+
       canvas { display: block; }
       #ui-flotante {
         position: absolute;
@@ -134,9 +200,9 @@
 
       /* ====== ESTILOS DEL CHATBOT ====== */
       #chat-container {
-          position: absolute;
+          position: fixed;
+          top: 85px; /* Aparece justo debajo del botón */
           right: 20px;
-          bottom: 90px;
           width: 320px;
           height: 450px;
           background: rgba(251, 246, 246, 0.9);
@@ -145,14 +211,13 @@
           display: flex;
           flex-direction: column;
           box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-          z-index: 25;
+          z-index: 60;
           overflow: hidden;
-          transition: transform 0.3s, opacity 0.3s;
-          font-family: 'Montserrat', sans-serif;
+          transition: transform 0.3s ease, opacity 0.3s ease;
       }
 
       #chat-container.oculto {
-          transform: translateY(20px);
+          transform: translateY(-10px);
           opacity: 0;
           pointer-events: none;
       }
@@ -160,10 +225,42 @@
       #chat-header {
           background: #6c1c34;
           color: white;
-          padding: 12px 15px;
+          padding: 10px 15px;
           display: flex;
           justify-content: space-between;
           align-items: center;
+          border-bottom: 2px solid rgba(0,0,0,0.1);
+      }
+
+      .chat-header-info {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+      }
+
+      #jasper-avatar {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%; /* Lo hace redondo */
+          object-fit: cover; /* Asegura que la imagen no se deforme */
+          border: 2px solid rgba(255, 255, 255, 0.8);
+          background-color: white; /* Por si la imagen tiene fondo transparente */
+      }
+
+      /* Estilo para el contenedor del nombre y subtítulo */
+      .chat-header-info div {
+          display: flex;
+          flex-direction: column;
+          line-height: 1.2;
+      }
+
+      .chat-header-info strong {
+          font-size: 16px;
+      }
+
+      .chat-subtitle {
+          font-size: 11px;
+          opacity: 0.8;
       }
 
       #chat-messages {
@@ -222,6 +319,56 @@
           display: flex;
           align-items: center;
       }
+
+      #btn-home {
+          background-color: rgba(251, 246, 246, 0.6);
+          color: #6c1c36;
+          margin-bottom: 40px;
+      }
+
+      /* Botón flotante que abre a Jasper */
+      #btn-chat-toggle {
+          position: fixed; /* Fijo para que no se mueva al rotar la cámara */
+          top: 20px;
+          right: 20px;
+          z-index: 60; /* Por encima del menú de inicio (50) */
+          border-radius: 50%;
+          width: 55px;
+          height: 55px;
+          padding: 0;
+          overflow: hidden;
+          animation: pulso-chat 2.5s infinite;
+      }
+
+      #icono-chat {
+        color: #6c1c34;
+        font-size: 35px;
+        transition: transform 0.1s ease-out;
+      }
+
+      /* Animación del latido del botón */
+      @keyframes pulso-chat {
+          0% { box-shadow: 0 0 0 0 rgba(223, 218, 219, 0.7); }
+          70% { box-shadow: 0 0 0 15px rgba(108, 28, 52, 0); }
+          100% { box-shadow: 0 0 0 0 rgba(108, 28, 52, 0); }
+      }
+
+      #btn-chat-close {
+          background: none;
+          border: none;
+          color: white;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0;
+      }
+      
+      #btn-chat-close:hover {
+          color: #f0f0f0;
+          transform: scale(1.1);
+      }
+
 
 
       @media (max-width: 600px) {

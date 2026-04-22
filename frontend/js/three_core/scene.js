@@ -12,6 +12,61 @@ function gradosACoordenadas(pitch, yaw, radio) {
     return new THREE.Vector3(x, y, z);
 }
 
+// --- FLECHAS DE BORDE (CSS puro, sin imagen) ---
+function crearFlechaBorde() {
+    const el = document.createElement('div');
+    el.style.cssText = `
+        position: fixed;
+        width: 0;
+        height: 0;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        z-index: 40;
+        filter: drop-shadow(0 0 6px rgba(97, 203, 53, 0.9));
+    `;
+    document.body.appendChild(el);
+    return el;
+}
+
+function estilizarFlecha(el, direccion) {
+    const color = 'rgba(97, 203, 53, 0.95)';
+    const size = '20px';
+    const pad = '18px';
+
+    // Limpiar estilos anteriores
+    el.style.borderTop = el.style.borderBottom = el.style.borderLeft = el.style.borderRight = 'none';
+    el.style.top = el.style.bottom = el.style.left = el.style.right = '';
+    el.style.transform = '';
+
+    switch (direccion) {
+        case 'derecha':
+            el.style.borderTop    = `${size} solid transparent`;
+            el.style.borderBottom = `${size} solid transparent`;
+            el.style.borderLeft   = `${size} solid ${color}`;
+            el.style.right = pad;
+            break;
+        case 'izquierda':
+            el.style.borderTop    = `${size} solid transparent`;
+            el.style.borderBottom = `${size} solid transparent`;
+            el.style.borderRight  = `${size} solid ${color}`;
+            el.style.left = pad;
+            break;
+        case 'arriba':
+            el.style.borderLeft   = `${size} solid transparent`;
+            el.style.borderRight  = `${size} solid transparent`;
+            el.style.borderBottom = `${size} solid ${color}`;
+            el.style.top = pad;
+            break;
+        case 'abajo':
+            el.style.borderLeft   = `${size} solid transparent`;
+            el.style.borderRight  = `${size} solid transparent`;
+            el.style.borderTop    = `${size} solid ${color}`;
+            el.style.bottom = pad;
+            break;
+    }
+}
+
 export function iniciarVisor(mapa) {
     const escena = new THREE.Scene();
     const camara = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -24,13 +79,18 @@ export function iniciarVisor(mapa) {
     const controles = new OrbitControls(camara, renderizador.domElement);
     controles.enableZoom = false;
     controles.enablePan = false;
+    controles.rotateSpeed = 0.4;   // Menor = más lento
+    controles.enableDamping = true; // Inercia al soltar
+    controles.dampingFactor = 0.05;
 
     const geometria = new THREE.SphereGeometry(500, 60, 40);
     geometria.scale(-1, 1, 1);
     const cargadorTextura = new THREE.TextureLoader();
-    const mapaIcono = cargadorTextura.load('/assets/arrow1.png',() => console.log("✅ Textura de flecha cargada correctamente"),
-    undefined,
-    (err) => console.error("❌ Error cargando la flecha:", err));
+    const mapaIcono = cargadorTextura.load('/assets/src/arrow1.png',
+        () => console.log("✅ Textura de flecha cargada correctamente"),
+        undefined,
+        (err) => console.error("❌ Error cargando la flecha:", err)
+    );
     mapaIcono.colorSpace = THREE.SRGBColorSpace;
 
     const tituloUI = document.getElementById('titulo-ubicacion');
@@ -44,11 +104,19 @@ export function iniciarVisor(mapa) {
 
     let fovObjetivo = 75;
 
+    // --- POOL DE FLECHAS DE BORDE ---
+    const MAX_FLECHAS = 8;
+    const poolFlechas = Array.from({ length: MAX_FLECHAS }, () => crearFlechaBorde());
+
+    function ocultarTodasFlechas() {
+        poolFlechas.forEach(f => { f.style.opacity = '0'; });
+    }
+
     // --- RAYCASTER ---
     const raycaster = new THREE.Raycaster();
     const mouse = new THREE.Vector2();
-    // --- HOVER ---
-    window.addEventListener('mousemove', (event) => {
+
+    const onMouseMove = (event) => {
         mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
         mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
         raycaster.setFromCamera(mouse, camara);
@@ -71,9 +139,9 @@ export function iniciarVisor(mapa) {
             
             grupoHotspots.children.forEach(hs => hs.userData.escalaObjetivo = 35);
         }
-    });
+    };
 
-    window.addEventListener('click', (event) => {
+    const onClick = (event) => {
         mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
         mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
         raycaster.setFromCamera(mouse, camara);
@@ -106,10 +174,19 @@ export function iniciarVisor(mapa) {
                 alert(`Coordenadas: Pitch ${pitch.toFixed(2)}, Yaw ${yaw.toFixed(2)}`);
             }
         }
-    });
+    };
+
+    const onResize = () => {
+        camara.aspect = window.innerWidth / window.innerHeight;
+        camara.updateProjectionMatrix();
+        renderizador.setSize(window.innerWidth, window.innerHeight);
+    };
+
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('click', onClick);
+    window.addEventListener('resize', onResize);
 
     // --- FUNCIÓN PARA CARGAR UN NODO ---
-    // Cambiamos el valor por defecto a null para saber si venimos de un clic o del inicio
     function cargarNodo(idNodo, yawLlegada = null) {
         const nodoData = mapa.nodos[idNodo];
         if (!nodoData) return;
@@ -117,7 +194,6 @@ export function iniciarVisor(mapa) {
         
         window.contextoActual = nodoData.contexto_ia || `Estás en ${nodoData.titulo}`;
 
-        // LÓGICA DE GIRO: Si hay yawLlegada (clic), lo usamos. Si es null (inicio), usamos el yaw_inicio del JSON (o 0 si no existe).
         const anguloGiro = yawLlegada !== null ? yawLlegada : (nodoData.yaw_inicio || 0);
 
         const telon = document.getElementById('cortinilla-transicion');
@@ -132,12 +208,11 @@ export function iniciarVisor(mapa) {
                 esfera.material.map = textura;
                 esfera.material.needsUpdate = true;
 
-                // PASO 1: Resetear rotaciones a cero
                 esfera.rotation.y = 0;
                 grupoHotspots.rotation.y = 0;
 
-                // PASO 2: Limpiar hotspots anteriores y agregar los nuevos
                 grupoHotspots.clear();
+                ocultarTodasFlechas();
 
                 nodoData.hotspots.forEach(hs => {
                     const materialSprite = new THREE.SpriteMaterial({ 
@@ -159,20 +234,17 @@ export function iniciarVisor(mapa) {
                         destino: hs.destino,
                         yaw_llegada: hs.yaw_llegada,
                         texto: hs.texto,
-                        escalaObjetivo:35
+                        escalaObjetivo: 35
                     };
 
                     grupoHotspots.add(sprite);
                 });
 
-                // PASO 3: Aplicar la rotación a esfera + hotspots juntos usando nuestra nueva variable
                 const rotacionRadianes = anguloGiro * (Math.PI / 180);
                 esfera.rotation.y = -rotacionRadianes;
                 grupoHotspots.rotation.y = -rotacionRadianes;
 
-                // PASO 4: Resetear la cámara para que mire al frente al entrar
                 controles.reset();
-
                 telon.style.opacity = '0';
             });
         }, 200);
@@ -180,26 +252,82 @@ export function iniciarVisor(mapa) {
 
     cargarNodo(mapa.nodo_inicial);
 
+    // --- LOOP DE ANIMACIÓN ---
+    let idAnimacion;
+
     function animar() {
-        requestAnimationFrame(animar);
+        idAnimacion = requestAnimationFrame(animar);
         controles.update();
         const tiempo = Date.now() * 0.002;
 
+        // --- PULSO Y ESCALA DE HOTSPOTS ---
         grupoHotspots.children.forEach(hs => {
-            // 1. Suavizado (Lerp): 0.1 es la velocidad de la elasticidad
             const escalaActual = hs.scale.x;
             const escalaDestino = hs.userData.escalaObjetivo;
             let nuevaEscala = escalaActual + (escalaDestino - escalaActual) * 0.1;
 
-            // 2. Pulso: Solo se aplica si NO estamos en hover (escala objetivo es 35)
-            // Opcional: puedes aplicarlo siempre para un efecto más vivo
             if (escalaDestino === 35) {
-                const pulso = Math.sin(tiempo) * 2; // Oscilación de +/- 2 unidades
+                const pulso = Math.sin(tiempo) * 2;
                 nuevaEscala += pulso;
             }
 
             hs.scale.set(nuevaEscala, nuevaEscala, 1);
         });
+
+        // --- INDICADORES DE BORDE ---
+        // Si el menú de inicio está visible, ocultamos las flechas y no las procesamos
+        const menuInicio = document.getElementById('menu-inicio');
+        const menuVisible = menuInicio && menuInicio.style.display !== 'none';
+
+        if (menuVisible) {
+            ocultarTodasFlechas();
+        } else {
+            ocultarTodasFlechas();
+            let indiceFlechaActual = 0;
+
+            grupoHotspots.children.forEach(hs => {
+                if (indiceFlechaActual >= MAX_FLECHAS) return;
+
+                const vector = hs.position.clone();
+                vector.project(camara);
+
+                const detras = vector.z > 1;
+                const fueraX = vector.x > 1 || vector.x < -1;
+                const fueraY = vector.y > 1 || vector.y < -1;
+                const estaFuera = detras || fueraX || fueraY;
+
+                if (!estaFuera) return;
+
+                const flecha = poolFlechas[indiceFlechaActual];
+                indiceFlechaActual++;
+
+                let direccion;
+                if (detras) {
+                    direccion = vector.x >= 0 ? 'izquierda' : 'derecha';
+                } else {
+                    const absX = Math.abs(vector.x);
+                    const absY = Math.abs(vector.y);
+                    if (absX >= absY) {
+                        direccion = vector.x > 0 ? 'derecha' : 'izquierda';
+                    } else {
+                        direccion = vector.y > 0 ? 'arriba' : 'abajo';
+                    }
+                }
+
+                estilizarFlecha(flecha, direccion);
+
+                if (direccion === 'derecha' || direccion === 'izquierda') {
+                    flecha.style.top = '50%';
+                    flecha.style.transform = 'translateY(-50%)';
+                } else {
+                    flecha.style.left = '50%';
+                    flecha.style.transform = 'translateX(-50%)';
+                }
+
+                const pulsoOpacidad = 0.6 + Math.sin(tiempo * 2) * 0.4;
+                flecha.style.opacity = String(pulsoOpacidad);
+            });
+        }
 
         // --- ZOOM SUAVE (via FOV) ---
         if (Math.abs(camara.fov - fovObjetivo) > 0.1) {
@@ -219,12 +347,6 @@ export function iniciarVisor(mapa) {
     }
     animar();
 
-    window.addEventListener('resize', () => {
-        camara.aspect = window.innerWidth / window.innerHeight;
-        camara.updateProjectionMatrix();
-        renderizador.setSize(window.innerWidth, window.innerHeight);
-    });
-
     // --- ZOOM (via FOV) ---
     function hacerZoom(cantidad) {
         const ajuste = cantidad < 0 ? -5 : 5;
@@ -232,5 +354,32 @@ export function iniciarVisor(mapa) {
         fovObjetivo = THREE.MathUtils.clamp(fovObjetivo, 30, 90);
     }
 
-    return { cargarNodo, hacerZoom };
+    // --- DESTRUIR VISOR ---
+    function destruirVisor() {
+        cancelAnimationFrame(idAnimacion);
+
+        window.removeEventListener('mousemove', onMouseMove);
+        window.removeEventListener('click', onClick);
+        window.removeEventListener('resize', onResize);
+
+        poolFlechas.forEach(f => {
+            if (f.parentNode) f.parentNode.removeChild(f);
+        });
+
+        if (renderizador.domElement.parentNode) {
+            renderizador.domElement.parentNode.removeChild(renderizador.domElement);
+        }
+
+        grupoHotspots.clear();
+        escena.clear();
+        geometria.dispose();
+        material.dispose();
+        if (mapaIcono) mapaIcono.dispose();
+        controles.dispose();
+        renderizador.dispose();
+
+        console.log("🗑️ Visor destruido y memoria liberada.");
+    }
+
+    return { cargarNodo, hacerZoom, destruirVisor };
 }

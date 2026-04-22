@@ -1,49 +1,124 @@
 {
+  "institucion": {
+    "nombre": "Escuela Superior de Ingeniería Mecánica y Eléctrica Unidad Zacatenco",
+    "siglas": "ESIME_ZAC",
+    "descripcion": "La ESIME Zacatenco es una escuela del IPN especializada en formar ingenieros en áreas como electrónica, eléctrica, automatización y sistemas automotrices. Se ubica en la Unidad Profesional Zacatenco y es reconocida por su excelencia académica e innovación tecnológica.",
+    "mision": "La Escuela Superior de Ingeniería Mecánica y Eléctrica Unidad Zacatenco es una institución educativa de nivel superior y posgrado, líder en los diversos campos de la Ingeniería Electromecánica...",
+    "url": "https://www.esimez.ipn.mx/",
+    "fechaCreacion": "19 de marzo de 1959",
+    "ubicacion": "Unidad Profesional, Av. Luis Enrique Erro, Adolfo López Mateos S/N, Zacatenco, Gustavo A. Madero, 07700 Ciudad de México",
+    "historia": "La ESIME fue fundada en 1936 como una de las primeras escuelas del IPN, enfocada en ingeniería mecánica y eléctrica. En 1959 se trasladó a la Unidad Zacatenco.",
+    "titular": "Dr. Mauro Alberto Enciso Aguilar"
+  },
+  "programasAcademicos": [
+    {
+      "nombre": "Ingeniería en Comunicaciones y Electrónica",
+      "descripcion": "Forma profesionales capaces de diseñar, analizar y mantener sistemas electrónicos y de telecomunicaciones.",
+      "duracion": 9,
+      "modalidad": "Escolarizada"
+    },
+    {
+      "nombre": "Ingeniería en Control y Automatización",
+      "descripcion": "Prepara ingenieros para diseñar y optimizar sistemas automatizados en procesos industriales.",
+      "duracion": 9,
+      "modalidad": "Escolarizada"
+    },
+    {
+      "nombre": "Ingeniería Eléctrica",
+      "descripcion": "Enfocada en la generación, transmisión y distribución de energía eléctrica, así como en sistemas eléctricos industriales.",
+      "duracion": 9,
+      "modalidad": "Escolarizada"
+    },
+    {
+      "nombre": "Ingeniería en Sistemas Automotrices",
+      "descripcion": "Capacita a profesionales en el diseño, desarrollo y mantenimiento de sistemas automotrices modernos.",
+      "duracion": 9,
+      "modalidad": "Escolarizada"
+    },
+    {
+      "nombre": "Ingeniería Fotónica",
+      "descripcion": "Especializa en el estudio y aplicación de la luz en tecnologías como fibra óptica y láseres.",
+      "duracion": 9,
+      "modalidad": "Escolarizada"
+    }
+  ],
+  "departamentos": [
+    {
+      "nombre": "Departamento de Gestión Escolar",
+      "descripcion": "Administra los procesos escolares como inscripciones, reinscripciones y emisión de documentos oficiales."
+    },
+    {
+      "nombre": "Departamento de Extensión y Apoyos Educativos",
+      "descripcion": "Facilita programas de vinculación con el sector productivo y apoyo académico complementario, incluyendo Bolsa de Trabajo."
+    },
+    {
+      "nombre": "Departamento de Servicios Estudiantiles",
+      "descripcion": "Ofrece apoyo y servicios para el bienestar y desarrollo de los estudiantes, como orientación psicológica."
+    }
+  ],
   "nodo_inicial": "exterior",
   "nodos": {
     "exterior": {
-      "titulo": "Exterior",
+      "titulo": "Exterior LANTA",
       "yaw_inicio": -60,
       "imagen_url": "/assets/LANTA/Exte_antenas.webp",
-      "contexto_ia": "¡Hola! Soy Jasper... Nos encontramos en el exterior del edificio principal.",
+      "contexto_ia": "¡Hola! Soy Jasper. Nos encontramos en el exterior del Laboratorio Nacional de Telecomunicaciones y Antenas (LANTA).",
+      "equipos_destacados": [],
       "hotspots": [
-        { "destino": "recepcion", "texto": "Dentro", "pitch": -11.28, "yaw": 98.19, "yaw_llegada":240 }
+        { "destino": "recepcion", "texto": "Entrar a Recepción", "pitch": -11.28, "yaw": 98.19, "yaw_llegada": 240 }
       ]
     },
     "recepcion": {
       "titulo": "Recepción",
       "imagen_url": "/assets/LANTA/Recep_antenas.webp",
-      "contexto_ia": "Te encuentras en la recepción del Laboratorio Nacional de Telecomunicaciones y Antenas...",
+      "contexto_ia": "Te encuentras en la recepción del Laboratorio Nacional de Telecomunicaciones y Antenas. Este es el punto de control y bienvenida.",
+      "equipos_destacados": [],
       "hotspots": [
-        
-        { "destino": "oficina", "texto": "Oficina", "pitch": -5.32, "yaw": 122.30, "yaw_llegada":0 },
-        { "destino": "exterior", "texto": "Fuera", "pitch": -20.09, "yaw": -54.92, "yaw_llegada":120 },
-        { "destino": "antesalaCamNec", "texto": "Antesala", "pitch": -9.75, "yaw": -156.85, "yaw_llegada":100 }
+        { "destino": "oficina", "texto": "Ir a la Oficina", "pitch": -5.32, "yaw": 122.30, "yaw_llegada": 0 },
+        { "destino": "exterior", "texto": "Salir al Exterior", "pitch": -20.09, "yaw": -54.92, "yaw_llegada": 120 },
+        { "destino": "antesalaCamNec", "texto": "Ir a la Antesala", "pitch": -9.75, "yaw": -156.85, "yaw_llegada": 100 }
       ]
     },
     "oficina": {
-      "titulo": "Oficina",
+      "titulo": "Oficina Técnica",
       "imagen_url": "/assets/LANTA/Equipo_antenas.webp",
-      "contexto_ia": "Estás en la oficina técnica del laboratorio...",
+      "contexto_ia": "Estás en la oficina técnica del laboratorio. Aquí el personal analiza datos y configura los equipos de medición.",
+      "equipos_destacados": [
+        {
+          "nombre": "Estaciones de trabajo y análisis",
+          "funcion": "Procesar la información recopilada por las antenas durante los ensayos."
+        }
+      ],
       "hotspots": [
-        { "destino": "recepcion", "texto": "Recepción", "pitch": -8.35, "yaw": 179.28, "yaw_llegada":60 }
+        { "destino": "recepcion", "texto": "Volver a Recepción", "pitch": -8.35, "yaw": 179.28, "yaw_llegada": 60 }
       ]
     },
     "antesalaCamNec": {
       "titulo": "Antesala Cámara Anecoica",
       "imagen_url": "/assets/LANTA/Ant_Antenas.webp",
-      "contexto_ia": "Ahora estás en la antesala de la cámara anecoica...",
+      "contexto_ia": "Ahora estás en la antesala de la cámara anecoica, la zona de preparación antes de entrar al entorno de pruebas aislado.",
+      "equipos_destacados": [],
       "hotspots": [
-        { "destino": "recepcion", "texto": "Recepción", "pitch": -12.51, "yaw": 84.26, "yaw_llegada":-35 },
-        { "destino": "labCamNec", "texto": "Cámara Anecoica", "pitch": -9.23, "yaw": 175.17, "yaw_llegada":-90 }
+        { "destino": "recepcion", "texto": "Volver a Recepción", "pitch": -12.51, "yaw": 84.26, "yaw_llegada": -35 },
+        { "destino": "labCamNec", "texto": "Entrar a Cámara Anecoica", "pitch": -9.23, "yaw": 175.17, "yaw_llegada": -90 }
       ]
     },
     "labCamNec": {
       "titulo": "Cámara Anecoica",
       "imagen_url": "/assets/LANTA/Lab_antenas.webp",
-      "contexto_ia": "Has ingresado a la cámara anecoica, un recinto diseñado para eliminar reflexiones...",
+      "contexto_ia": "Has ingresado a la cámara anecoica, un recinto diseñado para eliminar reflexiones electromagnéticas y simular un entorno libre de interferencias externas.",
+      "equipos_destacados": [
+        {
+          "nombre": "Conos absorbentes de radiofrecuencia",
+          "funcion": "Absorber ondas electromagnéticas para evitar que reboten en las paredes y arruinen las mediciones."
+        },
+        {
+          "nombre": "Posicionador de antenas",
+          "funcion": "Soporte giratorio central utilizado para probar el patrón de radiación de las antenas en 360 grados."
+        }
+      ],
       "hotspots": [
-        { "destino": "antesalaCamNec", "texto": "Antesala", "pitch": -8.33, "yaw": -91.75, "yaw_llegada":10 }
+        { "destino": "antesalaCamNec", "texto": "Salir a la Antesala", "pitch": -8.33, "yaw": -91.75, "yaw_llegada": 10 }
       ]
     }
   }

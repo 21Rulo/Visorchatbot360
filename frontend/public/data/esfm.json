@@ -1,11 +1,64 @@
 {
+  "institucion": {
+    "nombre": "Escuela Superior de Física y Matemáticas",
+    "siglas": "ESFM",
+    "descripcion": "La ESFM es una institución pública de educación superior especializada en la formación de profesionales en física, matemáticas e ingeniería matemática, reconocida por su excelencia académica y su compromiso con la investigación científica y tecnológica.",
+    "mision": "Formar integralmente profesionales de excelencia en el campo de las ciencias físico-matemáticas con alto grado de comprensión y responsabilidad social, capaces de contribuir al desarrollo económico, científico y tecnológico del país.",
+    "vision": "Ser líder en su ámbito, con un modelo educativo flexible y centrado en el aprendizaje que desarrolla la capacidad creativa y la actitud innovadora en sus alumnos para que sean competitivos a nivel internacional.",
+    "url": "https://www.esfm.ipn.mx/",
+    "fechaCreacion": "2 de marzo de 1961",
+    "ubicacion": "Av. Luis Enrique Erro S/N, Unidad Profesional Adolfo López Mateos, Zacatenco, Alcaldía Gustavo A. Madero, C.P. 07738, Ciudad de México.",
+    "historia": "La ESFM fue creada el 2 de marzo de 1961 como parte del IPN, con el objetivo de formar especialistas en física y matemáticas para la docencia, la investigación y el desarrollo de la industria nacional. Ha sido un referente en la educación superior en México.",
+    "titular": "Dr. Miguel Neri Rosas"
+  },
+  "programasAcademicos": [
+    {
+      "nombre": "Licenciatura en Ingeniería Matemática",
+      "descripcion": "Forma profesionales capaces de modelar y resolver problemas complejos en diversas áreas de la ingeniería mediante herramientas matemáticas avanzadas.",
+      "duracion": 8,
+      "modalidad": "Escolarizada"
+    },
+    {
+      "nombre": "Licenciatura en Física y Matemáticas",
+      "descripcion": "Proporciona una sólida formación en física y matemáticas, preparando a los estudiantes para la investigación científica y la docencia.",
+      "duracion": 8,
+      "modalidad": "Escolarizada"
+    },
+    {
+      "nombre": "Licenciatura en Matemática Algorítmica",
+      "descripcion": "Enfocada en el estudio de algoritmos y su aplicación en la resolución de problemas matemáticos y computacionales.",
+      "duracion": 8,
+      "modalidad": "Escolarizada"
+    },
+    {
+      "nombre": "Posgrados (Maestría y Doctorados)",
+      "descripcion": "Incluye Maestría y Doctorado en Ciencias Fisicomatemáticas, Doctorado en Física de los Materiales y Doctorado en Energía.",
+      "duracion": 4,
+      "modalidad": "Escolarizada"
+    }
+  ],
+  "departamentos": [
+    {
+      "nombre": "Departamento de Física",
+      "descripcion": "Encargado de impartir y coordinar las asignaturas relacionadas con la física, incluyendo prácticas en laboratorios."
+    },
+    {
+      "nombre": "Departamento de Matemáticas",
+      "descripcion": "Responsable de la enseñanza de las matemáticas y talleres de cálculo."
+    },
+    {
+      "nombre": "Departamento de Gestión Escolar",
+      "descripcion": "Administra los procesos escolares como inscripciones, reinscripciones y trámites de documentos oficiales."
+    }
+  ],
   "nodo_inicial": "root",
   "nodos": {
     "root": {
       "titulo": "Entrada Principal",
       "yaw_inicio": -90,
       "imagen_url": "/assets/ESFM/root.webp",
-      "contexto_ia": "¡Hola! Soy Jasper... Nos encontramos en la entrada principal del edificio de la Escuela Superior de Física y Matemáticas.",
+      "contexto_ia": "Te encuentras en el exterior del edificio de la ESFM. Este punto marca el acceso principal al laboratorio. Desde aquí puedes observar a estudiantes y visitantes transitando entre edificios, en un entorno universitario activo.",
+      "equipos_destacados": [],
       "hotspots": [
         { "destino": "pas1", "texto": "Pasillo", "pitch": -2.5, "yaw": 90, "yaw_llegada": -90 }
       ]
@@ -13,74 +66,114 @@
     "pas1": {
       "titulo": "Pasillo",
       "imagen_url": "/assets/ESFM/root_ext2.webp",
+      "contexto_ia": "Este pasillo conecta distintas áreas académicas de la ESFM Zacatenco. A lo largo de este recorrido se encuentran oficinas, laboratorios y zonas comunes.",
+      "equipos_destacados": [],
       "hotspots": [
         { "destino": "ent", "texto": "Entrada al Laboratorio", "pitch": -2, "yaw": 90, "yaw_llegada": -90 },
-        { "destino": "root", "texto": "Entrada Principal", "pitch": -3.5, "yaw": -95, "yaw_llegada": 0 }
+        { "destino": "root", "texto": "Entrada Principal", "pitch": -3.5, "yaw": -95, "yaw_llegada": 90 }
       ]
     },
     "ent": {
       "titulo": "Entrada al Laboratorio",
       "imagen_url": "/assets/ESFM/root_ext1.webp",
+      "contexto_ia": "Estás en la entrada al área del Sistema de Física de Materiales (SFM).",
+      "equipos_destacados": [],
       "hotspots": [
-        { "destino": "pas1", "texto": "Pasillo", "pitch": -15, "yaw": 180, "yaw_llegada": 0 },
-        { "destino": "rep", "texto": "Recepción Principal", "pitch": -15, "yaw": 0, "yaw_llegada": 0 }
+        { "destino": "pas1", "texto": "Pasillo", "pitch": -15, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "rep", "texto": "Recepción Principal", "pitch": -15, "yaw": 180, "yaw_llegada": 90 }
       ]
     },
     "rep": {
-      "titulo": "Recepción Principal",
+      "titulo": "Recepción Laboratorios SFM",
       "imagen_url": "/assets/ESFM/ext1_res.webp",
+      "contexto_ia": "Has llegado a la recepción del SFM, punto central de atención y control administrativo. Aquí se coordinan actividades, se recibe a visitantes y se realiza la gestión de acceso a las áreas técnicas.",
+      "equipos_destacados": [],
       "hotspots": [
-        { "destino": "ent", "texto": "Entrada al Laboratorio", "pitch": -15, "yaw": 180 },
-        { "destino": "res", "texto": "Pasillo Laboratorio", "pitch": -15, "yaw": 0 }
+        { "destino": "ent", "texto": "Entrada al Laboratorio", "pitch": -14, "yaw": 90, "yaw_llegada": 90 },
+        { "destino": "res", "texto": "Pasillo Laboratorio", "pitch": -15, "yaw": -90, "yaw_llegada": -100 }
       ]
     },
     "res": {
-      "titulo": "Pasillo Laboratorio",
+      "titulo": "Pasillo Laboratorios",
       "imagen_url": "/assets/ESFM/res_pas.webp",
+      "contexto_ia": "Este pasillo interior conecta las diferentes áreas técnicas del laboratorio del SFM. A lo largo del recorrido se encuentran las antesalas de los laboratorios de temperatura y gravedad.",
+      "equipos_destacados": [],
       "hotspots": [
-        { "destino": "rep", "texto": "Recepción Principal", "pitch": -15, "yaw": 180 },
-        { "destino": "pasTemp", "texto": "Laboratorio de Temperatura", "pitch": -15, "yaw": 0 },
-        { "destino": "pasGal", "texto": "Pasillo Laboratorio Gravedad", "pitch": -15, "yaw": 90 }
+        { "destino": "rep", "texto": "Recepción Principal", "pitch": -15, "yaw": -80, "yaw_llegada":-90},
+        { "destino": "pasTemp", "texto": "Laboratorio de Temperatura", "pitch": -15, "yaw": 10, "yaw_llegada": 80 },
+        { "destino": "pasGal", "texto": "Pasillo Laboratorio Gravedad", "pitch": -15, "yaw": 100, "yaw_llegada": 220 }
       ]
     },
     "pasTemp": {
       "titulo": "Pasillo Laboratorio de Temperatura",
       "imagen_url": "/assets/ESFM/pas_antLabTemp.webp",
+      "contexto_ia": "Estás en la antesala del Laboratorio de Temperatura. Este espacio funciona como zona intermedia que garantiza el acceso ordenado al laboratorio, preservando sus condiciones de trabajo.",
+      "equipos_destacados": [],
       "hotspots": [
-        { "destino": "res", "texto": "Pasillo Laboratorio", "pitch": -15, "yaw": 180 },
-        { "destino": "labTemp", "texto": "Laboratorio de Temperatura", "pitch": -15, "yaw": 0 },
-        { "destino": "mainTemp", "texto": "Calibración de Temperatura", "pitch": -15, "yaw": 90 }
+        { "destino": "res", "texto": "Pasillo Laboratorio", "pitch": -15, "yaw": 90, "yaw_llegada":165},
+        { "destino": "labTemp", "texto": "Laboratorio de Temperatura", "pitch": -15, "yaw": -90, "yaw_llegada": 90},
+        { "destino": "mainTemp", "texto": "Calibración de Temperatura", "pitch": -15, "yaw": -60, "yaw_llegada": 180 }
       ]
     },
     "labTemp": {
       "titulo": "Laboratorio de Temperatura",
       "imagen_url": "/assets/ESFM/mainLabTemp_CaliLabTemp.webp",
+      "contexto_ia": "Este es el Laboratorio de Temperatura del SFM, especializado en la calibración y ensayo de instrumentos térmicos. Aquí se trabaja bajo estrictas normativas internacionales.",
+      "equipos_destacados": [
+        {
+          "nombre": "Baño termostatado",
+          "funcion": "Control preciso de temperatura para ensayos térmicos."
+        },
+        {
+          "nombre": "Horno de calibración",
+          "funcion": "Realización de pruebas térmicas a altas temperaturas."
+        }
+      ],
       "hotspots": [
-        { "destino": "pasTemp", "texto": "Pasillo Laboratorio", "pitch": -15, "yaw": 180 },
-        { "destino": "mainTemp", "texto": "Calibración de Temperatura", "pitch": -15, "yaw": 0 }
+        { "destino": "pasTemp", "texto": "Pasillo Laboratorio", "pitch": -15, "yaw": 90, "yaw_llegada": -90 },
+        { "destino": "mainTemp", "texto": "Calibración de Temperatura", "pitch": -15, "yaw": 45, "yaw_llegada": 180 }
       ]
     },
     "mainTemp": {
       "titulo": "Calibración de Temperatura",
       "imagen_url": "/assets/ESFM/antLabTemp_mainLabTemp.webp",
+      "contexto_ia": "Área principal de calibración térmica. El personal técnico realiza aquí procedimientos asegurando la trazabilidad de las mediciones.",
+      "equipos_destacados": [
+        {
+          "nombre": "Sensores de referencia",
+          "funcion": "Medición comparativa de alta precisión para calibrar otros instrumentos."
+        }
+      ],
       "hotspots": [
-        { "destino": "labTemp", "texto": "Laboratorio de Temperatura", "pitch": -15, "yaw": 180 },
-        { "destino": "pasTemp", "texto": "Pasillo Laboratorio", "pitch": -15, "yaw": 0 }
+        { "destino": "pasTemp", "texto": "Pasillo Laboratorio", "pitch": -15, "yaw": -30, "yaw_llegada": -90 }
       ]
     },
     "pasGal": {
       "titulo": "Pasillo Laboratorio Gravedad",
       "imagen_url": "/assets/ESFM/pas_antLabGrav.webp",
+      "contexto_ia": "Te encuentras en la antesala del Laboratorio de Gravedad. Esta zona actúa como un punto de transición para resguardar elementos antes del ingreso al laboratorio principal de masa y peso.",
+      "equipos_destacados": [],
       "hotspots": [
-        { "destino": "res", "texto": "Pasillo Laboratorio", "pitch": -15, "yaw": 180 },
-        { "destino": "labGal", "texto": "Laboratorio de Gravedad", "pitch": -15, "yaw": 0 }
+        { "destino": "res", "texto": "Pasillo Laboratorio", "pitch": -15, "yaw": -30, "yaw_llegada": 70 },
+        { "destino": "labGal", "texto": "Laboratorio de Gravedad", "pitch": -15, "yaw": 120, "yaw_llegada": 190 }
       ]
     },
     "labGal": {
       "titulo": "Laboratorio de Gravedad",
       "imagen_url": "/assets/ESFM/antLabGrav_labGrav.webp",
+      "contexto_ia": "Este es el Laboratorio de Gravedad, dedicado a la calibración de balanzas, pesas patrón y sistemas de medición de masa con trazabilidad al Sistema Internacional de Unidades.",
+      "equipos_destacados": [
+        {
+          "nombre": "Balanzas de alta precisión",
+          "funcion": "Calibración y medición exacta de masa para metrología legal e industrial."
+        },
+        {
+          "nombre": "Pesas patrón",
+          "funcion": "Garantizar la exactitud de los instrumentos de medición de gravedad."
+        }
+      ],
       "hotspots": [
-        { "destino": "pasGal", "texto": "Pasillo Laboratorio Gravedad", "pitch": -15, "yaw": 180 }
+        { "destino": "pasGal", "texto": "Pasillo Laboratorio Gravedad", "pitch": -15, "yaw": 260, "yaw_llegada": 45 }
       ]
     }
   }

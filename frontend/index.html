@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visor 360 Institucional - IPN</title>
-    <link rel="icon" href="data:,">
+    <link rel="icon" type="image/png" href="/assets/src/ipn.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
@@ -13,9 +13,31 @@
     
   </head>
   <body>
+    <div id="menu-inicio">
+        <div class="menu-contenido">
+            <h1 class="titulo-main">IPN Virtual 360°</h1>
+            <p class="subtitulo">Explora nuestros laboratorios e instalaciones desde cualquier lugar.</p>
+            
+            <div class="opciones-recorrido">
+                <button class="btn-recorrido" data-lab="esfm">
+                    <span class="material-symbols-outlined">science</span>
+                    Escuela Superior de Física y Matemáticas (ESFM)
+                </button>
+                
+                <button class="btn-recorrido" data-lab="lanta">
+                    <span class="material-symbols-outlined">satellite_alt</span>
+                    Laboratorio Nacional de Antenas (LANTA)
+                </button>
+            </div>
+        </div>
+    </div>
+    
     <div id="cortinilla-transicion"></div>
     
     <div id="panel-controles">
+      <button class="btn-control" id="btn-home" title="Volver al Menú">
+        <span class="material-symbols-outlined">home</span>
+      </button>
       <button class="btn-control" id="btn-zoom-in">
         <span class="material-symbols-outlined">zoom_in</span>
       </button>
@@ -38,14 +60,20 @@
     <div id="tooltip-hotspot" class="oculto"></div>
 
     <script type="module" src="/js/app.js"></script>
-    <button id="btn-chat-toggle" class="btn-control" style="position: absolute; right: 20px; bottom: 90px; z-index: 20; border-radius: 50%; width: 55px; height: 55px;">
-        <span class="material-symbols-outlined">chat</span>
+    <button id="btn-chat-toggle" class="btn-control">
+        <span class="material-symbols-outlined" id="icono-chat">chat</span>
     </button>
 
-    <div id="chat-container" class="oculto">
+    <div id="chat-container">
         <div id="chat-header">
-            <strong>Jasper - Asistente IPN</strong>
-            <button id="btn-chat-close" style="background:none; border:none; color:white; cursor:pointer;">
+            <div class="chat-header-info">
+                <img src="/assets/src/jasperc.png" alt="Jasper" id="jasper-avatar">
+                <div>
+                    <strong>Jasper</strong>
+                    <span class="chat-subtitle">Asistente IPN</span>
+                </div>
+            </div>
+            <button id="btn-chat-close">
                 <span class="material-symbols-outlined">close</span>
             </button>
         </div>
