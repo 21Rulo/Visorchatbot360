@@ -86,7 +86,7 @@ export function iniciarVisor(mapa) {
     const geometria = new THREE.SphereGeometry(500, 60, 40);
     geometria.scale(-1, 1, 1);
     const cargadorTextura = new THREE.TextureLoader();
-    const mapaIcono = cargadorTextura.load('/assets/src/arrow1.png',
+    const mapaIcono = cargadorTextura.load('/assets/src/arrow1.webp',
         () => console.log("✅ Textura de flecha cargada correctamente"),
         undefined,
         (err) => console.error("❌ Error cargando la flecha:", err)
