@@ -34,7 +34,7 @@
     "estacionamiento": {
       "titulo": "Estacionamiento ESIT",
       "imagen_url": "/assets/ESIT/EXT8.webp",
-      "contexto_ia": "Continiación del estacionamiento principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
+      "contexto_ia": "Continuación del estacionamiento principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
       "hotspots": [
         { "destino": "logo", "texto": "volver", "pitch": -0.9, "yaw": 85, "yaw_llegada": 0 },
