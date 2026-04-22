@@ -369,8 +369,6 @@
           transform: scale(1.1);
       }
 
-
-
       @media (max-width: 600px) {
         #titulo-ubicacion {
           font-size: 16px; /* Texto más pequeño para que no ocupe toda la pantalla */
