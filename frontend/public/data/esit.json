@@ -24,11 +24,12 @@
   "nodos": {
     "logo": {
       "titulo": "Estacionamiento ESIT",
+      "yaw_inicio": -90,
       "imagen_url": "/assets/ESIT/EXT9.webp",
       "contexto_ia": "Estacionamiento principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "estacionamiento", "texto": "continuar", "pitch": -0.9, "yaw": 300, "yaw_llegada": 0 }
+        { "destino": "estacionamiento", "texto": "continuar", "pitch": -4, "yaw": 200, "yaw_llegada": -94 }
       ]
     },
     "estacionamiento": {
@@ -37,8 +38,8 @@
       "contexto_ia": "Continuación del estacionamiento principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "logo", "texto": "volver", "pitch": -0.9, "yaw": 85, "yaw_llegada": 0 },
-        { "destino": "entrada", "texto": "entrada", "pitch": 0, "yaw": 180, "yaw_llegada": 0 }
+        { "destino": "logo", "texto": "volver", "pitch": -1, "yaw": 350, "yaw_llegada": 20 },
+        { "destino": "entrada", "texto": "entrada", "pitch": -1, "yaw": 85, "yaw_llegada": 170 }
       ]
     },
     "entrada": {
@@ -47,8 +48,8 @@
       "contexto_ia": "Entrada principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicada en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "estacionamiento", "texto": "volver", "pitch": 0, "yaw": 120, "yaw_llegada": 0 },
-        { "destino": "pasillo1", "texto": "entradr al pasillo", "pitch": 0, "yaw": 275, "yaw_llegada": 0 }
+        { "destino": "estacionamiento", "texto": "volver", "pitch": 0, "yaw": 20, "yaw_llegada": 0 },
+        { "destino": "pasillo1", "texto": "entradr al pasillo", "pitch": 0, "yaw": 190, "yaw_llegada": 180 }
       ]
     },
     "pasillo1": {
@@ -57,8 +58,8 @@
       "contexto_ia": "Pasillo principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "entrada", "texto": "salir", "pitch": 0, "yaw": 80, "yaw_llegada": 0 },
-        { "destino": "pasillo2", "texto": "pasillo", "pitch": 0, "yaw": 290, "yaw_llegada": 0 }
+        { "destino": "entrada", "texto": "salir", "pitch": 0, "yaw": 0, "yaw_llegada": 0 },
+        { "destino": "pasillo2", "texto": "pasillo", "pitch": 0, "yaw": 180, "yaw_llegada": 0 }
       ]
     },
     "pasillo2": {
@@ -67,8 +68,8 @@
       "contexto_ia": "Pasillo principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "pasillo1", "texto": "volver", "pitch": -2, "yaw": 194, "yaw_llegada": 0 },
-        { "destino": "pasillo3", "texto": "pasillo", "pitch": 0, "yaw": 95, "yaw_llegada": 0 }
+        { "destino": "pasillo1", "texto": "volver", "pitch": -2, "yaw": 100, "yaw_llegada": 0 },
+        { "destino": "pasillo3", "texto": "pasillo", "pitch": 0, "yaw": 5, "yaw_llegada": 90 }
       ]
     },
     "pasillo3": {
@@ -77,8 +78,8 @@
       "contexto_ia": "Pasillo principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "pasillo2", "texto": "volver", "pitch": 0, "yaw": 175, "yaw_llegada": 0 },
-        { "destino": "pasillo4", "texto": "pasillo", "pitch": 0, "yaw": 357, "yaw_llegada": 0 }
+        { "destino": "pasillo2", "texto": "volver", "pitch": 0, "yaw": 90, "yaw_llegada": -90 },
+        { "destino": "pasillo4", "texto": "pasillo", "pitch": 0, "yaw": -90, "yaw_llegada": 90 }
       ]
     },
     "pasillo4": {
@@ -87,8 +88,8 @@
       "contexto_ia": "Pasillo principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "pasillo3", "texto": "volver", "pitch": 0, "yaw": 183, "yaw_llegada": 0 },
-        { "destino": "pasillo5", "texto": "pasillo", "pitch": 0, "yaw": 0, "yaw_llegada": 0 }
+        { "destino": "pasillo3", "texto": "volver", "pitch": 0, "yaw": 90, "yaw_llegada": -90 },
+        { "destino": "pasillo5", "texto": "pasillo", "pitch": 0, "yaw": -90, "yaw_llegada": 90 }
       ]
     },
     "pasillo5": {
@@ -97,8 +98,8 @@
       "contexto_ia": "Pasillo principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "pasillo4", "texto": "volver", "pitch": 0, "yaw": 180, "yaw_llegada": 0 },
-        { "destino": "pasillo6", "texto": "pasillo", "pitch": 0, "yaw": 0, "yaw_llegada": 0 }
+        { "destino": "pasillo4", "texto": "volver", "pitch": 0, "yaw": 90, "yaw_llegada": -90 },
+        { "destino": "pasillo6", "texto": "pasillo", "pitch": 0, "yaw": -90, "yaw_llegada": -90 }
       ]
     },
     "pasillo6": {
@@ -107,9 +108,9 @@
       "contexto_ia": "Pasillo principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "pasillo5", "texto": "volver", "pitch": 0, "yaw": 268, "yaw_llegada": 0 },
-        { "destino": "laboratorio_esquina_inferior_izquierda", "texto": "laboratorio", "pitch": 0, "yaw": 150, "yaw_llegada": 0 },
-        { "destino": "antesala1", "texto": "antesala", "pitch": 0, "yaw": 225, "yaw_llegada": 0 }
+        { "destino": "pasillo5", "texto": "volver", "pitch": 0, "yaw": 178, "yaw_llegada": -90 },
+        { "destino": "laboratorio_esquina_inferior_izquierda", "texto": "laboratorio", "pitch": 0, "yaw": 60, "yaw_llegada": 30 },
+        { "destino": "antesala1", "texto": "antesala", "pitch": 0, "yaw": 135, "yaw_llegada": -90 }
       ]
     },
     "antesala1": {
@@ -118,8 +119,8 @@
       "contexto_ia": "Antesala del Laboratorio de Ensayos Textiles de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "pasillo6", "texto": "salida", "pitch": -2, "yaw": 100, "yaw_llegada": 0 },
-        { "destino": "camara", "texto": "Camara de condiciones controladas", "pitch": -2, "yaw": 195, "yaw_llegada": 0 }
+        { "destino": "pasillo6", "texto": "salida", "pitch": -2, "yaw": 0, "yaw_llegada": -90 },
+        { "destino": "camara", "texto": "Camara de condiciones controladas", "pitch": -2, "yaw": 100, "yaw_llegada": 85 }
       ]
     },
     "camara": {
@@ -128,8 +129,8 @@
       "contexto_ia": "Cámara de condiciones controladas del Laboratorio de Ensayos Textiles de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "antesala1", "texto": "antesala", "pitch": 0, "yaw": 185, "yaw_llegada": 0 },
-        { "destino": "laboratorio_medio_inferior", "texto": "laboratorio", "pitch": 0, "yaw": 5, "yaw_llegada": 0 }
+        { "destino": "antesala1", "texto": "antesala", "pitch": 0, "yaw": 90, "yaw_llegada": 0 },
+        { "destino": "laboratorio_medio_inferior", "texto": "laboratorio", "pitch": 0, "yaw": -85, "yaw_llegada": 90 }
       ]
     },
     "laboratorio_esquina_inferior_izquierda": {
@@ -143,11 +144,11 @@
         { "nombre": "Balanza de precisión textil", "funcion": "Determinar la masa por unidad de área de materiales no tejidos conforme a métodos de prueba estandarizados." }
       ],
       "hotspots": [
-        { "destino": "camara", "texto": "Camara de condiciones controladas", "pitch": -2, "yaw": 220, "yaw_llegada": 0 },
-        { "destino": "pasillo6", "texto": "salida", "pitch": 2, "yaw": 310, "yaw_llegada": 0 },
-        { "destino": "laboratorio_medio_inferior", "texto": "laboratorio", "pitch": 230, "yaw": -20, "yaw_llegada": 0 },
-        { "destino": "laboratorio_medio_medio", "texto": "laboratorio", "pitch": -10, "yaw": 90, "yaw_llegada": 0 },
-        { "destino": "laboratorio_medio_izquierda", "texto": "laboratorio", "pitch": -10, "yaw": 50, "yaw_llegada": 0 }
+        { "destino": "camara", "texto": "Camara de condiciones controladas", "pitch": -2, "yaw": 130, "yaw_llegada": -95 },
+        { "destino": "pasillo6", "texto": "salida", "pitch": 0, "yaw": 215, "yaw_llegada": 180 },
+        { "destino": "laboratorio_medio_medio", "texto": "Mesa de trabajo", "pitch": -20, "yaw": 0, "yaw_llegada": 170 },
+        { "destino": "laboratorio_medio_izquierda", "texto": "Máquinas", "pitch": -10, "yaw": -50, "yaw_llegada": -100 },
+        { "destino": "laboratorio_esquina_inferior_derecha", "texto": "Inferior derecha", "pitch": -10, "yaw": 60, "yaw_llegada": 55 }
       ]
     },
     "laboratorio_medio_inferior": {
@@ -156,10 +157,11 @@
       "contexto_ia": "Laboratorio de Ensayos Textiles de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "laboratorio_esquina_inferior_izquierda", "texto": "laboratorio", "pitch": -10, "yaw": 260, "yaw_llegada": 0 },
-        { "destino": "camara", "texto": "Camara de condiciones controladas", "pitch": 0, "yaw": 170, "yaw_llegada": 0 },
-        { "destino": "laboratorio_esquina_inferior_derecha", "texto": "laboratorio", "pitch": -5, "yaw": 90, "yaw_llegada": 0 },
-        { "destino": "laboratorio_medio_medio", "texto": "laboratorio", "pitch": -20, "yaw": 0, "yaw_llegada": 0 }
+        { "destino": "laboratorio_medio_izquierda", "texto": "Máquinas", "pitch": -10, "yaw": -160, "yaw_llegada": -90 },
+        { "destino": "camara", "texto": "Camara de condiciones controladas", "pitch": 0, "yaw": 90, "yaw_llegada": -95 },
+        { "destino": "laboratorio_esquina_inferior_derecha", "texto": "Inferior derecha", "pitch": -5, "yaw": 0, "yaw_llegada": 50 },
+        { "destino": "laboratorio_medio_medio", "texto": "Mesa de trabajo", "pitch": -20, "yaw": -90, "yaw_llegada": 170 },
+        { "destino": "pasillo6", "texto": "salida", "pitch": 0, "yaw": -215, "yaw_llegada": 180 }
       ]
     },
     "laboratorio_esquina_inferior_derecha": {
@@ -168,9 +170,9 @@
       "contexto_ia": "Laboratorio de Ensayos Textiles de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "laboratorio_medio_inferior", "texto": "laboratorio", "pitch": -40, "yaw": 185, "yaw_llegada": 0 },
-        { "destino": "laboratorio_esquina_superiror_derecha", "texto": "laboratorio", "pitch": -10, "yaw": 320, "yaw_llegada": 0 },
-        { "destino": "laboratorio_medio_medio", "texto": "laboratorio", "pitch": -15, "yaw": 275, "yaw_llegada": 0 }
+        { "destino": "laboratorio_medio_inferior", "texto": "Laboratorio de Ensayos Textiles", "pitch": -10, "yaw": 120, "yaw_llegada": 90 },
+        { "destino": "laboratorio_esquina_superior_derecha", "texto": "Esquina superior derecha", "pitch": -10, "yaw": 240, "yaw_llegada": 35 },
+        { "destino": "laboratorio_medio_medio", "texto": "Mesa de trabajo", "pitch": -15, "yaw": 190, "yaw_llegada": 80 }
       ]
     },
     "laboratorio_medio_medio": {
@@ -179,13 +181,8 @@
       "contexto_ia": "Laboratorio de Ensayos Textiles de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "laboratorio_medio_inferior", "texto": "laboratorio", "pitch": -15, "yaw": 95, "yaw_llegada": 0 },
-        { "destino": "laboratorio_esquina_inferior_derecha", "texto": "laboratorio", "pitch": -10, "yaw": 60, "yaw_llegada": 0 },
-        { "destino": "laboratorio_esquina_inferior_izquierda", "texto": "laboratorio", "pitch": -15, "yaw": 120, "yaw_llegada": 0 },
-        { "destino": "laboratorio_esquina_superior_izquierda", "texto": "laboratorio", "pitch": -10, "yaw": 250, "yaw_llegada": 0 },
-        { "destino": "laboratorio_esquina_superior_derecha", "texto": "laboratorio", "pitch": -10, "yaw": 308, "yaw_llegada": 0 },
-        { "destino": "laboratorio_medio_izquierda", "texto": "laboratorio", "pitch": -10, "yaw": 180, "yaw_llegada": 0 },
-        { "destino": "laboratorio_medio_medio_superior", "texto": "laboratorio", "pitch": -20, "yaw": 280, "yaw_llegada": 0 }
+        { "destino": "laboratorio_medio_inferior", "texto": "Medio inferior", "pitch": -15, "yaw": 10, "yaw_llegada": -90 },
+        { "destino": "laboratorio_medio_medio_superior", "texto": "Medio superior", "pitch": -20, "yaw": -165, "yaw_llegada": 170 }
       ]
     },
     "laboratorio_esquina_superior_derecha": {
@@ -194,10 +191,8 @@
       "contexto_ia": "Laboratorio de Ensayos Textiles de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "laboratorio_medio_superior", "texto": "laboratorio", "pitch": -30, "yaw": 350, "yaw_llegada": 0 },
-        { "destino": "laboratorio_medio_medio_superior", "texto": "laboratorio", "pitch": -25, "yaw": 300, "yaw_llegada": 0 },
-        { "destino": "laboratorio_medio_medio", "texto": "salir", "pitch": -10, "yaw": 265, "yaw_llegada": 0 },
-        { "destino": "laboratorio_esquina_inferior_derecha", "texto": "salir", "pitch": -10, "yaw": 230, "yaw_llegada": 0 }
+        { "destino": "laboratorio_medio_superior", "texto": "Superior", "pitch": -30, "yaw": -113, "yaw_llegada": -30 },
+        { "destino": "laboratorio_esquina_inferior_derecha", "texto": "Inferior derecha", "pitch": -10, "yaw": 138, "yaw_llegada": -50 }
       ]
     },
     "laboratorio_medio_superior": {
@@ -206,9 +201,8 @@
       "contexto_ia": "Laboratorio de Ensayos Textiles de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "laboratorio_esquina_superior_derecha", "texto": "laboratorio", "pitch": -15, "yaw": 320, "yaw_llegada": 0 },
-        { "destino": "laboratorio_medio_medio_superior", "texto": "laboratorio", "pitch": -10, "yaw": 50, "yaw_llegada": 0 },
-        { "destino": "laboratorio_esquina_superior_izquierda", "texto": "salir", "pitch": -15, "yaw": 145, "yaw_llegada": 0 }
+        { "destino": "laboratorio_esquina_superior_derecha", "texto": "Superior derecha", "pitch": -15, "yaw": 230, "yaw_llegada": 0 },
+        { "destino": "laboratorio_esquina_superior_izquierda", "texto": "Superior izquierda", "pitch": -15, "yaw": 50, "yaw_llegada": -45 }
       ]
     },
     "laboratorio_medio_medio_superior": {
@@ -217,11 +211,9 @@
       "contexto_ia": "Laboratorio de Ensayos Textiles de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "laboratorio_medio_superior", "texto": "laboratorio", "pitch": -20, "yaw": 280, "yaw_llegada": 0 },
-        { "destino": "laboratorio_medio_izquierda", "texto": "laboratorio", "pitch": -15, "yaw": 125, "yaw_llegada": 0 },
-        { "destino": "laboratorio_esquina_superior_izquierda", "texto": "laboratorio", "pitch": -15, "yaw": 230, "yaw_llegada": 0 },
-        { "destino": "laboratorio_medio_medio", "texto": "laboratorio", "pitch": -15, "yaw": 95, "yaw_llegada": 0 },
-        { "destino": "laboratorio_esquina_superior_derecha", "texto": "laboratorio", "pitch": -15, "yaw": 335, "yaw_llegada": 0 }
+        { "destino": "laboratorio_esquina_superior_izquierda", "texto": "Superior izquierda", "pitch": -15, "yaw": 130, "yaw_llegada": -50 },
+        { "destino": "laboratorio_medio_medio", "texto": "Medio", "pitch": -20, "yaw": 0, "yaw_llegada": 0 },
+        { "destino": "laboratorio_esquina_superior_derecha", "texto": "Superior derecha", "pitch": -15, "yaw": -110, "yaw_llegada": 0 }
       ]
     },
     "laboratorio_esquina_superior_izquierda": {
@@ -230,10 +222,8 @@
       "contexto_ia": "Laboratorio de Ensayos Textiles de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "laboratorio_medio_superior", "texto": "laboratorio", "pitch": -35, "yaw": 255, "yaw_llegada": 0 },
-        { "destino": "laboratorio_medio_medio_superior", "texto": "laboratorio", "pitch": -25, "yaw": 310, "yaw_llegada": 0 },
-        { "destino": "laboratorio_medio_medio", "texto": "laboratorio", "pitch": -15, "yaw": 335, "yaw_llegada": 0 },
-        { "destino": "laboratorio_medio_izquierda", "texto": "laboratorio", "pitch": -15, "yaw": 7, "yaw_llegada": 0 }
+        { "destino": "laboratorio_medio_superior", "texto": "Medio superior", "pitch": -35, "yaw": 180, "yaw_llegada": 140 },
+        { "destino": "laboratorio_medio_izquierda", "texto": "Medio izquierda", "pitch": -15, "yaw": -75, "yaw_llegada": 90 }
       ]
     },
     "laboratorio_medio_izquierda": {
@@ -242,9 +232,8 @@
       "contexto_ia": "Laboratorio de Ensayos Textiles de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "laboratorio_esquina_inferior_izquierda", "texto": "laboratorio", "pitch": -15, "yaw": 0, "yaw_llegada": 0 },
-        { "destino": "laboratorio_medio_medio", "texto": "laboratorio", "pitch": -20, "yaw": 270, "yaw_llegada": 0 },
-        { "destino": "laboratorio_esquina_superior_izquierda", "texto": "laboratorio", "pitch": -10, "yaw": 185, "yaw_llegada": 0 }
+        { "destino": "laboratorio_esquina_inferior_izquierda", "texto": "Inferior izquierda", "pitch": -15, "yaw": 275, "yaw_llegada": 180 },
+        { "destino": "laboratorio_esquina_superior_izquierda", "texto": "Superior izquierda", "pitch": -10, "yaw": 90, "yaw_llegada": -90 }
       ]
     }
   }

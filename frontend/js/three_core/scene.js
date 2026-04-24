@@ -190,6 +190,7 @@ export function iniciarVisor(mapa) {
     function cargarNodo(idNodo, yawLlegada = null) {
         const nodoData = mapa.nodos[idNodo];
         if (!nodoData) return;
+        console.log(`%c📍 Nodo actual: ${idNodo} | Título: ${nodoData.titulo}`, "color: #00d2ff; font-weight: bold; font-size: 14px;");
         tituloUI.innerText = nodoData.titulo;
         
         window.contextoActual = nodoData.contexto_ia || `Estás en ${nodoData.titulo}`;
