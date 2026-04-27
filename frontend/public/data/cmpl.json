@@ -30,11 +30,12 @@
   "nodos": {
     "1": {
       "titulo": "Fachada CMP+L",
+      "yaw_inicio": 90,
       "imagen_url": "/assets/CMPL/1.webp",
       "contexto_ia": "Esta escena muestra la entrada principal del Centro Mexicano para la Producción Más Limpia (CMP+L). Al frente se observa el edificio central con su fachada de vidrio y el letrero institucional. El espacio exterior está conformado por una amplia explanada peatonal y áreas verdes con arbustos podados. A la derecha se encuentra la caseta de acceso y un área con techumbre ligera y mesas, mientras que a la izquierda se aprecia un arco vegetal y la zona de estacionamiento. El entorno general transmite una entrada organizada, iluminada y adecuada para recibir a los visitantes del centro.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "2", "texto": "Entrada Principal", "pitch": 0, "yaw": 346, "yaw_llegada": 0 }
+        { "destino": "2", "texto": "Entrada Principal", "pitch": 0, "yaw": -90, "yaw_llegada": 90 }
       ]
     },
     "2": {
@@ -43,8 +44,8 @@
       "contexto_ia": "Esta escena muestra una vista cercana de la entrada principal del Centro Mexicano para la Producción Más Limpia. Se aprecia de forma destacada la fachada curva del edificio, cubierta con ventanales amplios y sostenida por columnas blancas. Al centro se observan las escaleras de acceso y la puerta principal, mientras que a los costados hay macetas con vegetación ornamental. A la izquierda se distingue la reja perimetral y áreas verdes del complejo, y a la derecha se observa parte de la explanada y la zona techada con mesas donde el personal y visitantes pueden descansar. La iluminación natural resalta la arquitectura y la amplitud del espacio exterior.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "3", "texto": "Vestíbulo", "pitch": 0, "yaw": 0, "yaw_llegada": 0 },
-        { "destino": "1", "texto": "Atrás", "pitch": 0, "yaw": 180, "yaw_llegada": 0 }
+        { "destino": "3", "texto": "Vestíbulo", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "1", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
       ]
     },
     "3": {
@@ -53,8 +54,8 @@
       "contexto_ia": "Esta escena muestra el vestíbulo principal del Centro Mexicano para la Producción Más Limpia. Desde aquí se aprecia la puerta de acceso al exterior con grandes ventanales que permiten la entrada de luz natural y una vista hacia la explanada. Al centro se encuentra la escalera que conduce al nivel superior y, debajo de ella, un área con contenedores de separación de residuos, reforzando el enfoque ambiental del centro. A la derecha se ubica la zona de recepción y oficinas en módulos acristalados, donde el personal atiende a visitantes, estudiantes e investigadores.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "4", "texto": "Pasillo", "pitch": 0, "yaw": 0, "yaw_llegada": 0 },
-        { "destino": "2", "texto": "Salida", "pitch": 0, "yaw": 145, "yaw_llegada": 0 }
+        { "destino": "4", "texto": "Pasillo", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "2", "texto": "Salida", "pitch": 0, "yaw": 50, "yaw_llegada": -90 }
       ]
     },
     "4": {
@@ -63,9 +64,9 @@
       "contexto_ia": "Esta escena muestra el pasillo administrativo del Centro Mexicano para la Producción Más Limpia. A la izquierda se observa la conexión con el vestíbulo principal, caracterizada por ventanales amplios y una zona con extintores y contenedores de separación de residuos. Al frente se extiende un pasillo iluminado con módulos de oficinas y salas de trabajo distribuidas a ambos lados. A la derecha se aprecia un cubículo acristalado donde el personal realiza actividades administrativas. El espacio combina áreas de tránsito con zonas de atención y trabajo, mostrando la organización interna del centro.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "7", "texto": "Sala de espera", "pitch": -15, "yaw": 0, "yaw_llegada": 0 },
-        { "destino": "5", "texto": "Primer Laboratorio", "pitch": 0, "yaw": 75, "yaw_llegada": 0 },
-        { "destino": "3", "texto": "Salida", "pitch": 0, "yaw": 210, "yaw_llegada": 0 }
+        { "destino": "7", "texto": "Sala de espera", "pitch": 0, "yaw": -80, "yaw_llegada": 0 },
+        { "destino": "5", "texto": "Primer Laboratorio", "pitch": 0, "yaw": -20, "yaw_llegada": 90 },
+        { "destino": "3", "texto": "Salida", "pitch": 0, "yaw": 110, "yaw_llegada": -90 }
       ]
     },
     "5": {
