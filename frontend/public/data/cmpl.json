@@ -54,7 +54,7 @@
       "contexto_ia": "Esta escena muestra el vestíbulo principal del Centro Mexicano para la Producción Más Limpia. Desde aquí se aprecia la puerta de acceso al exterior con grandes ventanales que permiten la entrada de luz natural y una vista hacia la explanada. Al centro se encuentra la escalera que conduce al nivel superior y, debajo de ella, un área con contenedores de separación de residuos, reforzando el enfoque ambiental del centro. A la derecha se ubica la zona de recepción y oficinas en módulos acristalados, donde el personal atiende a visitantes, estudiantes e investigadores.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "4", "texto": "Pasillo", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "4", "texto": "Pasillo", "pitch": 0, "yaw": -90, "yaw_llegada": 45 },
         { "destino": "2", "texto": "Salida", "pitch": 0, "yaw": 50, "yaw_llegada": -90 }
       ]
     },
@@ -64,7 +64,7 @@
       "contexto_ia": "Esta escena muestra el pasillo administrativo del Centro Mexicano para la Producción Más Limpia. A la izquierda se observa la conexión con el vestíbulo principal, caracterizada por ventanales amplios y una zona con extintores y contenedores de separación de residuos. Al frente se extiende un pasillo iluminado con módulos de oficinas y salas de trabajo distribuidas a ambos lados. A la derecha se aprecia un cubículo acristalado donde el personal realiza actividades administrativas. El espacio combina áreas de tránsito con zonas de atención y trabajo, mostrando la organización interna del centro.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "7", "texto": "Sala de espera", "pitch": 0, "yaw": -80, "yaw_llegada": 0 },
+        { "destino": "7", "texto": "Sala de espera", "pitch": 0, "yaw": -80, "yaw_llegada": 50 },
         { "destino": "5", "texto": "Primer Laboratorio", "pitch": 0, "yaw": -20, "yaw_llegada": 90 },
         { "destino": "3", "texto": "Salida", "pitch": 0, "yaw": 110, "yaw_llegada": -90 }
       ]
@@ -75,8 +75,9 @@
       "contexto_ia": "Esta escena muestra el área de espera del Centro Mexicano para la Producción Más Limpia, equipada con sillones donde los visitantes y personal pueden permanecer antes de ingresar a las oficinas o laboratorios. Al centro se aprecia la puerta abierta de un laboratorio, donde se observan mesas de trabajo, equipos y material especializado. A la derecha se encuentra un cubículo acristalado identificado como aula de clases, donde se desarrollan actividades académicas y administrativas. El espacio combina áreas de tránsito, trabajo y espera, reflejando la operación cotidiana del centro.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "6", "texto": "Laboratorio", "pitch": 0, "yaw": 0, "yaw_llegada": 0 },
-        { "destino": "4", "texto": "Salida", "pitch": 0, "yaw": 180, "yaw_llegada": 0 }
+        { "destino": "6", "texto": "Laboratorio", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "4", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": 45 },
+        { "destino": "7", "texto": "Sala de espera", "pitch": 0, "yaw": 180, "yaw_llegada": 45 }
       ]
     },
     "6": {
@@ -85,7 +86,7 @@
       "contexto_ia": "Esta escena muestra el interior de un laboratorio de análisis del Centro Mexicano para la Producción Más Limpia. A lo largo de las mesas de trabajo se observan equipos especializados, como analizadores, sistemas de medición, computadora con software de registro de datos y material de laboratorio dispuesto para diferentes procedimientos. En la parte superior hay gabinetes con puertas de vidrio para el resguardo de reactivos y utensilios. El espacio está diseñado para realizar ensayos y mediciones relacionadas con la calidad de agua, energía y procesos industriales, en un ambiente controlado y seguro.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "5", "texto": "Salida", "pitch": 0, "yaw": 180, "yaw_llegada": 0 }
+        { "destino": "5", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": 180 }
       ]
     },
     "7": {
@@ -94,9 +95,9 @@
       "contexto_ia": "Esta escena muestra una zona de descanso dentro del Centro Mexicano para la Producción Más Limpia, equipada con varios sillones donde estudiantes, investigadores y personal pueden esperar o convivir. A la izquierda se observa un laboratorio visible a través de ventanales interiores, con estantes y equipo resguardado. Al fondo se encuentran puertas que conducen a más laboratorios y áreas especializadas. La iluminación, los ventanales y la distribución abierta del espacio generan un entorno cómodo y funcional para el tránsito y las actividades del centro.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "8", "texto": "Acceso Laboratorio", "pitch": -1, "yaw": 0, "yaw_llegada": 0 },
-        { "destino": "11", "texto": "Acceso Laboratorio", "pitch": 0, "yaw": 35, "yaw_llegada": 0 },
-        { "destino": "4", "texto": "Salida", "pitch": 0, "yaw": 180, "yaw_llegada": 0 }
+        { "destino": "8", "texto": "Laboratorio Área Analítica", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "11", "texto": "Acceso Laboratorio", "pitch": 0, "yaw": -45, "yaw_llegada": 90 },
+        { "destino": "4", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": 50 }
       ]
     },
     "8": {
@@ -105,8 +106,8 @@
       "contexto_ia": "Esta escena muestra un pasillo interior del Centro Mexicano para la Producción Más Limpia. A la derecha se encuentra la entrada al auditorio, marcada con su señalización correspondiente, mientras que justo a un lado se abre la puerta de un laboratorio equipado con instrumentos y mesas de trabajo. Hacia el fondo del pasillo se observan ventanales y áreas comunes que conectan con oficinas y zonas de descanso. El espacio está bien iluminado y señalizado, permitiendo una circulación clara entre aulas, laboratorios y áreas administrativas.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "9", "texto": "Laboratorio", "pitch": -5, "yaw": -3, "yaw_llegada": 0 },
-        { "destino": "7", "texto": "Salida", "pitch": 0, "yaw": 255, "yaw_llegada": 0 }
+        { "destino": "9", "texto": "Laboratorio", "pitch": 0, "yaw": 255, "yaw_llegada": 90 },
+        { "destino": "7", "texto": "Atrás", "pitch": 0, "yaw": 180, "yaw_llegada": 50 }
       ]
     },
     "9": {
@@ -115,8 +116,8 @@
       "contexto_ia": "Esta escena muestra un laboratorio de instrumentación analítica del Centro Mexicano para la Producción Más Limpia. A lo largo de las mesas se observan equipos especializados para análisis físico-químicos, acompañados de computadoras para el registro y procesamiento de datos. En los gabinetes superiores se resguardan reactivos, material de vidrio y consumibles de laboratorio. El espacio está diseñado para realizar mediciones precisas y ensayos especializados en un ambiente controlado, siguiendo normas de seguridad y buenas prácticas de laboratorio.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "10", "texto": "Laboratorio", "pitch": 0, "yaw": -5, "yaw_llegada": 0 },
-        { "destino": "8", "texto": "Salida", "pitch": 0, "yaw": 187, "yaw_llegada": 0 }
+        { "destino": "10", "texto": "Laboratorio", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "8", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": 180 }
       ]
     },
     "10": {
@@ -125,7 +126,7 @@
       "contexto_ia": "Esta escena muestra un laboratorio de análisis instrumental del Centro Mexicano para la Producción Más Limpia. A lo largo de las mesas se observan equipos especializados, como sistemas de cromatografía, módulos de control de temperatura y computadoras para adquisición y procesamiento de datos. En el área central se aprecia un equipo conectado a un sistema de extracción de gases, junto a matraces y muestras preparadas para ensayo. El laboratorio está diseñado para realizar análisis detallados de muestras ambientales e industriales en condiciones controladas, apoyando proyectos de investigación y servicios especializados.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "9", "texto": "Salida", "pitch": 0, "yaw": 180, "yaw_llegada": 0 }
+        { "destino": "9", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
       ]
     },
     "11": {
@@ -134,8 +135,8 @@
       "contexto_ia": "Esta escena muestra el acceso principal a uno de los laboratorios del Centro Mexicano para la Producción Más Limpia. Al centro se encuentra la puerta doble con el letrero de 'Laboratorio', a través de la cual se alcanza a ver el interior del área de trabajo. A la izquierda se observa un laboratorio separado por ventanales interiores, mientras que a la derecha se ubica una zona de espera con sillones y señalización de seguridad. El pasillo conecta las áreas de laboratorio con los espacios comunes, facilitando el tránsito de estudiantes, investigadores y personal técnico.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "12", "texto": "Entrada Laboratorio", "pitch": 0, "yaw": -10, "yaw_llegada": 0 },
-        { "destino": "7", "texto": "Salida", "pitch": 0, "yaw": 160, "yaw_llegada": 0 }
+        { "destino": "12", "texto": "Entrada", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "7", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": 55 }
       ]
     },
     "12": {
@@ -144,8 +145,8 @@
       "contexto_ia": "Esta escena muestra la entrada y zona de seguridad del laboratorio principal del Centro Mexicano para la Producción Más Limpia. Al frente se observan la regadera y el lavaojos de emergencia, así como extintor y señalización de no fumar y uso obligatorio de mascarilla. A la derecha se encuentra un refrigerador y área de resguardo de reactivos y muestras, mientras que al fondo se aprecia el área de trabajo con mesas, equipos y personal con bata realizando actividades experimentales. Este espacio marca la transición entre el pasillo general y el área de trabajo controlado, enfatizando las normas de bioseguridad del laboratorio.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "13", "texto": "Laboratorio", "pitch": 0, "yaw": 0, "yaw_llegada": 0 },
-        { "destino": "11", "texto": "Salida", "pitch": 0, "yaw": 180, "yaw_llegada": 0 }
+        { "destino": "13", "texto": "Avanzar", "pitch": 0, "yaw": -90, "yaw_llegada": 40 },
+        { "destino": "11", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": 90 }
       ]
     },
     "13": {
@@ -154,8 +155,8 @@
       "contexto_ia": "La escena muestra una de las zonas centrales del laboratorio del LaNDACBio, donde se llevan a cabo actividades de preparación de muestras, análisis y operación de instrumentación specializada. En el lado izquierdo se observa a una persona trabajando con equipo analítico y recipientes de reactivos, mientras que al centro se encuentra una isla de trabajo con material de laboratorio, instrumentos de medición y recipientes utilizados para experimentación. A la derecha se distingue un gabinete de seguridad para almacenamiento de sustancias inflamables, equipado con equipo de protección personal. El entorno refleja un espacio altamente operativo, organizado y destinado a procedimientos experimentales continuos dentro del laboratorio.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "14", "texto": "Laboratorio", "pitch": 0, "yaw": 75, "yaw_llegada": 0 },
-        { "destino": "12", "texto": "Salida", "pitch": 0, "yaw": 165, "yaw_llegada": 0 }
+        { "destino": "14", "texto": "Avanzar", "pitch": 0, "yaw": -45, "yaw_llegada": 90 },
+        { "destino": "12", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
       ]
     },
     "14": {
@@ -164,9 +165,9 @@
       "contexto_ia": "La escena muestra el laboratorio, donde se concentran las áreas de preparación de soluciones, manejo de reactivos y operación de equipos specializados. Al centro se observa una isla de trabajo con material de vidrio, recipientes y equipos de medición, mientras que al fondo se distinguen vitrinas con reactivos organizados. A la derecha se encuentra un gabinete amarillo para el resguardo seguro de sustancias peligrosas, acompañado de instrucciones de seguridad visibles. El entorno refleja un espacio ampliamente equipado y ordenado, diseñado para realizar experimentos de manera controlada y bajo estrictas normas de seguridad.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "15", "texto": "Laboratorio", "pitch": 0, "yaw": 0, "yaw_llegada": 0 },
-        { "destino": "19", "texto": "Espectrometría", "pitch": 0, "yaw": 60, "yaw_llegada": 0 },
-        { "destino": "13", "texto": "Salida", "pitch": 0, "yaw": 180, "yaw_llegada": 0 }
+        { "destino": "15", "texto": "Avanzar", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "19", "texto": "Espectrometría", "pitch": 0, "yaw": -35, "yaw_llegada": 120 },
+        { "destino": "13", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
       ]
     },
     "15": {
@@ -175,8 +176,8 @@
       "contexto_ia": "La escena muestra una vista amplia del laboratorio, donde se combinan áreas de preparación de muestras, manejo de reactivos y operación de equipos térmicos. Al centro se observa una isla de trabajo con recipientes, bolsas de material y equipo de medición, mientras que al fondo se distinguen mesas con instrumentación donde el personal realiza ensayos. A la derecha se encuentran hornos, desecadores y otros equipos especializados sobre una mesa continua, frente a una pared de vidrio que comunica con otra sección del laboratorio. El espacio está organizado para facilitar el flujo de trabajo y mantener el control de seguridad en las actividades experimentales.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "14", "texto": "Salida", "pitch": 0, "yaw": 260, "yaw_llegada": 0 },
-        { "destino": "16", "texto": "Laboratorio", "pitch": 0, "yaw": -3, "yaw_llegada": 0 }
+        { "destino": "14", "texto": "Atrás", "pitch": 0, "yaw": 180, "yaw_llegada": -90 },
+        { "destino": "16", "texto": "Avanzar", "pitch": 0, "yaw": 260, "yaw_llegada": 90 }
       ]
     },
     "16": {
@@ -185,8 +186,8 @@
       "contexto_ia": "La escena muestra una zona del laboratorio del LaNDACBio dedicada a la preparación de soluciones y mediciones de alta precisión. Al centro se observan islas de trabajo con material de vidrio, reactivos y equipos para preparación de muestras. Al fondo se distinguen vitrinas con matraces y probetas organizadas, mientras que a la derecha se encuentran los cuartos señalizados como 'Balanzas analíticas' y 'Equipos specializados', destinados a mediciones delicadas y al uso de instrumentación específica. El espacio está ordenado y señalizado para garantizar un flujo de trabajo seguro y eficiente dentro del laboratorio.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "17", "texto": "Laboratorio", "pitch": 0, "yaw": -2, "yaw_llegada": 0 },
-        { "destino": "15", "texto": "Salida", "pitch": 0, "yaw": 180, "yaw_llegada": 0 }
+        { "destino": "17", "texto": "Avanzar", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "15", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
       ]
     },
     "17": {
@@ -195,8 +196,8 @@
       "contexto_ia": "Esta escena corresponde a una zona del laboratorio del LaNDACBio dedicada a la preparación de soluciones y al manejo de reactores con control de temperatura. Al frente se observan mesones con material volumétrico y de vidrio organizado en estanterías, así como bandejas con matraces, botellas y utensilios de laboratorio listos para su uso. A la derecha destaca un sistema de reactor conectado a un termostato Polystat y otros equipos auxiliares, utilizado para ensayos que requieren condiciones controladas de agitación y temperatura. Al fondo se aprecia una puerta que conduce al exterior como parte de la ruta de evacuación, reforzando las medidas de seguridad del área.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "18", "texto": "Laboratorio", "pitch": 0, "yaw": 0, "yaw_llegada": 0 },
-        { "destino": "16", "texto": "Salida", "pitch": 0, "yaw": 180, "yaw_llegada": 0 }
+        { "destino": "18", "texto": "Avanzar", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "16", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
       ]
     },
     "18": {
@@ -205,8 +206,8 @@
       "contexto_ia": "Esta escena muestra un área del laboratorio dedicada al procesamiento de muestras bajo condiciones controladas. A la izquierda se observa una mesa con material de vidrio y equipos auxiliares, mientras que en el centro un analista trabaja frente a un equipo de centrifugado de gran capacidad. A la derecha se encuentra la campana de extracción, utilizada para manipular reactivos y procesos que requieren ventilación localizada, junto a incubadoras y otros instrumentos de apoyo. Al fondo se aprecia una puerta que conecta con el exterior y forma parte de la ruta de evacuación del laboratorio, reforzando las medidas de seguridad del LaNDACBio.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "21", "texto": "Conexión LaNDACBio", "pitch": 0, "yaw": 0, "yaw_llegada": 0 },
-        { "destino": "17", "texto": "Salida", "pitch": 0, "yaw": 175, "yaw_llegada": 0 }
+        { "destino": "21", "texto": "Conexión LaNDACBio", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "17", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
       ]
     },
     "19": {
@@ -215,8 +216,8 @@
       "contexto_ia": "Esta escena corresponde al área de análisis instrumental del LaNDACBio, donde se concentran equipos de alta precisión para la caracterización de aguas, suelos y muestras industriales. A lo largo de las mesas se observan sistemas de cromatografía, espectrometría y otros analizadores acoplados a computadoras de control, así como campanas y ductos de extracción que garantizan una operación segura con reactivos y vapores. Las ventanas permiten la entrada de luz natural y comunicación visual con otras zonas del laboratorio, mientras que la distribución del mobiliario facilita el flujo de trabajo entre preparación de muestras, corrida de análisis y procesamiento de resultados, apoyando las actividades de investigación y servicios en producción más limpia.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "20", "texto": "Laboratorio espectrometría", "pitch": 0, "yaw": -36, "yaw_llegada": 0 },
-        { "destino": "14", "texto": "Salida", "pitch": 0, "yaw": 210, "yaw_llegada": 0 }
+        { "destino": "20", "texto": "Laboratorio espectrometría", "pitch": 0, "yaw": 210, "yaw_llegada": 120 },
+        { "destino": "14", "texto": "Atrás", "pitch": 0, "yaw": 100, "yaw_llegada": 50 }
       ]
     },
     "20": {
@@ -225,7 +226,7 @@
       "contexto_ia": "Esta escena muestra el área de espectrometría del LaNDACBio, donde se operan equipos especializados para la determinación de metales y otros elementos traza en aguas, residuos y muestras industriales. A lo largo de la mesa se observan distintos analizadores acoplados a computadoras de control y sistemas de inyección automática de muestras, mientras un especialista supervisa una corrida analítica frente a una de las pantallas. Las ventanas permiten la entrada de luz natural y la ventilación hacia el exterior, complementada por campanas y ductos de extracción para el manejo seguro de gases y vapores. En este espacio se generan datos clave para evaluar el cumplimiento normativo y apoyar proyectos de producción más limpia y control de contaminación.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "19", "texto": "Salida", "pitch": 0, "yaw": 195, "yaw_llegada": 0 }
+        { "destino": "19", "texto": "Atrás", "pitch": 0, "yaw": 50, "yaw_llegada": -90 }
       ]
     },
     "21": {
@@ -234,8 +235,8 @@
       "contexto_ia": "Esta escena muestra el patio de servicio contiguo a los laboratorios del Centro Mexicano para la Producción más Limpia. A la derecha se observa la puerta de acceso directo al área de trabajo, junto con ductos de extracción de aire que ayudan a ventilar de forma segura los procesos que se realizan en el interior. Al fondo se aprecia una zona de resguardo con caseta y contenedores donde se almacenan temporalmente materiales, envases y residuos para su manejo adecuado. Este espacio funciona como área de apoyo logístico, ventilación y ruta de salida hacia el exterior del laboratorio.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "22", "texto": "Pasillo LaNDACBio", "pitch": -15, "yaw": 10, "yaw_llegada": 0 },
-        { "destino": "18", "texto": "Entrada Laboratorio", "pitch": 0, "yaw": 130, "yaw_llegada": 0 }
+        { "destino": "22", "texto": "Pasillo LaNDACBio", "pitch": 0, "yaw": 270, "yaw_llegada": 90 },
+        { "destino": "18", "texto": "Entrada Laboratorio", "pitch": 0, "yaw": 45, "yaw_llegada": -90 }
       ]
     },
     "22": {
@@ -244,8 +245,8 @@
       "contexto_ia": "Esta escena muestra el área exterior que conecta los laboratorios del Centro Mexicano para la Producción más Limpia con el estacionamiento del campus. A la izquierda se encuentra la puerta de salida del laboratorio, rodeada de ductos de extracción y un pequeño tramo de escaleras. Al centro y a la derecha se observan senderos peatonales con jardineras y arbustos recortados, así como bodegas y contenedores donde se resguardan materiales y equipos de apoyo. Al fondo se aprecia la zona de estacionamiento y luminarias del exterior. Este espacio funciona como ruta de evacuación, acceso de servicio y transición entre el área experimental y el entorno abierto del centro.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "23", "texto": "Pasillo LaNDACBio", "pitch": 0, "yaw": -10, "yaw_llegada": 0 },
-        { "destino": "21", "texto": "Entrada Laboratorio", "pitch": 10, "yaw": 240, "yaw_llegada": 0 }
+        { "destino": "23", "texto": "Pasillo LaNDACBio", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "21", "texto": "Entrada Laboratorio", "pitch": 0, "yaw": 150, "yaw_llegada": -60 }
       ]
     },
     "23": {
@@ -254,8 +255,8 @@
       "contexto_ia": "Esta escena muestra el entorno exterior del Centro Mexicano para la Producción más Limpia, justo frente al módulo de LaNDACBio. A la izquierda se observa el estacionamiento principal, donde arriban visitantes, personal académico y estudiantes. Al centro se encuentra la fachada del laboratorio LaNDACBio, con su acceso peatonal y un pasillo lateral que conduce hacia la parte posterior del edificio. A la derecha se aprecia el área de servicios, donde se ubican equipos de apoyo como el generador eléctrico de emergencia y estructuras auxiliares. Este espacio funciona como punto de llegada desde el estacionamiento y como zona de circulación técnica alrededor del laboratorio.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "24", "texto": "Entrada LaNDACBio", "pitch": 0, "yaw": 340, "yaw_llegada": 0 },
-        { "destino": "22", "texto": "Salida", "pitch": 0, "yaw": 185, "yaw_llegada": 0 }
+        { "destino": "24", "texto": "Entrada LaNDACBio", "pitch": 0, "yaw": -110, "yaw_llegada": 90 },
+        { "destino": "22", "texto": "Salida", "pitch": 0, "yaw": 95, "yaw_llegada": -140 }
       ]
     },
     "24": {
@@ -264,8 +265,8 @@
       "contexto_ia": "Esta escena muestra el interior del módulo principal de LaNDACBio, visto desde la entrada que conecta con el área exterior del CMP+L. A la izquierda se aprecia el letrero institucional de LaNDACBio y equipo analítico junto al acceso, mientras que al fondo se extiende el espacio de trabajo del laboratorio con mesas, reactores, computadoras y personal realizando actividades de investigación aplicada. A la derecha se observa la puerta hacia el pasillo exterior, lo que permite identificar este punto como transición entre las áreas de servicio externas y la zona de experimentación en bioprocesos y producción más limpia.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "25", "texto": "LaNDACBio", "pitch": -15, "yaw": 0, "yaw_llegada": 0 },
-        { "destino": "23", "texto": "Salida", "pitch": 0, "yaw": 180, "yaw_llegada": 0 }
+        { "destino": "25", "texto": "LaNDACBio", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "23", "texto": "Salida", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
       ]
     },
     "25": {
@@ -274,9 +275,9 @@
       "contexto_ia": "Esta escena muestra el corazón operativo del laboratorio LaNDACBio, donde se llevan a cabo los experimentos y pruebas de bioprocesos asociados a la producción más limpia. A lo largo de las bancadas se observan equipos especializados, campanas, reactores y sistemas de medición, acompañados de estanterías con reactivos y materiales de laboratorio. La distribución abierta del espacio permite el trabajo colaborativo entre el personal, facilitando el monitoreo de los procesos, el análisis de muestras y el desarrollo de proyectos de investigación aplicada en energía, medio ambiente y aprovechamiento sustentable de recursos.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "26", "texto": "LaNDACBio", "pitch": 0, "yaw": 45, "yaw_llegada": 0 },
-        { "destino": "28", "texto": "LaNDACBio", "pitch": 0, "yaw": 310, "yaw_llegada": 0 },
-        { "destino": "24", "texto": "Salida", "pitch": 0, "yaw": 180, "yaw_llegada": 0 }
+        { "destino": "26", "texto": "Derecha", "pitch": 0, "yaw": 310, "yaw_llegada": 90 },
+        { "destino": "28", "texto": "Izquierda", "pitch": 0, "yaw": 220, "yaw_llegada": 90 },
+        { "destino": "24", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
       ]
     },
     "26": {
@@ -285,8 +286,8 @@
       "contexto_ia": "Esta escena corresponde a una de las áreas de procesos del laboratorio LaNDACBio, donde se realizan operaciones de separación, concentración y secado de muestras. Sobre las bancadas se observan rotavapores, hornos, equipos de vacío, reactores y sistemas de medición que permiten trabajar con soluciones y compuestos provenientes de proyectos en energía, agua y aprovechamiento de residuos. La distribución en isla central facilita el movimiento del personal alrededor de los montajes experimentales, mientras que las ventanas laterales aportan iluminación natural y ventilación, reforzando las condiciones de seguridad y confort durante las actividades de investigación.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "27", "texto": "LaNDACBio", "pitch": 0, "yaw": 40, "yaw_llegada": 0 },
-        { "destino": "25", "texto": "LaNDACBio", "pitch": 0, "yaw": 310, "yaw_llegada": 0 }
+        { "destino": "27", "texto": "Avanzar", "pitch": 0, "yaw": 310, "yaw_llegada": 90 },
+        { "destino": "25", "texto": "Atrás", "pitch": 0, "yaw": 220, "yaw_llegada": -90 }
       ]
     },
     "27": {
@@ -295,8 +296,8 @@
       "contexto_ia": "Esta escena muestra la zona del laboratorio LaNDACBio dedicada a la preparación, tratamiento y análisis de muestras. En las bancadas laterales se observan placas calefactoras, sistemas de agitación, rotavapores y equipos de destilación empleados para realizar procesos físico-químicos esenciales antes de la caracterización de materiales o soluciones. La isla central contiene reactores y sistemas de control que permiten desarrollar experimentos de bioprocesos y producción más limpia. La iluminación natural proveniente de las ventanas y la distribución amplia del espacio facilitan el trabajo continuo del personal técnico y de investigación.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "28", "texto": "LaNDACBio", "pitch": 0, "yaw": 40, "yaw_llegada": 0 },
-        { "destino": "26", "texto": "LaNDACBio", "pitch": 0, "yaw": 310, "yaw_llegada": 0 }
+        { "destino": "28", "texto": "Avanzar", "pitch": 0, "yaw": 310, "yaw_llegada": 90 },
+        { "destino": "26", "texto": "Atrás", "pitch": 0, "yaw": 200, "yaw_llegada": 90 }
       ]
     },
     "28": {
@@ -305,8 +306,8 @@
       "contexto_ia": "Esta escena muestra el área general de trabajo del laboratorio LaNDACBio, donde se preparan reactivos, se almacenan muestras en refrigeradores y se realizan ensayos de rutina. A lo largo de las bancadas se observan balanzas, agitación magnética, hornos, equipos de medición y gabinetes con materiales de laboratorio, mientras que la isla central reúne montajes experimentales y sistemas de control. Es un espacio diseñado para el trabajo continuo de investigadores y técnicos en proyectos de producción más limpia y caracterización de materiales.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "25", "texto": "LaNDACBio", "pitch": 0, "yaw": 35, "yaw_llegada": 0 },
-        { "destino": "27", "texto": "LaNDACBio", "pitch": 0, "yaw": 315, "yaw_llegada": 0 }
+        { "destino": "25", "texto": "Atrás", "pitch": 0, "yaw": 320, "yaw_llegada": -90 },
+        { "destino": "27", "texto": "Avanzar", "pitch": 0, "yaw": 220, "yaw_llegada": 90 }
       ]
     }
   }
