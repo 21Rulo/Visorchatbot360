@@ -147,10 +147,10 @@
       "contexto_ia": "Es un espacio amplio y bien iluminado, con techo modular y lámparas fluorescentes, piso de loseta y líneas amarillas que delimitan áreas de seguridad. A la izquierda hay un equipo vertical de ensayos mecánicos de menor tamaño (tipo banco de tensión/compresión) con su base de control, junto a una pequeña mesa con laptop para operación. En el centro se observa una mesa grande azul para trabajo y manipulación de muestras, con sillas alrededor. Al fondo hay bancadas largas con varios instrumentos de medición y preparación de probetas, gabinetes de almacenamiento y una ventana. A la derecha del centro se ve equipo de pruebas/medición adicional sobre mesas y soportes. En primer plano derecho hay una pantalla/monitor grande frente a un pizarrón con anotaciones técnicas, indicando uso para explicación de resultados o capacitación. Hacia el extremo derecho se aprecia la entrada a un área contigua con más mesas de laboratorio",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "lab1", "texto": "Salir", "pitch": 0, "yaw": 90, "yaw_llegada": 0 },
-        { "destino": "lab2_izquierda_detras", "texto": "Izquierda", "pitch": 0, "yaw": 180, "yaw_llegada": 0 },
-        { "destino": "lab2_centro", "texto": "Centro", "pitch": -15, "yaw": -120, "yaw_llegada": 0 },
-        { "destino": "lab2_derecha_frente", "texto": "Frente", "pitch": 0, "yaw": -90, "yaw_llegada": 0 }
+        { "destino": "lab1", "texto": "Salir", "pitch": 0, "yaw": 90, "yaw_llegada": 90 },
+        { "destino": "lab2_izquierda_detras", "texto": "Izquierda", "pitch": 0, "yaw": 180, "yaw_llegada": 90 },
+        { "destino": "lab2_centro", "texto": "Centro", "pitch": -15, "yaw": -120, "yaw_llegada": 45 },
+        { "destino": "lab2_derecha_frente", "texto": "Derecha", "pitch": 0, "yaw": -90, "yaw_llegada": 0 }
       ]
     },
     "lab2_izquierda_detras": {
@@ -159,9 +159,8 @@
       "contexto_ia": "El área es amplia, ordenada y bien iluminada con techo modular y lámparas fluorescentes; piso de loseta claro con líneas amarillas que marcan zonas de trabajo/seguridad. A la izquierda hay un fregadero y mesa para limpieza/preparación de muestras, con recipientes e insumos, y gabinetes superiores azules con vidrio y material de laboratorio. Cerca de esa zona se observa un equipo vertical de medición/ensayo con columna y base de control. Al fondo hay una bancada larga con varios instrumentos de medición y preparación de probetas, además de una ventana que aporta luz natural. En el centro destaca una mesa grande azul para manipulación y montaje de muestras, con sillas alrededor y un soporte/trípode para accesorios de prueba. A la derecha se ve un pizarrón/área de registro y un monitor para visualización de resultados, junto a una puerta hacia un espacio contiguo. En primer plano derecho hay una mesa curva con un sistema de medición o ensayo de precisión (instrumentación electrónica, base y columna) y otros módulos de control, indicando el uso del área para caracterización y pruebas específicas de materiales.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "lab2_derecha_detras", "texto": "Izquierda", "pitch": 0, "yaw": 0, "yaw_llegada": 0 },
-        { "destino": "lab2_centro", "texto": "Centro", "pitch": -15, "yaw": 57, "yaw_llegada": 0 },
-        { "destino": "lab2_izquierda_frente", "texto": "Derecha", "pitch": 0, "yaw": 90, "yaw_llegada": 0 }
+        { "destino": "lab2_derecha_detras", "texto": "Avanzar", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "lab2_izquierda_frente", "texto": "Atrás", "pitch": 0, "yaw": 0, "yaw_llegada": 90 }
       ]
     },
     "lab2_derecha_detras": {
@@ -170,9 +169,8 @@
       "contexto_ia": "El espacio es claro y ordenado, con piso de loseta, techo modular y luminarias fluorescentes; ventanas laterales aportan luz natural. Líneas amarillas en el piso delimitan ruta de circulación y zonas de trabajo/seguridad. A la izquierda hay una bancada curva metálica con varios instrumentos de medición y caracterización (balanzas, equipos de inspección óptica/microscopios y módulos electrónicos), usada para análisis detallado de muestras. Cerca del centro se encuentra una mesa grande azul para manipulación y preparación de probetas, con sillas/bancos alrededor y soportes para montaje. Al fondo se observan equipos de prueba más voluminosos y estructuras de ensayo, además de acceso a otra área del laboratorio. A la derecha hay varias mesas negras con instrumentos adicionales de medición/ensayo de precisión, herramientas y accesorios para preparación de muestras, junto a gabinetes superiores azules para resguardo de material. En conjunto, esta zona se usa para preparar, medir y evaluar propiedades físicas y mecánicas de materiales antes o después de los ensayos principales.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "lab2_derecha_frente", "texto": "Izquierda", "pitch": 0, "yaw": 0, "yaw_llegada": 0 },
-        { "destino": "lab2_centro", "texto": "Centro", "pitch": -15, "yaw": 32, "yaw_llegada": 0 },
-        { "destino": "lab2_derecha_detras", "texto": "Derecha", "pitch": 0, "yaw": 90, "yaw_llegada": 0 }
+        { "destino": "lab2_derecha_frente", "texto": "Avanzar", "pitch": 0, "yaw": -90, "yaw_llegada": 180 },
+        { "destino": "lab2_izquierda_detras", "texto": "Atrás", "pitch": 0, "yaw": 0, "yaw_llegada": -90 }
       ]
     },
     "lab2_derecha_frente": {
@@ -181,9 +179,8 @@
       "contexto_ia": "Es un espacio amplio, con piso de loseta clara, techo modular con luminarias fluorescentes y señalización de seguridad en el piso (líneas amarillas para circulación y áreas de trabajo). En el centro hay una mesa grande azul para manipulación y preparación de muestras, con sillas alrededor. A la izquierda se observa una estación curva con instrumentación de medición y un equipo vertical de ensayo/medición con dial y pesas (usado para pruebas físicas de materiales), además de bancos auxiliares. En la parte izquierda-media, dentro de un área parcialmente separada, destaca una estructura mecánica roja con un gran disco/rueda y bastidores, utilizada para ensayos especiales de materiales (p. ej., fatiga, desgaste o pruebas dinámicas). Al fondo y hacia la derecha hay varias bancadas con instrumentos de laboratorio y preparación de probetas, gabinetes superiores azules y ventanas que aportan luz natural. En el lado derecho se encuentra un equipo grande automatizado de caracterización/ensayo de materiales (tipo durómetro/medidor de dureza con sistema óptico) y otra estación de medición en mesa curva con módulos electrónicos. En las paredes hay carteles técnicos y mapas, y se ve el acceso a pasillos/otras áreas del laboratorio.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "lab2_izquierda_frente", "texto": "Izquierda", "pitch": 0, "yaw": 0, "yaw_llegada": 0 },
-        { "destino": "lab2_centro", "texto": "Centro", "pitch": -15, "yaw": 48, "yaw_llegada": 0 },
-        { "destino": "lab2_izquierda_detras", "texto": "Derecha", "pitch": 0, "yaw": 90, "yaw_llegada": 0 }
+        { "destino": "lab2_izquierda_frente", "texto": "Avanzar", "pitch": 0, "yaw": -90, "yaw_llegada": -90 },
+        { "destino": "lab2_derecha_detras", "texto": "Atrás", "pitch": 0, "yaw": 0, "yaw_llegada": 0 }
       ]
     },
     "lab2_centro": {
@@ -192,10 +189,7 @@
       "contexto_ia": "sección principal del laboratorio de metrología/pruebas físicas del CIITEC, con ambiente amplio, limpio y bien iluminado (techo modular con lámparas fluorescentes, piso de loseta clara). En primer plano se aprecia una mesa grande azul usada para preparación y manipulación de muestras. En el lado izquierdo hay una pantalla/monitor grande frente a un pizarrón, y una puerta que comunica con un área contigua de laboratorio. Cerca de esa zona se ve un equipo vertical de ensayo o medición con dos columnas y base de control, junto a una estación de trabajo del operador con computadora e instrumentación. A lo largo de la pared central hay gabinetes superiores azules, mesas pequeñas y una tarja/zona de limpieza con insumos. En el lado derecho se encuentra una bancada curva de acero con varios instrumentos de caracterización y medición de materiales (equipos ópticos/medidores de dureza y módulos electrónicos), además de un equipo automatizado de prueba más grande. En el extremo derecho destaca una estructura mecánica roja con gran disco/rueda y bastidores para ensayos especiales (dinámicos, desgaste o fatiga), junto a estantería/cajas de resguardo. Las líneas amarillas en el piso delimitan rutas de circulación y áreas de seguridad.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "lab2_derecha_detras", "texto": "Esquina", "pitch": -10, "yaw": 15, "yaw_llegada": 0 },
-        { "destino": "lab2_derecha_frente", "texto": "Esquina", "pitch": -10, "yaw": 120, "yaw_llegada": 0 },
-        { "destino": "lab2_izquierda_detras", "texto": "Esquina", "pitch": -10, "yaw": 295, "yaw_llegada": 0 },
-        { "destino": "lab2_izquierda_frente", "texto": "Esquina", "pitch": -10, "yaw": 210, "yaw_llegada": 0 }
+        { "destino": "lab2_izquierda_frente", "texto": "Atrás", "pitch": 0, "yaw": 135, "yaw_llegada": -45 }
       ]
     }
   }
