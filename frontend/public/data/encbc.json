@@ -64,11 +64,12 @@
   "nodos": {
     "encb_1": {
       "titulo": "Fachada ENCB",
+      "yaw_inicio": 90,
       "imagen_url": "/assets/ENCB_Casco/UDIBI/1.jpg",
       "contexto_ia": "Te encuentras frente a la entrada principal de la Escuela Nacional de Ciencias Biológicas (ENCB) del Instituto Politécnico Nacional, en su Unidad Santo Tomás. Esta zona es uno de los accesos más transitados por la comunidad estudiantil. A tu alrededor puedes observar el pasillo de ingreso con torniquetes, el letrero institucional semicircular con el nombre de la escuela y una zona arbolada que caracteriza al campus. Frente a la entrada se encuentran varios locales y puestos donde estudiantes y visitantes suelen comprar comida, bebidas o artículos diversos. Esta área funciona como punto de reunión, de llegada y salida, y como referencia general para ubicarse dentro del plantel.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "encb_2", "texto": "Entrada principal ENCB", "pitch": -5, "yaw": 325, "yaw_llegada": 0 }
+        { "destino": "encb_2", "texto": "Entrada principal ENCB", "pitch": 0, "yaw": -120, "yaw_llegada": 90 }
       ]
     },
     "encb_2": {
@@ -77,8 +78,8 @@
       "contexto_ia": "Te encuentras en el pasillo central de la Escuela Nacional de Ciencias Biológicas (ENCB) en la Unidad Santo Tomás. Esta área conecta directamente la entrada principal con los edificios académicos situados al fondo. A tu alrededor puedes observar jardines cuidados, árboles altos y senderos que acompañan el flujo de estudiantes. A la derecha se ubica el módulo de acceso con torniquetes y vigilancia, mientras que a la izquierda se encuentran áreas administrativas y de servicios. El camino principal conduce al Edificio de Aulas, identificado fácilmente por su estructura amplia y la presencia constante de alumnos. Este espacio funciona como un corredor de tránsito cotidiano hacia laboratorios, salones y zonas comunes de la escuela.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "encb_3", "texto": "Pasillo Principal ENCB", "pitch": 0, "yaw": 0, "yaw_llegada": 0 },
-        { "destino": "encb_1", "texto": "Entrada principal ENCB", "pitch": 0, "yaw": 180, "yaw_llegada": 0 }
+        { "destino": "encb_3", "texto": "Pasillo Principal ENCB", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "encb_1", "texto": "Entrada principal ENCB", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
       ]
     },
     "encb_3": {
@@ -87,8 +88,8 @@
       "contexto_ia": "Te encuentras en una zona techada situada frente al edificio principal de aulas de la Escuela Nacional de Ciencias Biológicas (ENCB) en la Unidad Santo Tomás. Esta área funciona como un punto de transición entre los jardines centrales y el acceso al edificio. A tu alrededor puedes observar estructuras metálicas características del edificio, así como senderos marcados que guían el paso de estudiantes. Los jardines laterales, con bancas y áreas verdes, ofrecen espacios de descanso y convivencia. Esta zona es frecuentemente utilizada como punto de reunión y como resguardo contra la lluvia o el sol antes de ingresar a clases. Desde aquí, el visitante puede orientarse fácilmente hacia los pasillos principales, los laboratorios y otras áreas del plantel.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "encb_4", "texto": "Entrada principal ENCB", "pitch": 0, "yaw": 340, "yaw_llegada": 0 },
-        { "destino": "encb_2", "texto": "Salida", "pitch": 0, "yaw": 200, "yaw_llegada": 0 }
+        { "destino": "encb_4", "texto": "Entrada principal ENCB", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "encb_2", "texto": "Salida", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
       ]
     },
     "encb_4": {
@@ -97,8 +98,8 @@
       "contexto_ia": "Estás frente a la fachada principal del edificio de aulas de la Escuela Nacional de Ciencias Biológicas (ENCB) en la Unidad Santo Tomás. Este edificio es reconocible por su estructura metálica tubular de gran altura, uno de los elementos arquitectónicos más distintivos del plantel. Frente a ti se encuentra el acceso principal, con puertas de vidrio que conducen a los vestíbulos, auditorios y salones distribuidos en varios niveles. A tu alrededor puedes observar áreas abiertas y jardines, así como un pasillo techado que conecta esta zona con los espacios de convivencia del campus. Este punto funciona como el acceso directo a clases, laboratorios y actividades académicas, por lo que es una de las zonas más concurridas por la comunidad estudiantil.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "encb_5", "texto": "Entrada", "pitch": 0, "yaw": 0, "yaw_llegada": 0 },
-        { "destino": "encb_3", "texto": "Entrada principal ENCB", "pitch": 0, "yaw": 90, "yaw_llegada": 0 }
+        { "destino": "encb_5", "texto": "Entrada", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "encb_3", "texto": "Atrás", "pitch": 0, "yaw": 0, "yaw_llegada": -90 }
       ]
     },
     "encb_5": {
@@ -107,8 +108,8 @@
       "contexto_ia": "Estás justo frente al acceso inmediato del edificio de aulas de la Escuela Nacional de Ciencias Biológicas (ENCB) en la Unidad Santo Tomás. Aquí se aprecia con claridad la estructura tubular externa que envuelve al edificio, un diseño arquitectónico distintivo compuesto por columnas metálicas inclinadas y anillos que rodean la fachada. Frente a ti se encuentran las puertas de vidrio que dan entrada directa al vestíbulo, donde se observan elementos decorativos y áreas de circulación estudiantil. Este punto marca la transición entre los espacios abiertos del campus y las zonas académicas internas, y suele ser un sitio de paso constante para estudiantes que se dirigen a salones, auditorios y laboratorios. La zona es amplia, iluminada y rodeada de jardines, lo que brinda una sensación abierta antes de ingresar a las instalaciones.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "encb_6", "texto": "Mural ENCB", "pitch": 0, "yaw": 10, "yaw_llegada": 0 },
-        { "destino": "encb_4", "texto": "Frente", "pitch": 0, "yaw": 180, "yaw_llegada": 0 }
+        { "destino": "encb_6", "texto": "Mural ENCB", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "encb_4", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": 0 }
       ]
     },
     "encb_6": {
@@ -117,9 +118,9 @@
       "contexto_ia": "Te encuentras dentro del vestíbulo principal del edificio de aulas de la Escuela Nacional de Ciencias Biológicas (ENCB) en la Unidad Santo Tomás. Frente a ti se aprecia un mural interior característico del área, acompañado de amplios ventanales que permiten la entrada de luz natural. Este espacio funciona como punto central de distribución hacia distintas zonas del edificio. Desde aquí puedes bifurcar tu camino: hacia la rampa que conduce a la UDIBI o hacia el pasillo que te lleva a las instalaciones del Labiofis.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "encb_5", "texto": "Salida", "pitch": 0, "yaw": 180, "yaw_llegada": 0 },
-        { "destino": "udibi_7", "texto": "Rampa a UDIBI", "pitch": -5, "yaw": 270, "yaw_llegada": 0 },
-        { "destino": "labiofis_6", "texto": "Pasillo hacia Labiofis", "pitch": 0, "yaw": 90, "yaw_llegada": 0 }
+        { "destino": "encb_5", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": -90 },
+        { "destino": "udibi_7", "texto": "Rampa a UDIBI", "pitch": -5, "yaw": 180, "yaw_llegada": 90 },
+        { "destino": "labiofis_6", "texto": "Pasillo hacia Labiofis", "pitch": 0, "yaw": 0, "yaw_llegada": 0 }
       ]
     },
     "udibi_7": {
@@ -128,8 +129,8 @@
       "contexto_ia": "Te encuentras en el pasillo interior del edificio de aulas de la Escuela Nacional de Ciencias Biológicas (ENCB) en la Unidad Santo Tomás. Frente a ti está la rampa de acceso que conduce directamente hacia la UDIBI, una de las unidades de investigación más importantes de la escuela. A tu derecha permanece el mural interior que acompaña todo el corredor, mientras que a la izquierda se aprecian grandes ventanales con vista hacia la estructura tubular externa y los jardines del campus. El recorrido continúa subiendo por la rampa, siguiendo la dirección marcada, para acceder a los niveles donde se ubican laboratorios, oficinas y áreas de trabajo de la UDIBI.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "udibi_8", "texto": "Rampa a UDIBI", "pitch": 10, "yaw": 357, "yaw_llegada": 0 },
-        { "destino": "encb_6", "texto": "Mural ENCB", "pitch": 0, "yaw": 180, "yaw_llegada": 0 }
+        { "destino": "udibi_8", "texto": "Rampa a UDIBI", "pitch": 0, "yaw": -90, "yaw_llegada": 80 },
+        { "destino": "encb_6", "texto": "Mural ENCB", "pitch": 0, "yaw": 90, "yaw_llegada": 0 }
       ]
     },
     "udibi_8": {
@@ -138,8 +139,8 @@
       "contexto_ia": "Has llegado al nivel superior de la rampa del edificio de aulas de la ENCB, donde se encuentra la entrada de la UDIBI, la Unidad de Desarrollo e Investigación en Microbiología y Biotecnología. Frente a ti se ve claramente el acceso principal con su letrero institucional y los íconos de sus áreas de trabajo. Este punto marca la incorporación directa a los laboratorios y espacios de investigación especializados. A tu derecha, el pasillo continúa hacia otras zonas del edificio; a tu izquierda quedan las ventanas con vista a la estructura externa. Si el recorrido sigue hacia la UDIBI, este es el punto de entrada; si continúa por el edificio, la ruta sigue por el pasillo lateral.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "udibi_9", "texto": "Entrada principal ENCB", "pitch": 0, "yaw": 50, "yaw_llegada": 0 },
-        { "destino": "udibi_7", "texto": "Mural ENCB", "pitch": -15, "yaw": 150, "yaw_llegada": 0 }
+        { "destino": "udibi_9", "texto": "Entrada principal UDIBI", "pitch": 0, "yaw": -80, "yaw_llegada": 90 },
+        { "destino": "udibi_7", "texto": "Mural ENCB", "pitch": -15, "yaw": 60, "yaw_llegada": -90 }
       ]
     },
     "udibi_9": {
@@ -148,8 +149,8 @@
       "contexto_ia": "Te encuentras justo frente a la entrada principal de la UDIBI, la Unidad de Investigación en Microbiología y Biotecnología de la ENCB. Aquí se aprecia el acceso directo, con puertas de vidrio y el logotipo institucional en el muro. Esta área marca el punto exacto donde los visitantes ingresan a los laboratorios y espacios especializados de la unidad. A tu izquierda se encuentra el pasillo que continúa hacia otras zonas del edificio, mientras que detrás de ti queda la rampa por la que subiste desde el vestíbulo principal. A la derecha, las ventanas ofrecen vista hacia la estructura externa del edificio. Este es el punto de llegada formal para quienes siguen el recorrido hacia la UDIBI.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "udibi_10", "texto": "Recepción UDIBI", "pitch": 0, "yaw": 0, "yaw_llegada": 0 },
-        { "destino": "udibi_8", "texto": "Rampa a UDIBI", "pitch": 0, "yaw": 270, "yaw_llegada": 0 }
+        { "destino": "udibi_10", "texto": "Recepción UDIBI", "pitch": 0, "yaw": 270, "yaw_llegada": 50 },
+        { "destino": "udibi_8", "texto": "Rampa a UDIBI", "pitch": 0, "yaw": 180, "yaw_llegada": -90 }
       ]
     },
     "udibi_10": {
@@ -158,9 +159,9 @@
       "contexto_ia": "Te encuentras dentro de la recepción de la UDIBI, la Unidad de Investigación Médica y Biotecnológica de la ENCB. Este espacio es el punto de acceso y espera para visitantes, estudiantes e investigadores. Frente a ti está el módulo de recepción, donde se gestiona el ingreso a los laboratorios y áreas especializadas. A la izquierda se observa una sala de espera con pantallas informativas que muestran noticias, proyectos y actividades de la unidad. Detrás de ti queda la puerta de vidrio por la cual accediste desde la rampa del edificio de aulas. Al fondo, el pasillo iluminado conduce directamente hacia los distintos laboratorios y áreas operativas de la UDIBI. Este es el punto de bienvenida y control para quienes ingresan a la unidad.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "udibi_11", "texto": "Laboratorios UDIBI", "pitch": 0, "yaw": 32, "yaw_llegada": 0 },
-        { "destino": "udibi_23", "texto": "Área corporativa UDIBI", "pitch": 0, "yaw": 215, "yaw_llegada": 0 },
-        { "destino": "udibi_9", "texto": "Salida", "pitch": 0, "yaw": 140, "yaw_llegada": 0 }
+        { "destino": "udibi_11", "texto": "Laboratorios UDIBI", "pitch": 0, "yaw": -55, "yaw_llegada": 90 },
+        { "destino": "udibi_23", "texto": "Área corporativa UDIBI", "pitch": 0, "yaw": 120, "yaw_llegada": 90 },
+        { "destino": "udibi_9", "texto": "Salida", "pitch": 0, "yaw": 60, "yaw_llegada": -90 }
       ]
     },
     "udibi_11": {
@@ -169,8 +170,8 @@
       "contexto_ia": "Te encuentras en el área de recepción interna de la UDIBI, la Unidad de Desarrollo e Innovación en Biotecnología de la ENCB. Frente a ti se abre el pasillo principal que conduce directamente a los laboratorios y espacios de trabajo especializados, visibles a través de ventanales que permiten observar parte de la infraestructura científica. A tu izquierda se encuentra la sala de espera con pantallas informativas y espacios para visitantes, mientras que a la derecha permanece el módulo de recepción donde se gestiona el acceso al área restringida. Detrás de ti se ubica la entrada desde la rampa del edificio de aulas. Este punto marca el inicio del recorrido operativo dentro de la UDIBI.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "udibi_12", "texto": "Laboratorios UDIBI", "pitch": 0, "yaw": 5, "yaw_llegada": 0 },
-        { "destino": "udibi_10", "texto": "Recepción UDIBI", "pitch": 0, "yaw": 160, "yaw_llegada": 0 }
+        { "destino": "udibi_12", "texto": "Avanzar", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "udibi_10", "texto": "Recepción UDIBI", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
       ]
     },
     "udibi_12": {
@@ -179,8 +180,8 @@
       "contexto_ia": "Interior del pasillo de la UDIBI, en la zona donde inician los laboratorios especializados. A la izquierda se ve un cuarto técnico con puerta de vidrio, y a la derecha comienzan los laboratorios visibles a través de paneles transparentes donde trabaja el personal. El pasillo es estrecho y con un piso en tonos azul y blanco que guía el recorrido hacia el fondo. En la parte superior se observan canalizaciones y cableado expuesto típicos de un laboratorio moderno. Detrás de este punto quedó la recepción de la UDIBI, y el recorrido continúa hacia adelante siguiendo la curva del pasillo para llegar a más laboratorios.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "udibi_13", "texto": "Laboratorios UDIBI", "pitch": 0, "yaw": 3, "yaw_llegada": 0 },
-        { "destino": "udibi_11", "texto": "Salida", "pitch": 0, "yaw": 180, "yaw_llegada": 0 }
+        { "destino": "udibi_13", "texto": "Avanzar", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "udibi_11", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
       ]
     },
     "udibi_13": {
@@ -189,8 +190,8 @@
       "contexto_ia": "Te encuentras dentro del área de laboratorios de la UDIBI. A tu izquierda hay un muro de 'Publicaciones' donde se exhiben artículos y trabajos de investigación realizados por el personal del laboratorio. Frente a ti se extiende un pasillo limpio y controlado que conduce a diferentes salas de laboratorio. A la derecha pueden verse laboratorios activos a través de ventanas de vidrio, donde el personal técnico realiza actividades científicas especializadas. Esta zona forma parte del corredor principal interno de UDIBI, por donde continúa el recorrido hacia más módulos de trabajo y áreas de experimentación.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "udibi_14", "texto": "Laboratorios UDIBI", "pitch": 0, "yaw": 4, "yaw_llegada": 0 },
-        { "destino": "udibi_12", "texto": "Salida", "pitch": 0, "yaw": 180, "yaw_llegada": 0 }
+        { "destino": "udibi_14", "texto": "Avanzar", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "udibi_12", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
       ]
     },
     "udibi_14": {
@@ -199,9 +200,9 @@
       "contexto_ia": "Te encuentras dentro de UDIBI, avanzando por un pasillo amplio y bien iluminado que forma parte de la zona de laboratorios y oficinas. A tu izquierda se observa un área acristalada que funciona como sala colaborativa o sala de capacitación, donde el personal de UDIBI trabaja y asiste a reuniones. A la derecha se aprecian cajas y equipo en proceso de resguardo o traslado, indicando que es una zona operativa interna. El recorrido continúa de frente siguiendo el pasillo principal; este corredor conecta varias áreas técnicas y administrativas de UDIBI. El espacio mantiene un diseño industrial, con ductos y cableado expuesto en el techo, característico de zonas de laboratorio de alto nivel. Esta escena forma parte del recorrido interno dentro de UDIBI, después de haber ingresado por recepción.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "udibi_15", "texto": "Laboratorios UDIBI", "pitch": 0, "yaw": 358, "yaw_llegada": 0 },
-        { "destino": "udibi_12", "texto": "Salida", "pitch": 0, "yaw": 180, "yaw_llegada": 0 },
-        { "destino": "udibi_22", "texto": "Sala de reuniones UDIBI", "pitch": 0, "yaw": 260, "yaw_llegada": 0 }
+        { "destino": "udibi_15", "texto": "Avanzar", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "udibi_13", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": -90 },
+        { "destino": "udibi_22", "texto": "Sala de reuniones UDIBI", "pitch": 0, "yaw": 180, "yaw_llegada": 90 }
       ]
     },
     "udibi_15": {
@@ -210,9 +211,9 @@
       "contexto_ia": "Esta escena muestra un tramo intermedio del pasillo técnico dentro de UDIBI, donde se localizan múltiples laboratorios y áreas de trabajo especializado. A la izquierda se observa un laboratorio con personal realizando actividades experimentales; la zona está delimitada por paredes de vidrio, lo que permite ver equipos, mesas de trabajo y material de laboratorio. A la derecha se encuentra otra área de trabajo con pizarras llenas de diagramas y notas técnicas, utilizada para planeación, análisis o sesiones internas del equipo. El pasillo continúa hacia el fondo con una ligera curva, indicando que el recorrido sigue derecho por el pasillo principal. La infraestructura expuesta en el techo (tuberías, cableado y luminarias) es característica de las áreas de biofabricación y control ambiental de UDIBI, reforzando que el usuario se encuentra en la zona activa de laboratorios especializados.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "udibi_16", "texto": "Laboratorios UDIBI", "pitch": 0, "yaw": 358, "yaw_llegada": 0 },
-        { "destino": "udibi_14", "texto": "Salida", "pitch": 0, "yaw": 175, "yaw_llegada": 0 },
-        { "destino": "udibi_18", "texto": "Laboratorio accesible", "pitch": 0, "yaw": 250, "yaw_llegada": 0 }
+        { "destino": "udibi_16", "texto": "Avanzar", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "udibi_14", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": -90 },
+        { "destino": "udibi_18", "texto": "Laboratorio accesible", "pitch": 0, "yaw": 180, "yaw_llegada": 90 }
       ]
     },
     "udibi_16": {
@@ -221,7 +222,7 @@
       "contexto_ia": "Esta escena corresponde a un tramo avanzado del recorrido dentro de UDIBI, específicamente en la zona donde se distribuyen varios laboratorios especializados y oficinas técnicas. A la izquierda se encuentra un laboratorio completamente acristalado, con mesas, reactivos y equipo visible, lo que indica que es un área de trabajo experimental activo. También se observan anotaciones y diagramas escritos en los cristales, señal de procesos en curso o coordinación de protocolos. A la derecha hay una oficina o sala de trabajo administrativo, con personal realizando actividades de análisis o documentación. El pasillo continúa derecho y presenta una ligera curva al fondo, lo que indica que el recorrido debe seguir avanzando por el corredor principal. Esta sección mantiene el diseño característico de UDIBI: tubería aérea expuesta, iluminación lineal, altos estándares de orden y visibilidad en cada área científica.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "udibi_15", "texto": "Salida", "pitch": 0, "yaw": 170, "yaw_llegada": 0 }
+        { "destino": "udibi_15", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
       ]
     },
     "udibi_18": {
@@ -230,8 +231,8 @@
       "contexto_ia": "Esta escena de la UDIBI muestra un área de trabajo técnico donde personal especializado realiza actividades de laboratorio en una mesa equipada con instrumentos y documentación. A la derecha se observan equipos resguardados y material embalado, posiblemente instrumentos de laboratorio o insumos en proceso de instalación. El espacio está delimitado por ventanales que permiten ver hacia otros laboratorios y oficinas contiguas, lo que indica que esta zona forma parte del corredor interno de trabajo científico. La iluminación y distribución del mobiliario reflejan un entorno operativo activo, donde se desarrollan tareas de preparación, análisis y verificación de procedimientos.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "udibi_20", "texto": "Laboratorio accesible", "pitch": 0, "yaw": 2, "yaw_llegada": 0 },
-        { "destino": "udibi_15", "texto": "Salida", "pitch": 0, "yaw": 180, "yaw_llegada": 0 }
+        { "destino": "udibi_20", "texto": "Avanzar", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "udibi_15", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": 0 }
       ]
     },
     "udibi_19": {
@@ -240,7 +241,7 @@
       "contexto_ia": "Esta escena de la UDIBI corresponde a un laboratorio operativo donde se realizan procesos experimentales y de análisis. A la izquierda se observan estantes con carpetas, reactivos y documentación técnica organizada, así como una zona de lavado con insumos y material de laboratorio. En el centro destaca un refrigerador especializado para almacenamiento de muestras biológicas, junto a equipo embalado que sugiere recepción reciente de instrumentos. A la derecha, personal con bata y protección trabaja en mesas equipadas con centrifugadoras y material de laboratorio, reflejando actividades de preparación, procesamiento y observación de muestras. El espacio está completamente iluminado y conectado visualmente con otras áreas del laboratorio gracias a sus ventanales, mostrando un entorno activo, controlado y dedicado al trabajo científico.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "udibi_20", "texto": "Salida", "pitch": 0, "yaw": 3, "yaw_llegada": 0 }
+        { "destino": "udibi_20", "texto": "Atrás", "pitch": 0, "yaw": -90, "yaw_llegada": 180 }
       ]
     },
     "udibi_20": {
@@ -249,9 +250,9 @@
       "contexto_ia": "Esta escena de la UDIBI corresponde a un laboratorio activo donde dos especialistas trabajan en análisis y preparación de muestras sobre una mesa de acero inoxidable. Al centro del espacio se observa un pallet aún embalado, lo que indica la reciente llegada de equipo o insumos. A la izquierda se encuentra una estación con computadoras y equipo especializado, mientras que a la derecha se ubican refrigeradores de almacenamiento biológico y mesas de trabajo equipadas con material de laboratorio. La iluminación uniforme y la distribución del mobiliario muestran que es un laboratorio de procesamiento y análisis biotecnológico, diseñado para actividades de manipulación, registro y validación de muestras en condiciones controladas.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "udibi_18", "texto": "Salida", "pitch": 0, "yaw": 270, "yaw_llegada": 0 },
-        { "destino": "udibi_21", "texto": "Extensión de laboratorio accesible", "pitch": 0, "yaw": 180, "yaw_llegada": 0 },
-        { "destino": "udibi_19", "texto": "Laboratorio accesible", "pitch": 0, "yaw": 90, "yaw_llegada": 0 }
+        { "destino": "udibi_18", "texto": "Salida", "pitch": 0, "yaw": 180, "yaw_llegada": -90 },
+        { "destino": "udibi_21", "texto": "Extensión de laboratorio accesible", "pitch": 0, "yaw": 90, "yaw_llegada": 110 },
+        { "destino": "udibi_19", "texto": "Avanzar", "pitch": 0, "yaw": 0, "yaw_llegada": -90 }
       ]
     },
     "udibi_21": {
@@ -260,7 +261,7 @@
       "contexto_ia": "La escena muestra un laboratorio de la UDIBI con varios equipos especializados para análisis biotecnológico y procesamiento de muestras. Al centro se observan instrumentos de alta precisión como analizadores automatizados y sistemas de citometría o diagnóstico, acompañados de estaciones de cómputo donde el personal trabaja en la adquisición y procesamiento de datos experimentales. A la derecha, se encuentra una zona de trabajo con mesas de acero inoxidable donde se manipulan reactivos y muestras, mientras que al fondo se aprecia un pallet embalado que sugiere la llegada reciente de equipo o insumos. A la izquierda se ubican refrigeradores y unidades de almacenamiento biológico junto a una mesa con material de laboratorio. La escena representa un espacio de trabajo activo y altamente controlado dentro del flujo operativo de investigación y producción de la UDIBI.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "udibi_20", "texto": "Salida", "pitch": 0, "yaw": 170, "yaw_llegada": 0 }
+        { "destino": "udibi_20", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": 90 }
       ]
     },
     "udibi_22": {
@@ -269,7 +270,7 @@
       "contexto_ia": "Esta escena corresponde al área de trabajo colaborativo de la UDIBI, un espacio amplio y moderno destinado a reuniones, análisis en equipo y actividades administrativas o de investigación no experimental. Se observan varias mesas largas con computadoras y documentos, donde el personal trabaja en revisión de datos, preparación de reportes y coordinación de proyectos. El ambiente es abierto y luminoso, con pantallas de apoyo para presentaciones, zonas de descanso, una pequeña área de cafetería y ventanales que permiten la entrada de luz natural. Este espacio funciona como punto de encuentro entre equipos científicos y administrativos, complementando las actividades de laboratorio con trabajo intelectual y organizacional.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "udibi_14", "texto": "Salida", "pitch": 0, "yaw": 180, "yaw_llegada": 0 }
+        { "destino": "udibi_14", "texto": "Salida", "pitch": 0, "yaw": 90, "yaw_llegada": 0 }
       ]
     },
     "udibi_23": {
@@ -278,8 +279,8 @@
       "contexto_ia": "La escena muestra el área corporativa de la UDIBI, específicamente un pasillo que conduce a una sala de juntas acristalada donde un equipo participa en una reunión formal. Dentro de la sala se observa una presentación proyectada con gráficos, mientras el personal analiza información y discute resultados o avances operativos. A la izquierda del pasillo hay un tablero informativo con fotografías y avisos internos, típico de espacios administrativos. Al fondo se aprecia una zona de oficinas con escritorios y personal trabajando en actividades de gestión, administración de proyectos y coordinación institucional. Este entorno representa la parte ejecutiva de la UDIBI, donde se desarrollan reuniones estratégicas, planeación y seguimiento de procesos.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "udibi_25", "texto": "Sala de reuniones UDIBI", "pitch": 0, "yaw": 0, "yaw_llegada": 0 },
-        { "destino": "udibi_10", "texto": "Salida", "pitch": 0, "yaw": 150, "yaw_llegada": 0 }
+        { "destino": "udibi_25", "texto": "Sala de reuniones UDIBI", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "udibi_10", "texto": "Salida", "pitch": 0, "yaw": 90, "yaw_llegada": 50 }
       ]
     },
     "udibi_25": {
@@ -288,7 +289,7 @@
       "contexto_ia": "Esta área corresponde a una sala de juntas dentro de las instalaciones de UDIBI. Es un espacio cerrado con paredes de cristal donde se observa a un grupo de personas reunidas alrededor de una mesa grande, participando en una presentación o capacitación dirigida por un facilitador. En la pantalla se muestran datos y gráficas, lo que indica que se están revisando resultados, métricas o avances de proyectos. La sala está bien iluminada, equipada con mobiliario moderno y forma parte de la zona administrativa de UDIBI, utilizada para reuniones internas, sesiones de trabajo colaborativas y actividades de coordinación entre equipos de investigación y gestión.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "udibi_23", "texto": "Salida", "pitch": 0, "yaw": 215, "yaw_llegada": 0 }
+        { "destino": "udibi_23", "texto": "Salida", "pitch": 0, "yaw": 120, "yaw_llegada": -90 }
       ]
     },
     "labiofis_6": {
