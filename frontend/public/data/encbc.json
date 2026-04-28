@@ -460,7 +460,7 @@
       "hotspots": [
         { "destino": "labiofis_24", "texto": "Izquierda", "pitch": 0, "yaw": -130, "yaw_llegada": -90 },
         { "destino": "labiofis_25", "texto": "Avanzar", "pitch": 0, "yaw": -35, "yaw_llegada": 45 },
-        { "destino": "labiofis_18", "texto": "Atrás", "pitch": 0, "yaw": 135, "yaw_llegada": 45 }
+        { "destino": "labiofis_18", "texto": "Atrás", "pitch": 0, "yaw": 135, "yaw_llegada": -45 }
       ]
     },
     "labiofis_24": {
