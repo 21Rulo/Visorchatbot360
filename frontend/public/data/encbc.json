@@ -298,8 +298,8 @@
       "contexto_ia": "ENCB con abundante luz natural. El espacio tiene piso de mármol, techo alto con luminarias rectangulares y muros/laterales de vidrio con columnas, desde donde se observa el exterior del edificio. En el centro destaca un mural de gran formato con temática industrial: representa componentes mecánicos de gran escala (como un eje/turbina o engranajes) y figuras humanas asociadas al trabajo e ingeniería. El mural está delimitado por barandales para proteger la obra. A ambos lados del pasillo hay circulación peatonal, con algunas personas caminando y señalización institucional en muros.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "labiofis_7", "texto": "Pasillo", "pitch": -5, "yaw": 75, "yaw_llegada": 0 },
-        { "destino": "encb_6", "texto": "Salida", "pitch": 0, "yaw": 260, "yaw_llegada": 0 }
+        { "destino": "labiofis_7", "texto": "Pasillo", "pitch": 0, "yaw": -5, "yaw_llegada": 90 },
+        { "destino": "encb_6", "texto": "Salida", "pitch": 0, "yaw": 170, "yaw_llegada": 90 }
       ]
     },
     "labiofis_7": {
@@ -308,8 +308,8 @@
       "contexto_ia": "Laboratorio central con piso de mármol y techo alto, iluminado por luz natural que entra por ventanales de vidrio y por un patio exterior visible a la izquierda. El corredor cuenta con columnas cilíndricas y una barandilla que protege un desnivel/rampa central. En el muro izquierdo se observan paneles informativos institucionales (tipo exposición o línea del tiempo) y señalización de seguridad. Hacia la izquierda se abre un acceso al exterior con jardinería y algunas personas sentadas; en el piso, junto al acceso, hay una franja de advertencia en amarillo y negro que marca una zona de precaución. El pasillo se extiende hacia el fondo conectando con otras áreas del edificio.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "labiofis_8", "texto": "Pasillo", "pitch": 0, "yaw": 0, "yaw_llegada": 0 },
-        { "destino": "labiofis_6", "texto": "Salida", "pitch": 0, "yaw": 175, "yaw_llegada": 0 }
+        { "destino": "labiofis_8", "texto": "Pasillo", "pitch": 0, "yaw": -90, "yaw_llegada": 130 },
+        { "destino": "labiofis_6", "texto": "Salida", "pitch": 0, "yaw": 90, "yaw_llegada": 180 }
       ]
     },
     "labiofis_8": {
@@ -318,8 +318,8 @@
       "contexto_ia": "Vista 360° de un pasillo interior de la ENCB (IPN) que conecta áreas administrativas y de servicios. El corredor tiene piso de loseta, techo con canalizaciones/ductos visibles y columnas, y cuenta con ventanales a un costado que dan hacia un patio exterior con vegetación. En el muro central se observan paredes de ladrillo con tableros de avisos y comunicados. A la derecha destaca un cubículo/oficina acristalada para atención o trámites, con letrero de “Departamento de …”, personas al interior y acceso por puerta. En el piso hay flechas amarillas que indican el sentido de circulación peatonal y, en el extremo derecho, una franja de precaución amarillo-negro que marca un borde o desnivel. Se aprecian pasillos contiguos, señalización institucional y personas transitando.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "labiofis_9", "texto": "Pasillo", "pitch": 0, "yaw": 310, "yaw_llegada": 0 },
-        { "destino": "labiofis_7", "texto": "Salida", "pitch": 0, "yaw": 220, "yaw_llegada": 0 }
+        { "destino": "labiofis_9", "texto": "Pasillo", "pitch": 0, "yaw": 220, "yaw_llegada": 90 },
+        { "destino": "labiofis_7", "texto": "Salida", "pitch": 0, "yaw": 130, "yaw_llegada": -90 }
       ]
     },
     "labiofis_9": {
@@ -328,8 +328,8 @@
       "contexto_ia": "Vista 360° de un pasillo interior de la ENCB (IPN) con iluminación natural. El corredor tiene piso de loseta, techo con canalizaciones visibles y una columna grande al frente. A la izquierda hay un ventanal abierto hacia un patio exterior donde se observan áreas verdes y actividad estudiantil; junto al acceso hay una franja de precaución amarillo-negro por un borde o desnivel. En una columna se ve señalización de “Ruta de evacuación” y un directorio con flechas hacia servicios (por ejemplo biblioteca y otras áreas). Al centro el pasillo se extiende hacia una zona más oscura, con una flecha amarilla en el piso que indica el sentido de circulación. A la derecha hay muros de ladrillo, puertas de oficinas/salones y un tablero de avisos con comunicados, indicando que es un punto de tránsito hacia distintas áreas de la escuela.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "labiofis_10", "texto": "Pasillo", "pitch": 0, "yaw": 3, "yaw_llegada": 0 },
-        { "destino": "labiofis_8", "texto": "Salida", "pitch": 0, "yaw": 183, "yaw_llegada": 0 }
+        { "destino": "labiofis_10", "texto": "Pasillo", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "labiofis_8", "texto": "Salida", "pitch": 0, "yaw": 90, "yaw_llegada": -110 }
       ]
     },
     "labiofis_10": {
@@ -338,8 +338,8 @@
       "contexto_ia": "Vista exterior dentro de la ENCB desde un corredor techado hacia un andador arbolado. Al frente se observa un edificio con fachada curva de vidrio con la leyenda \"ENCB\" y el rótulo \"Laboratorio Nacional de Vacunología y Virus Tropicales\". En primer plano hay una rampa azul de accesibilidad que conecta con el camino; a un costado se ven botes de basura (verde y azul) y áreas de tierra/jardín bajo los árboles. Del lado derecho aparece un portón metálico grande y un pilar con señalética de evacuación/direccionales (UPIS y DPETS) y una cámara de vigilancia en la parte superior. A la izquierda se aprecia la continuidad del pasillo y la estructura del edificio con barandales.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "labiofis_11", "texto": "Pasillo Exterior", "pitch": 0, "yaw": 0, "yaw_llegada": 0 },
-        { "destino": "labiofis_9", "texto": "Salida", "pitch": 0, "yaw": 183, "yaw_llegada": 0 }
+        { "destino": "labiofis_11", "texto": "Pasillo Exterior", "pitch": 0, "yaw": -90, "yaw_llegada": 0 },
+        { "destino": "labiofis_9", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
       ]
     },
     "labiofis_11": {
@@ -348,8 +348,8 @@
       "contexto_ia": "Vista exterior en un andador arbolado de la ENCB. Al centro se observa un edificio de fachada semicircular de vidrio con el rótulo grande \"ENCB\" y el letrero \"Laboratorio Nacional de Vacunología y Virus Tropicales\"; en un costado se aprecia un emblema de CONACYT. El camino se divide en dos: a la izquierda un andador con botes de basura (azul y verde) y a la derecha una banqueta amplia junto a un edificio gris. Frente al laboratorio hay jardineras/áreas de tierra con plantas pequeñas y guarniciones amarillas. Se distinguen rampas azules de accesibilidad cerca de las entradas y algunas personas transitando por los pasillos.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "labiofis_12", "texto": "Pasillo Exterior", "pitch": 0, "yaw": 87, "yaw_llegada": 0 },
-        { "destino": "labiofis_10", "texto": "Salida", "pitch": 0, "yaw": 175, "yaw_llegada": 0 }
+        { "destino": "labiofis_12", "texto": "Pasillo Exterior", "pitch": 0, "yaw": 0, "yaw_llegada": 70 },
+        { "destino": "labiofis_10", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
       ]
     },
     "labiofis_12": {
@@ -358,8 +358,8 @@
       "contexto_ia": "Andador exterior arbolado dentro del campus de la ENCB. Se observa una zona ajardinada con tierra y vegetación baja delimitada por guarniciones amarillas, y varios caminos peatonales de concreto que se bifurcan: uno al centro hacia un pasillo entre edificios y otro hacia la derecha junto a un edificio con fachada de vidrio y una rampa azul de accesibilidad. A los lados hay edificios académicos de varios niveles (uno con grandes ventanales y estructura tipo laboratorio/aulas) y un área cercada con reja metálica. Hay personas caminando por los andadores, con iluminación natural filtrada por los árboles.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "labiofis_13", "texto": "Pasillo Exterior", "pitch": 0, "yaw": 35, "yaw_llegada": 0 },
-        { "destino": "labiofis_11", "texto": "Salida", "pitch": 0, "yaw": 123, "yaw_llegada": 0 }
+        { "destino": "labiofis_13", "texto": "Pasillo Exterior", "pitch": 0, "yaw": -60, "yaw_llegada": 110 },
+        { "destino": "labiofis_11", "texto": "Atrás", "pitch": 0, "yaw": 35, "yaw_llegada": -90 }
       ]
     },
     "labiofis_13": {
@@ -368,127 +368,127 @@
       "contexto_ia": "Explanada exterior arbolada dentro de la ENCB, frente a un edificio principal de tres niveles con fachada curva y grandes ventanales. Al centro se observa el acceso con reja/puerta, luminarias y un rampón azul de accesibilidad con barandales que conecta el andador con la entrada. El área tiene jardineras y vegetación baja a los lados, así como andadores de concreto que rodean el edificio y se conectan hacia la izquierda y la derecha. A la derecha se distingue una estructura baja de piedra tipo jardinera o base y, al fondo, otro edificio de varios niveles con fachada moderna/vidriada entre árboles.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "labiofis_14", "texto": "Entrada principal Laboratorio Central de Instrumentación", "pitch": 0, "yaw": 332, "yaw_llegada": 0 },
-        { "destino": "labiofis_12", "texto": "Salida", "pitch": 0, "yaw": 208, "yaw_llegada": 0 }
+        { "destino": "labiofis_14", "texto": "Entrada principal", "pitch": 0, "yaw": 240, "yaw_llegada": 90 },
+        { "destino": "labiofis_12", "texto": "Salida", "pitch": 0, "yaw": 110, "yaw_llegada": -45 }
       ]
     },
     "labiofis_14": {
-      "titulo": "Entrada Laboratorio Central de Instrumentación",
+      "titulo": "Departamento de Biofísica",
       "imagen_url": "/assets/ENCB_Casco/labiofis/9.jpg",
       "contexto_ia": "Acceso principal a un edificio de la ENCB identificado con el letrero \"DEPARTAMENTO DE BIOFÍSICA\" sobre una reja metálica negra abierta. Desde la entrada se ve un pasillo interior con piso de loseta y una escalera al fondo, con iluminación artificial en el techo. A la derecha del acceso hay un gran tablero de avisos/mural informativo con varios carteles. A la izquierda se observan señalamientos institucionales y un contenedor/tambor azul. En ambos extremos laterales se alcanza a ver el exterior arbolado y los andadores del campus, incluyendo rampas y escaleras con barandales.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "labiofis_15", "texto": "Acceso Laboratorio Central de Instrumentación", "pitch": 0, "yaw": 0, "yaw_llegada": 0 },
-        { "destino": "labiofis_13", "texto": "Salida", "pitch": -10, "yaw": 180, "yaw_llegada": 0 }
+        { "destino": "labiofis_15", "texto": "Acceso LCI", "pitch": 0, "yaw": -90, "yaw_llegada": 60 },
+        { "destino": "labiofis_13", "texto": "Salida", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
       ]
     },
     "labiofis_15": {
-      "titulo": "Entrada Laboratorio Central de Instrumentación",
+      "titulo": "Entrada",
       "imagen_url": "/assets/ENCB_Casco/labiofis/10.jpg",
       "contexto_ia": "Interior de un pasillo en edificio de la ENCB con muros de tabique claro y piso de loseta. Al centro se observan escaleras que comunican al siguiente nivel, con barandal metálico, y señalización de ruta/salida de emergencia en paredes. A la izquierda hay un acceso tipo oficina/ventanilla con puerta de vidrio y avisos en el muro. A la derecha se ven ventanales hacia áreas internas, un retrato enmarcado y, junto a la escalera, equipo de servicio (dispensador/nevera) y varios cilindros de gas con mangueras (equipo de laboratorio/seguridad). Al fondo, hacia la derecha, se aprecia la reja de entrada que conecta con el exterior del campus.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "labiofis_16", "texto": "Acceso Laboratorio Central de Instrumentación", "pitch": 0, "yaw": 62, "yaw_llegada": 0 },
-        { "destino": "labiofis_14", "texto": "Salida", "pitch": 0, "yaw": 150, "yaw_llegada": 0 }
+        { "destino": "labiofis_16", "texto": "Acceso LCI", "pitch": 0, "yaw": 330, "yaw_llegada": 90 },
+        { "destino": "labiofis_14", "texto": "Salida", "pitch": 0, "yaw": 62, "yaw_llegada": -90 }
       ]
     },
     "labiofis_16": {
-      "titulo": "Entrada Laboratorio Central de Instrumentación",
+      "titulo": "Laboratorio Central de Instrumentación(LCI)",
       "imagen_url": "/assets/ENCB_Casco/labiofis/11.jpg",
       "contexto_ia": "Frente interior de un conjunto de accesos a laboratorio dentro de un pasillo de la ENCB. Se observan tres puertas de acabado tipo madera con marcos metálicos y paneles superiores de vidrio; en la parte alta y en la puerta central se lee el letrero de “Laboratorio Central de Instrumentación”. A la derecha hay ventanales corridos con rejas metálicas que permiten ver el interior, y en una de las puertas hay avisos impresos. El área cuenta con muros de tabique claro, columnas amarillas, techo con instalaciones expuestas e iluminación artificial, y piso de loseta en patrón rectangular típico de pasillo institucional.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "labiofis_17", "texto": "Laboratorio Central de Instrumentación", "pitch": 0, "yaw": 0, "yaw_llegada": 0 },
-        { "destino": "labiofis_15", "texto": "Salida", "pitch": 0, "yaw": 180, "yaw_llegada": 0 }
+        { "destino": "labiofis_17", "texto": "LCI", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "labiofis_15", "texto": "Salida", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
       ]
     },
     "labiofis_17": {
-      "titulo": "Laboratorio Central de Instrumentación",
+      "titulo": "LCI",
       "imagen_url": "/assets/ENCB_Casco/labiofis/12.jpg",
       "contexto_ia": "Vista interior de un laboratorio de instrumentación/metrología. La escena muestra un espacio amplio y bien iluminado con piso de loseta; a la izquierda hay un área de trabajo con escritorio, computadora, documentos y equipo de oficina junto a gabinetes. Al centro se observan mesas de trabajo con tapete de corte y herramientas, además de un pasillo que conecta con otras áreas del edificio. A la derecha se ubican equipos industriales de medición y prueba de gran tamaño (banco/máquina vertical con panel de control, y otras máquinas y bancos sobre estanterías), con marcas en el piso para delimitar zonas de operación. Se aprecia señalización y un extintor, indicando un entorno técnico para prácticas, mantenimiento o calibración de equipos.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "labiofis_18", "texto": "Laboratorio Central de Instrumentación", "pitch": -10, "yaw": 340, "yaw_llegada": 0 },
-        { "destino": "labiofis_16", "texto": "Salida", "pitch": 0, "yaw": 225, "yaw_llegada": 0 }
+        { "destino": "labiofis_18", "texto": "LCI", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "labiofis_16", "texto": "Salida", "pitch": 0, "yaw": 120, "yaw_llegada": -90 }
       ]
     },
     "labiofis_18": {
-      "titulo": "Laboratorio Central de Instrumentación",
+      "titulo": "LCI",
       "imagen_url": "/assets/ENCB_Casco/labiofis/13.jpg",
       "contexto_ia": "Interior de un laboratorio de análisis con mesas de trabajo llenas de frascos, matraces, gradillas y reactivos. A la izquierda se observa una cabina de bioseguridad/campana de extracción con señalización de riesgo y equipo de laboratorio en encimera; también hay garrafones de agua. Al centro hay un estante con carpetas, manuales y material de uso diario, y al fondo un acceso con letrero de “SALIDA” hacia un área contigua donde se ve más personal. A la derecha se aprecian equipos analíticos y de medición (instrumentación de laboratorio), una computadora y paneles/controles de operación, además de conexiones, mangueras y accesorios montados en muro. El espacio tiene muros de tabique claro, ventanas altas, iluminación fluorescente y piso antiderrapante, con ambiente típico de laboratorio en operación.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "labiofis_20", "texto": "Laboratorio Central de Instrumentación", "pitch": -15, "yaw": 310, "yaw_llegada": 0 },
-        { "destino": "labiofis_23", "texto": "Laboratorio Central de Instrumentación", "pitch": 0, "yaw": 38, "yaw_llegada": 0 },
-        { "destino": "labiofis_17", "texto": "Salida", "pitch": -15, "yaw": 165, "yaw_llegada": 0 }
+        { "destino": "labiofis_20", "texto": "Avanzar", "pitch": -15, "yaw": 220, "yaw_llegada": 90 },
+        { "destino": "labiofis_23", "texto": "Derecha", "pitch": 0, "yaw": 310, "yaw_llegada": 45 },
+        { "destino": "labiofis_17", "texto": "Atrás", "pitch": -15, "yaw": 38, "yaw_llegada": -90 }
       ]
     },
     "labiofis_20": {
-      "titulo": "Laboratorio Central de Instrumentación",
+      "titulo": "LCI",
       "imagen_url": "/assets/ENCB_Casco/labiofis/15.jpg",
       "contexto_ia": "Vista panorámica de un laboratorio de química/servicios analíticos en operación. A la izquierda se observa un escritorio de registro con computadora y documentos, y junto a él una puerta hacia un área interna señalada como “Absorción Atómica”, con personal trabajando dentro. En la pared cercana hay señalética de seguridad (ruta de evacuación, extintor y avisos) y una tarja de lavado con repisas para material de vidrio; al frente se ven garrafones de agua y ventanas amplias que iluminan toda la sala. En el centro y hacia la derecha hay una gran mesa/isla de trabajo con equipos de medición, contenedores y bandejas de muestras, así como frascos etiquetados; se aprecia personal con bata realizando actividades de análisis. El piso cuenta con flechas que marcan la dirección de circulación dentro del laboratorio.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "labiofis_21", "texto": "Laboratorio Central de Instrumentación", "pitch": 0, "yaw": 275, "yaw_llegada": 0 },
-        { "destino": "labiofis_18", "texto": "Salida", "pitch": -10, "yaw": 183, "yaw_llegada": 0 }
+        { "destino": "labiofis_21", "texto": "Avanzar", "pitch": 0, "yaw": 193, "yaw_llegada": 140 },
+        { "destino": "labiofis_18", "texto": "Atrás", "pitch": -10, "yaw": 83, "yaw_llegada": 90 }
       ]
     },
     "labiofis_21": {
-      "titulo": "Laboratorio Central de Instrumentación",
+      "titulo": "LCI",
       "imagen_url": "/assets/ENCB_Casco/labiofis/16.jpg",
       "contexto_ia": "Vista panorámica de un laboratorio de química/servicios analíticos en operación. A la izquierda se observa un escritorio de registro con computadora y documentos, y junto a él una puerta hacia un área interna señalada como “Absorción Atómica”, con personal trabajando dentro. En la pared cercana hay señalética de seguridad (ruta de evacuación, extintor y avisos) y una tarja de lavado con repisas para material de vidrio; al frente se ven garrafones de agua y ventanas amplias que iluminan toda la sala. En el centro y hacia la derecha hay una gran mesa/isla de trabajo con equipos de medición, contenedores y bandejas de muestras, así como frascos etiquetados; se aprecia personal con bata realizando actividades de análisis. El piso cuenta con flechas que marcan la dirección de circulación dentro del laboratorio.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "labiofis_22", "texto": "Laboratorio Central de Instrumentación", "pitch": 0, "yaw": 0, "yaw_llegada": 0 },
-        { "destino": "labiofis_20", "texto": "Salida", "pitch": 0, "yaw": 140, "yaw_llegada": 0 }
+        { "destino": "labiofis_22", "texto": "Avanzar", "pitch": 0, "yaw": -90, "yaw_llegada": 45 },
+        { "destino": "labiofis_20", "texto": "Atrás", "pitch": 0, "yaw": 70, "yaw_llegada": -90 }
       ]
     },
     "labiofis_22": {
-      "titulo": "Laboratorio Central de Instrumentación",
+      "titulo": "LCI",
       "imagen_url": "/assets/ENCB_Casco/labiofis/17.jpg",
       "contexto_ia": "Vista interior de un laboratorio de análisis/instrumentación. A la izquierda se observa una campana o gabinete de seguridad con frascos y material de vidrio, junto a equipos de mesa y una zona de trabajo con recipientes y garrafones de agua. Al centro hay un pasillo que conecta con otra área (señal de “SALIDA” al fondo) y un estante con carpetas, bitácoras y consumibles. A la derecha se encuentra una mesa de instrumentación con analizadores/equipos automatizados, computadora y pantalla; un técnico con bata está operando el equipo y manipulando muestras en pequeños frascos. En paredes y techo se aprecian ductos/ventilación, tubería y conexiones de servicios, además de señalización y material informativo.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "labiofis_21", "texto": "Salida", "pitch": -10, "yaw": 340, "yaw_llegada": 0 }
+        { "destino": "labiofis_21", "texto": "Atrás", "pitch": -10, "yaw": -100, "yaw_llegada": -45 }
       ]
     },
     "labiofis_23": {
-      "titulo": "Laboratorio Central de Instrumentación",
+      "titulo": "LCI",
       "imagen_url": "/assets/ENCB_Casco/labiofis/18.jpg",
       "contexto_ia": "El espacio es amplio y de trabajo activo, con dos islas centrales de mesas de laboratorio llenas de material (vasos, frascos, botellas y bandejas), equipo de cómputo y algunos instrumentos; al fondo hay ventanales grandes que iluminan el área. Se observan señalamientos de seguridad y rutas marcadas en el piso con flechas amarillas, además de una regadera/lavaojos de emergencia indicada en la pared. A la derecha hay un pizarrón grande con una tabla/itinerario pegado, una fila de carpetas o archivadores sobre una mesa y un contenedor amarillo para residuos. También se ve una zona administrativa con escritorio, impresora y archivero, y personal con bata realizando tareas de laboratorio.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "labiofis_24", "texto": "Laboratorio Central de Instrumentación", "pitch": 0, "yaw": 324, "yaw_llegada": 0 },
-        { "destino": "labiofis_25", "texto": "Laboratorio Central de Instrumentación", "pitch": 0, "yaw": 44, "yaw_llegada": 0 },
-        { "destino": "labiofis_18", "texto": "Salida", "pitch": 0, "yaw": 235, "yaw_llegada": 0 }
+        { "destino": "labiofis_24", "texto": "Izquierda", "pitch": 0, "yaw": -130, "yaw_llegada": -90 },
+        { "destino": "labiofis_25", "texto": "Avanzar", "pitch": 0, "yaw": -35, "yaw_llegada": 45 },
+        { "destino": "labiofis_18", "texto": "Atrás", "pitch": 0, "yaw": 135, "yaw_llegada": 45 }
       ]
     },
     "labiofis_24": {
-      "titulo": "Laboratorio Central de Instrumentación",
+      "titulo": "LCI",
       "imagen_url": "/assets/ENCB_Casco/labiofis/19.jpg",
       "contexto_ia": "Panorama 360° dentro de un laboratorio de la ENCB, con un área amplia de trabajo experimental. Se observan dos grandes mesas/islas de laboratorio con cubiertas negras y gabinetes, llenas de frascos, botellas de reactivos, vasos y bandejas; en una mesa hay una canastilla con múltiples recipientes y en otra se ve un garrafón de agua. El laboratorio está iluminado con lámparas fluorescentes y cuenta con ventanales a ambos lados que permiten entrada de luz natural. Al centro del fondo hay un pizarrón blanco y un mueble bajo con archiveros o bandejas; también se aprecian señalamientos de seguridad (ruta/flechas en el piso) y una zona de trabajo con computadora/equipo de laboratorio hacia el lado derecho. Hay personal con bata realizando actividades en el área de mesas.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "labiofis_23", "texto": "Salida", "pitch": 0, "yaw": 3, "yaw_llegada": 0 }
+        { "destino": "labiofis_23", "texto": "Atrás", "pitch": 0, "yaw": -90, "yaw_llegada": 35 }
       ]
     },
     "labiofis_25": {
-      "titulo": "Laboratorio Central de Instrumentación",
+      "titulo": "LCI",
       "imagen_url": "/assets/ENCB_Casco/labiofis/20.jpg",
       "contexto_ia": "Panorama 360° en el interior de un laboratorio de la ENCB con zona de administración y trabajo experimental. A la izquierda se observa una puerta señalizada como “Cuarto de Balanzas” (acceso restringido) y, junto a ella, un área de seguridad con botiquín/primeros auxilios (símbolo de cruz verde) y un pizarrón blanco. Hacia el centro hay una mesa/isla de laboratorio con cristalería (vasos, matraces) colocada en bandejas, además de señalización de seguridad y flechas amarillas en el piso que marcan la circulación. Al fondo se aprecian ventanales que dan al exterior y otro personal con bata en el área de trabajo. A la derecha hay una estación de oficina con computadora, impresora, archivero y un ventilador, indicando que en este punto se realizan registros, captura de datos y control de actividades del laboratorio.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "labiofis_26", "texto": "Laboratorio Central de Instrumentación", "pitch": 0, "yaw": 36, "yaw_llegada": 0 },
-        { "destino": "labiofis_23", "texto": "Salida", "pitch": 0, "yaw": 303, "yaw_llegada": 0 }
+        { "destino": "labiofis_26", "texto": "LCI", "pitch": 0, "yaw": 303, "yaw_llegada": 90 },
+        { "destino": "labiofis_23", "texto": "Atrás", "pitch": 0, "yaw": 210, "yaw_llegada": 210 }
       ]
     },
     "labiofis_26": {
-      "titulo": "Laboratorio Central de Instrumentación",
+      "titulo": "LCI",
       "imagen_url": "/assets/ENCB_Casco/labiofis/21.jpg",
       "contexto_ia": "Panorama 360° dentro de un laboratorio de la ENCB. A la izquierda se observa una campana/cabina de extracción o área de manejo seguro con señal de “Uso obligatorio de equipo de protección”, y en su interior hay frascos y reactivos almacenados. En el centro hay un pasillo de circulación con señalización en el piso, un pizarrón blanco en la pared y un punto de primeros auxilios (cruz verde), además de estantería baja con material y documentos; se aprecia personal con bata en actividades del laboratorio. A la derecha se encuentra una mesa de trabajo de granito con cristalería (matraces, vasos, soportes) y montajes con mangueras y conexiones para equipos de análisis o preparación de soluciones; sobre la mesa hay dispositivos eléctricos de laboratorio (agitadores/placas o equipos de medición). Al fondo, ventanales amplios dan al exterior e iluminan el área, mostrando un espacio activo de trabajo experimental y registro de datos.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "labiofis_25", "texto": "Salida", "pitch": 0, "yaw": 0, "yaw_llegada": 0 }
+        { "destino": "labiofis_25", "texto": "Atrás", "pitch": 0, "yaw": -90, "yaw_llegada": 45 }
       ]
     }
   }
