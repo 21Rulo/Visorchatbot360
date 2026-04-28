@@ -105,6 +105,13 @@ function toggleChat() {
 btnToggle.addEventListener('click', toggleChat);
 btnClose.addEventListener('click', toggleChat);
 
+// --- CONTADOR GLOBAL PARA IDs ÚNICOS DE MENSAJES ---
+// Evita colisiones que ocurren cuando dos mensajes se crean
+// en el mismo milisegundo (Date.now() devolvía el mismo valor
+// para el mensaje del usuario y el "...", haciendo que getElementById
+// encontrara el elemento equivocado y sobreescribiera el mensaje del usuario).
+let contadorMensajes = 0;
+
 async function enviarMensaje() {
     const texto = inputChat.value.trim();
     if (!texto) return;
@@ -117,25 +124,30 @@ async function enviarMensaje() {
     const idCarga = agregarMensajeUI('...', 'agente');
 
     try {
-        // Enviar al backend (Asegúrate de que el puerto coincida con tu backend)
         const response = await fetch('http://127.0.0.1:8000/api/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 mensaje: texto,
-                contexto: window.contextoActual // ¡Aquí le pasamos el contexto del JSON!
+                contexto: window.contextoActual
             })
         });
 
         const data = await response.json();
         
         // Reemplazar el "Escribiendo..." con la respuesta real
-        document.getElementById(idCarga).innerText = data.respuesta;
+        const elementoCarga = document.getElementById(idCarga);
+        if (elementoCarga) {
+            elementoCarga.innerText = data.respuesta;
+        }
         messagesDiv.scrollTop = messagesDiv.scrollHeight;
 
     } catch (error) {
         console.error('Error de chat:', error);
-        document.getElementById(idCarga).innerText = 'Error al conectar con Jasper.';
+        const elementoCarga = document.getElementById(idCarga);
+        if (elementoCarga) {
+            elementoCarga.innerText = 'Error al conectar con Jasper.';
+        }
     }
 }
 
@@ -148,7 +160,10 @@ function agregarMensajeUI(texto, tipo) {
     const div = document.createElement('div');
     div.className = `msg ${tipo}`;
     div.innerText = texto;
-    div.id = 'msg-' + Date.now();
+    // Usamos un contador incremental en lugar de Date.now() para garantizar
+    // que cada mensaje tenga siempre un ID único, sin importar qué tan rápido
+    // se creen dos mensajes consecutivos.
+    div.id = 'msg-' + (++contadorMensajes);
     messagesDiv.appendChild(div);
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
     return div.id;

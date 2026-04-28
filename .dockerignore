@@ -1,0 +1,14 @@
+cat << 'EOF' > .dockerignore
+# Ignorar dependencias locales
+frontend/node_modules/
+frontend/dist/
+
+# Ignorar cache de Python
+**/__pycache__/
+*.pyc
+
+# Ignorar git y variables de entorno
+.git/
+.env
+infra/.env
+EOF

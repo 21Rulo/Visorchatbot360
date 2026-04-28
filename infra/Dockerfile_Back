@@ -1,0 +1,43 @@
+# ===== BUILDER STAGE (Compilación) =====
+FROM python:3.11-slim as builder
+
+WORKDIR /build
+
+# Copiar requirements
+COPY backend/app/requirements.txt .
+
+# Instalar dependencias en caché
+RUN pip install --user --no-cache-dir -r requirements.txt
+
+# ===== RUNTIME STAGE (Producción) =====
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Crear usuario no-root por seguridad
+RUN useradd -m -u 1000 appuser
+
+# Copiar dependencias compiladas del builder
+COPY --from=builder /root/.local /home/appuser/.local
+ENV PATH=/home/appuser/.local/bin:$PATH
+
+# Copiar código de la aplicación
+COPY backend/app/ ./app/
+
+# Cambiar permisos
+RUN chown -R appuser:appuser /app
+
+# Cambiar a usuario no-root
+USER appuser
+
+# Variables de entorno
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONPATH=/
+
+# Exponer puerto
+EXPOSE 8000
+
+
+# Comando para ejecutar
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

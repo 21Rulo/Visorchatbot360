@@ -16,4 +16,4 @@ app.include_router(api_router, prefix="/api")
 
 @app.get("/")
 def read_root():
-    return {"mensaje": "Servidor activo"}
+    return {"status": "ok", "message": "Visor 360 API activa"}

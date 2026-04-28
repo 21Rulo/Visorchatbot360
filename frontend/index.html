@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Visor 360 Institucional - IPN</title>
     <link rel="icon" type="image/png" href="/assets/src/ipn.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,17 +54,19 @@
       <button class="btn-control" id="btn-home" title="Volver al Menú">
         <span class="material-symbols-outlined">home</span>
       </button>
-      <button class="btn-control" id="btn-zoom-in">
-        <span class="material-symbols-outlined">zoom_in</span>
-      </button>
-      <button class="btn-control" id="btn-zoom-out">
-        <span class="material-symbols-outlined">zoom_out</span>
-      </button>
-      <button class="btn-control" id="btn-fullscreen">
-        <span class="material-symbols-outlined">fullscreen</span>
-      </button>
+      <div class="zoom-group">
+        <button class="btn-control" id="btn-zoom-in">
+            <span class="material-symbols-outlined">zoom_in</span>
+        </button>
+        <button class="btn-control" id="btn-zoom-out">
+            <span class="material-symbols-outlined">zoom_out</span>
+        </button>
+        <button class="btn-control" id="btn-fullscreen">
+            <span class="material-symbols-outlined">fullscreen</span>
+        </button>
+      </div>
     </div>
-    
+      
     <div id="contenedor-brujula">
         <span class="material-symbols-outlined" id="icono-brujula">explore</span>
     </div>
@@ -80,7 +82,7 @@
         <span class="material-symbols-outlined" id="icono-chat">chat</span>
     </button>
 
-    <div id="chat-container">
+    <div id="chat-container" class="oculto">
         <div id="chat-header">
             <div class="chat-header-info">
                 <img src="/assets/src/jasperc.png" alt="Jasper" id="jasper-avatar">

@@ -1,0 +1,49 @@
+version: '3.9'
+
+services:
+  # ===== BACKEND =====
+  backend:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile_Back
+    container_name: visor360-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - MODELO_CHAT=llama-3.3-70b-versatile
+    volumes:
+      - ../backend/app:/app
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    networks:
+      - visor360-network
+
+  # ===== FRONTEND =====
+  frontend:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile_Front
+    container_name: visor360-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    networks:
+      - visor360-network
+
+networks:
+  visor360-network:
+    driver: bridge
