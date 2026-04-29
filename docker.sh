@@ -107,7 +107,7 @@ case "${1}" in
         echo
         if [[ $REPLY =~ ^[Ss]$ ]]; then
             docker system prune -a --volumes
-            print_success "Sistema limpiado"
+            print_success "Sistema depurado"
         fi
         ;;
 
