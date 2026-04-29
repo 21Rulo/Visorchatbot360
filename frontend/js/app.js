@@ -86,7 +86,7 @@ btnHome.addEventListener('click', () => {
     }, 10);
 
     // 2. Mostrar el chat automáticamente
-    document.getElementById('chat-container').classList.remove('oculto');
+    document.getElementById('chat-container').classList.add('oculto');
 
     // 3. Actualizar el contexto
     window.contextoActual = "El usuario ha regresado al Lobby Principal. Invítalo de nuevo a seleccionar un laboratorio.";

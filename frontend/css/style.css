@@ -1,4 +1,7 @@
 body { 
+        height: 100%;
+        width: 100%;
+        padding: 0;
         margin: 0; overflow: hidden;
         font-family: 'Montserrat', sans-serif;
         -webkit-font-smoothing: antialiased; 
@@ -374,9 +377,6 @@ body {
             padding: 10px;
         }
 
-        .menu-contenido {
-            padding: 15px;
-        }
 
         .titulo-main {
             font-size: 1.2rem; /* Título más pequeño */
@@ -398,6 +398,61 @@ body {
             font-size: 12px;
         }
     }
+    /* ====== ARREGLO PARA EL CHAT EN HORIZONTAL ====== */
+    
+    /* Hacemos el botón flotante más pequeño para que no estorbe */
+    #btn-chat-toggle {
+        top: 10px;
+        right: 10px;
+        width: 45px;
+        height: 45px;
+    }
+
+    #icono-chat {
+        font-size: 26px;
+    }
+
+    /* Ajustamos el contenedor del chat a la altura de la pantalla */
+    #chat-container {
+        top: 5px;
+        right: 5px;
+        width: 320px;
+        /* calc() resta 10px para dejar un pequeño margen y que no toque los bordes */
+        height: calc(100vh - 10px); 
+        max-height: none;
+    }
+
+    /* Reducimos los rellenos internos para aprovechar el espacio */
+    #chat-header {
+        padding: 8px 12px;
+    }
+
+    #jasper-avatar {
+        width: 30px;
+        height: 30px;
+    }
+
+    .chat-header-info strong {
+        font-size: 14px;
+    }
+
+    #chat-input-area {
+        padding: 8px;
+        /* Aseguramos que la barra inferior de los iPhone no tape el input */
+        padding-bottom: max(8px, env(safe-area-inset-bottom));
+    }  
+    
+    #menu-inicio::-webkit-scrollbar,
+        .menu-contenido::-webkit-scrollbar {
+            display: none;
+      }
+
+/* Ocultar barra de desplazamiento para IE, Edge y Firefox */
+      #menu-inicio,
+      .menu-contenido {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
 
       #chat-input-area {
           display: flex;
