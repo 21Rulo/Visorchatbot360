@@ -2,6 +2,7 @@
 .env
 .env.local
 .env.*.local
+infra/.env*
 
 # Python
 __pycache__/
@@ -71,3 +72,4 @@ htmlcov/
 # Local development
 .local
 .cache
+
