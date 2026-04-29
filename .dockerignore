@@ -10,5 +10,6 @@ frontend/dist/
 # Ignorar git y variables de entorno
 .git/
 .env
+.env.prod
 infra/.env
 EOF
