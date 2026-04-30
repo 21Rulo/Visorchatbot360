@@ -179,7 +179,7 @@ export function iniciarVisor(mapa) {
         tooltipUI.classList.add('oculto');
         ultimoHotspotTocado = null;
 
-        if (event.ctrlKey) {
+        /*if (event.ctrlKey) {
             const interseccionEsfera = raycaster.intersectObject(esfera);
             if (interseccionEsfera.length > 0) {
                 const punto = interseccionEsfera[0].point;
@@ -197,7 +197,7 @@ export function iniciarVisor(mapa) {
         }`);
                 alert(`Coordenadas: Pitch ${pitch.toFixed(2)}, Yaw ${yaw.toFixed(2)}`);
             }
-        }
+        }*/
     };
 
     const onResize = () => {
