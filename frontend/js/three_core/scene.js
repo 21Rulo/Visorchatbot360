@@ -112,6 +112,8 @@ export function iniciarVisor(mapa) {
         poolFlechas.forEach(f => { f.style.opacity = '0'; });
     }
 
+
+    let ultimoHotspotTocado = null;
     // --- RAYCASTER ---
     const raycaster = new THREE.Raycaster();
     const mouse = new THREE.Vector2();
@@ -147,13 +149,35 @@ export function iniciarVisor(mapa) {
         raycaster.setFromCamera(mouse, camara);
 
         const intersecciones = raycaster.intersectObjects(grupoHotspots.children);
+        
         if (intersecciones.length > 0) {
             const hotspotTocado = intersecciones[0].object;
             const idDestino = hotspotTocado.userData.destino;
             const yawLlegada = hotspotTocado.userData.yaw_llegada ?? 0;
-            cargarNodo(idDestino, yawLlegada);
+
+            // --- LÓGICA PARA MÓVILES ---
+            // Si es el mismo que ya tocamos (segundo toque) o si estamos en PC (mousemove ya mostró el tooltip)
+            if (ultimoHotspotTocado === hotspotTocado || window.innerWidth > 1024) {
+                tooltipUI.classList.add('oculto');
+                cargarNodo(idDestino, yawLlegada);
+                ultimoHotspotTocado = null;
+            } else {
+                // Primer toque en móvil: mostramos el tooltip
+                ultimoHotspotTocado = hotspotTocado;
+                tooltipUI.innerText = hotspotTocado.userData.texto;
+                tooltipUI.style.left = `${event.clientX}px`;
+                tooltipUI.style.top = `${event.clientY - 40}px`; // Un poco más arriba para que el dedo no lo tape
+                tooltipUI.classList.remove('oculto');
+                
+                // Si el usuario toca otra parte de la pantalla, se limpia el rastro
+                setTimeout(() => {
+                    if (ultimoHotspotTocado === hotspotTocado) ultimoHotspotTocado = null;
+                }, 3000);
+            }
             return;
         }
+        tooltipUI.classList.add('oculto');
+        ultimoHotspotTocado = null;
 
         if (event.ctrlKey) {
             const interseccionEsfera = raycaster.intersectObject(esfera);
@@ -190,6 +214,7 @@ export function iniciarVisor(mapa) {
     function cargarNodo(idNodo, yawLlegada = null) {
         const nodoData = mapa.nodos[idNodo];
         if (!nodoData) return;
+        tooltipUI.classList.add('oculto');
         console.log(`%c📍 Nodo actual: ${idNodo} | Título: ${nodoData.titulo}`, "color: #00d2ff; font-weight: bold; font-size: 14px;");
         tituloUI.innerText = nodoData.titulo;
         
