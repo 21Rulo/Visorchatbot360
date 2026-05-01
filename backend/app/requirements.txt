@@ -1,6 +1,9 @@
+dnspython
 fastapi
-uvicorn
+groq
+motor
 openai
 pydantic
+pydantic-settings
 python-dotenv
-groq
+uvicorn

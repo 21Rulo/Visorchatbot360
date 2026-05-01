@@ -1,9 +1,19 @@
 import os
 from fastapi import FastAPI
+from contextlib import asynccontextmanager
 from fastapi.middleware.cors import CORSMiddleware
 from app.api.routes import router as api_router
+from app.models.database import connect_to_mongo, close_mongo_connection
 
 ENTORNO = os.getenv("ENTORNO", "desarrollo")
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Esto ocurre al iniciar la App
+    await connect_to_mongo()
+    yield
+    # Esto ocurre al apagar la App
+    await close_mongo_connection()
 
 app = FastAPI(
     title="Backend Chatbot 360",
