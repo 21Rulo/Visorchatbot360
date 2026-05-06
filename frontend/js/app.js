@@ -104,17 +104,29 @@ btnToggle.addEventListener('click', toggleChat);
 btnClose.addEventListener('click', toggleChat);
 
 // --- CONTADOR GLOBAL PARA IDs ÚNICOS DE MENSAJES ---
+let sessionId = null;
 let contadorMensajes = 0;
+
+function inicializarSesion() {
+    const datosGuardados = JSON.parse(localStorage.getItem('chat_session'));
+    if (datosGuardados && Date.now() < datosGuardados.expira) {
+        sessionId = datosGuardados.id;
+        console.log("Sesión recuperada:", sessionId);
+    } else {
+        // Si no hay datos o ya pasaron las 72 horas, limpiamos
+        localStorage.removeItem('chat_session');
+        sessionId = null;
+        console.log("Sesión nueva iniciada");
+    }
+}
 
 async function enviarMensaje() {
     const texto = inputChat.value.trim();
     if (!texto) return;
 
-    // Mostrar mensaje del usuario
     agregarMensajeUI(texto, 'usuario');
     inputChat.value = '';
 
-    // Mostrar "Escribiendo..."
     const idCarga = agregarMensajeUI('...', 'agente');
 
     try {
@@ -123,12 +135,25 @@ async function enviarMensaje() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 mensaje: texto,
-                contexto: window.contextoActual
+                contexto: window.contextoActual,
+                session_id: sessionId // <--- 1. Enviamos el ID actual (sea null o un string)
             })
         });
 
         const data = await response.json();
         
+        // 2. Guardamos el session_id que nos envía el backend
+        // Si el backend genera uno nuevo, lo guardamos para la próxima vuelta.
+        if (data.session_id && data.session_id !== sessionId) {
+            sessionId = data.session_id;
+            const sesionGuardar = {
+                id: sessionId,
+                expira: Date.now() + (72 * 60 * 60 * 1000) // 72 horas en milisegundos
+            };
+            localStorage.setItem('chat_session', JSON.stringify(sesionGuardar));
+        }
+        // -----------------------------------------------------
+
         // Reemplazar el "Escribiendo..." con la respuesta real
         const elementoCarga = document.getElementById(idCarga);
         if (elementoCarga) {

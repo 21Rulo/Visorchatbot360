@@ -1,54 +1,56 @@
 from groq import Groq
 from app.core.config import settings
 from app.agents.agente_guia import obtener_respuesta_guia
+from app.agents.agente_info import obtener_respuesta_info
+from app.memory.short_term import obtener_historial, agregar_mensaje
 
 client = Groq(api_key=settings.GROQ_API_KEY)
 
-def procesar_mensaje(mensaje: str, contexto_ubicacion: str) -> str:
+async def procesar_mensaje(
+    session_id: str,
+    mensaje: str, 
+    contexto_ubicacion: str
+) -> str:
     """
-    Este es el ORQUESTADOR.
-    Lee el mensaje del usuario, decide de qué tema trata y llama al agente correcto.
+    Orquestador: clasifica la intención y enruta al agente correcto.
+    Ahora maneja memoria de conversación por sesión.
     """
-    # 1. Prompt estricto para que la IA clasifique la intención
     system_prompt = """
     Eres el Orquestador del Chatbot del IPN. Tu único trabajo es clasificar la intención del usuario.
-    Responde ÚNICAMENTE con UNA de estas palabras clave:
-    - GUIA: Si el usuario saluda, platica, hace preguntas generales, o pregunta sobre lo que está viendo en su recorrido virtual.
-    - ACADEMICO: Si el usuario pregunta por carreras, inscripciones o plan de estudios.
-    - SERVICIOS: Si el usuario pregunta por becas, cafetería, deportes, etc.
+    Responde ÚNICAMENTE con UNA de estas palabras:
+    - GUIA: Saludos, conversación general, preguntas sobre lo que ve en el recorrido virtual.
+    - INFO: Preguntas sobre carreras, inscripciones, becas, servicios, trámites o cualquier 
+            información institucional del IPN.
     No agregues explicaciones, puntos ni comillas. Solo la palabra.
     """
 
+    historial = await obtener_historial(session_id)
+
     try:
-        # 2. Le preguntamos a Groq qué tipo de mensaje es
         response = client.chat.completions.create(
-            model=settings.MODELO_CHAT, # Usamos el modelo rápido para clasificar
+            model=settings.MODELO_CHAT,
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": mensaje}
             ],
-            temperature=0.0, # Temperatura 0 para que no sea creativo, solo analítico
+            temperature=0.0,
             max_tokens=10
         )
         
-        # Limpiamos la respuesta por si la IA agregó un espacio
         intencion = response.choices[0].message.content.strip().upper()
-        print(f"🧠 [ORQUESTADOR] Decidió que el mensaje es tipo: {intencion}")
+        print(f"🧠 [ORQUESTADOR] session={session_id} | intención={intencion}")
 
-        # 3. Enrutamos el mensaje según la intención detectada
-        if "ACADEMICO" in intencion:
-            # TODO: En el futuro aquí llamarás a "return obtener_respuesta_academica(mensaje)"
-            return "Aún estoy aprendiendo sobre la oferta académica del IPN. Por el momento solo puedo guiarte en este recorrido virtual."
-            
-        elif "SERVICIOS" in intencion:
-            # TODO: En el futuro llamarás al agente de servicios
-            return "Todavía no tengo la información sobre becas o trámites, ¡pero pronto la tendré!"
-            
+        if "INFO" in intencion:
+            respuesta = obtener_respuesta_info(mensaje, historial)
         else:
-            # Si dice "GUIA" o cualquier otra cosa, le pasamos la bolita al Agente Guía
-            return obtener_respuesta_guia(mensaje, contexto_ubicacion)
+            respuesta = obtener_respuesta_guia(mensaje, contexto_ubicacion, historial)
 
     except Exception as e:
         print(f"Error en Orquestador: {e}")
-        # Seguro de vida: Si el orquestador falla, mandamos todo al Guía para que el usuario no vea error
-        return obtener_respuesta_guia(mensaje, contexto_ubicacion)
+        respuesta = obtener_respuesta_guia(mensaje, contexto_ubicacion, historial)
+
+    # Guardamos el intercambio en memoria
+    await agregar_mensaje(session_id, "user", mensaje)
+    await agregar_mensaje(session_id, "assistant", respuesta)
+
+    return respuesta
