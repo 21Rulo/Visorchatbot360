@@ -47,8 +47,6 @@ async function cargarRecorrido(nombreLab) {
 }
 
 // --- CONTROLES DE VISOR ---
-// Registrados una sola vez, delegan en visorActual para evitar listeners duplicados
-
 document.getElementById('btn-zoom-in').addEventListener('click', () => {
     if (visorActual) visorActual.hacerZoom(-10); // Reducir FOV = Acercar
 });
@@ -106,10 +104,6 @@ btnToggle.addEventListener('click', toggleChat);
 btnClose.addEventListener('click', toggleChat);
 
 // --- CONTADOR GLOBAL PARA IDs ÚNICOS DE MENSAJES ---
-// Evita colisiones que ocurren cuando dos mensajes se crean
-// en el mismo milisegundo (Date.now() devolvía el mismo valor
-// para el mensaje del usuario y el "...", haciendo que getElementById
-// encontrara el elemento equivocado y sobreescribiera el mensaje del usuario).
 let contadorMensajes = 0;
 
 async function enviarMensaje() {

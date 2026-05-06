@@ -12,7 +12,7 @@ function gradosACoordenadas(pitch, yaw, radio) {
     return new THREE.Vector3(x, y, z);
 }
 
-// --- FLECHAS DE BORDE (CSS puro, sin imagen) ---
+// --- FLECHAS DE BORDE ---
 function crearFlechaBorde() {
     const el = document.createElement('div');
     el.style.cssText = `
@@ -79,8 +79,8 @@ export function iniciarVisor(mapa) {
     const controles = new OrbitControls(camara, renderizador.domElement);
     controles.enableZoom = false;
     controles.enablePan = false;
-    controles.rotateSpeed = 0.4;   // Menor = más lento
-    controles.enableDamping = true; // Inercia al soltar
+    controles.rotateSpeed = 0.4;
+    controles.enableDamping = true;
     controles.dampingFactor = 0.05;
 
     const geometria = new THREE.SphereGeometry(500, 60, 40);
@@ -156,7 +156,6 @@ export function iniciarVisor(mapa) {
             const yawLlegada = hotspotTocado.userData.yaw_llegada ?? 0;
 
             // --- LÓGICA PARA MÓVILES ---
-            // Si es el mismo que ya tocamos (segundo toque) o si estamos en PC (mousemove ya mostró el tooltip)
             if (ultimoHotspotTocado === hotspotTocado || window.innerWidth > 1024) {
                 tooltipUI.classList.add('oculto');
                 cargarNodo(idDestino, yawLlegada);
@@ -166,7 +165,7 @@ export function iniciarVisor(mapa) {
                 ultimoHotspotTocado = hotspotTocado;
                 tooltipUI.innerText = hotspotTocado.userData.texto;
                 tooltipUI.style.left = `${event.clientX}px`;
-                tooltipUI.style.top = `${event.clientY - 40}px`; // Un poco más arriba para que el dedo no lo tape
+                tooltipUI.style.top = `${event.clientY - 40}px`;
                 tooltipUI.classList.remove('oculto');
                 
                 // Si el usuario toca otra parte de la pantalla, se limpia el rastro
@@ -301,7 +300,6 @@ export function iniciarVisor(mapa) {
         });
 
         // --- INDICADORES DE BORDE ---
-        // Si el menú de inicio está visible, ocultamos las flechas y no las procesamos
         const menuInicio = document.getElementById('menu-inicio');
         const menuVisible = menuInicio && menuInicio.style.display !== 'none';
 
