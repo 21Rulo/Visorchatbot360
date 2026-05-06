@@ -12,6 +12,7 @@ services:
     environment:
       - GROQ_API_KEY=${GROQ_API_KEY}
       - MODELO_CHAT=llama-3.3-70b-versatile
+      - MONGO_URI=${MONGO_URI}
       #- ENTORNO=produccion
     volumes:
       - ../backend/app:/app
