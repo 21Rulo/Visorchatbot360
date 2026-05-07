@@ -119,6 +119,7 @@ function inicializarSesion() {
         console.log("Sesión nueva iniciada");
     }
 }
+inicializarSesion();
 
 async function enviarMensaje() {
     const texto = inputChat.value.trim();
@@ -144,11 +145,11 @@ async function enviarMensaje() {
         
         // 2. Guardamos el session_id que nos envía el backend
         // Si el backend genera uno nuevo, lo guardamos para la próxima vuelta.
-        if (data.session_id && data.session_id !== sessionId) {
-            sessionId = data.session_id;
+        if (data.session_id) {
+            sessionId = data.session_id; // Actualiza la variable
             const sesionGuardar = {
                 id: sessionId,
-                expira: Date.now() + (72 * 60 * 60 * 1000) // 72 horas en milisegundos
+                expira: Date.now() + (72 * 60 * 60 * 1000) // Renueva las 72h
             };
             localStorage.setItem('chat_session', JSON.stringify(sesionGuardar));
         }

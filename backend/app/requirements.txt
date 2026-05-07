@@ -1,9 +1,12 @@
+chromadb==0.4.24
 dnspython
 fastapi
 groq
+langchain==0.1.13
 motor
 openai
 pydantic
 pydantic-settings
 python-dotenv
+sentence-transformers==2.5.1
 uvicorn

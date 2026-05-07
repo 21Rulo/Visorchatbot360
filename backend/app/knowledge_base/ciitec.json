@@ -1,0 +1,196 @@
+{
+  "institucion": {
+    "nombre": "Centro de Investigación e Innovación Tecnológica",
+    "siglas": "ciitec",
+    "descripcion": "El Centro de Investigación e Innovación Tecnológica (CIITEC) del Instituto Politécnico Nacional es una unidad creada en 1997 dedicada a impulsar la innovación y el desarrollo tecnológico con impacto académico, científico y social. Su labor integra investigación de alto nivel, formación de especialistas a través de posgrados en Tecnología Avanzada y una fuerte vinculación con sectores productivos y de servicios. El CIITEC se distingue por la calidad de sus laboratorios y servicios tecnológicos, respaldados por acreditaciones como la ISO 17025 y por un sistema institucional de gestión de calidad. Con una visión de mejora continua e internacionalización, el centro contribuye al avance del conocimiento, al fortalecimiento del posgrado del IPN y a la solución de problemas tecnológicos relevantes para la sociedad y la industria.",
+    "mision": "Formar recursos humanos con capacidad creativa e innovadora a través de programas académicos de posgrado pertinentes, basados en la generación del conocimiento científico, el desarrollo tecnológico y la vinculación con el sector productivo y de servicios, con responsabilidad e impacto social.",
+    "vision": "Ser un Centro de referencia en la formación de recursos humanos con capacidad creativa, basado en la innovación tecnológica y la sostenibilidad, que impacte en el sector productivo y de servicios a través de la generación de conocimiento en ingeniería y tecnología de materiales y sistemas ciberfísicos; inmerso en la cuarta revolución industrial.",
+    "url": "https://www.ciitec.ipn.mx/",
+    "fechaCreacion": "Agosto de 1997",
+    "ubicacion": "Cda. de Cecati s/n, Santa Catarina, Azcapotzalco, 02250 Ciudad de México, CDMX",
+    "historia": "El Centro de Investigación e Innovación Tecnológica (CIITEC) del Instituto Politécnico Nacional (IPN), fue fundado en el mes de agosto de 1997 para atender a las necesidades del sector productivo y de servicios en materia de innovación tecnológica. Las actividades del CIITEC se fundamentan en los aspectos académicos, científicos y tecnológicos, los cuales permiten el desarrollo de líneas de investigación que contribuyen a la generación de conocimiento de frontera. Dentro de las funciones principales del centro, se encuentra la formación de recursos humanos con capacidad creativa e innovadora a través de los Programas de Posgrado en Tecnología Avanzada (Maestría y Doctorado), basado en el conocimiento científico, el desarrollo tecnológico y la vinculación con los sectores productivos y de servicios, con responsabilidad e impacto social. Desde su creación, el CIITEC ha incursionado en el área de servicios tecnológicos y proyectos vinculados, motivo por el cual, fue el primer centro de investigación del IPN en obtener la acreditación en la norma ISO 17025 para algunos de sus laboratorios, lo que nos ha posicionado como un centro de calidad y excelencia.",
+    "titular": "Dr. Ricardo Rafael Ambriz Rojas"
+  },
+  "programasAcademicos": [
+    {
+      "nombre": "Maestría en Tecnología Avanzada (MTA)",
+      "descripcion": "Programa de posgrado del CIITEC orientado a formar recursos humanos de alto nivel mediante investigación, desarrollo tecnológico e innovación en un entorno multidisciplinario, con enfoque en resolver problemas científicos y tecnológicos vinculados al sector productivo y social.",
+      "duracion": 2,
+      "modalidad": "Escolarizada"
+    },
+    {
+      "nombre": "Doctorado en Tecnología Avanzada (DTA)",
+      "descripcion": "Programa doctoral del CIITEC enfocado en formar investigadores líderes capaces de generar conocimiento de frontera, innovación tecnológica y soluciones científicas de alto impacto en áreas de ingeniería y tecnología avanzada.",
+      "duracion": 4,
+      "modalidad": "Escolarizada"
+    }
+  ],
+  "departamentos": [],
+  "nodo_inicial": "entrada_lmdpf",
+  "nodos": {
+    "entrada_lmdpf": {
+      "titulo": "Entrada",
+      "yaw_inicio": 90,
+      "imagen_url": "/assets/CIITEC/1.jpg",
+      "contexto_ia": "Panorámica exterior de acceso principal al CIITEC. La cámara está bajo una techumbre/arcada de vidrio y estructura metálica que cubre la entrada. Al frente se observa el edificio principal de fachada baja y moderna, con un vestíbulo de vidrio en forma de pirámide truncada y puertas al fondo; hay rampa y guarniciones amarillas, además de señal de accesibilidad (símbolo de silla de ruedas) en el piso. A la izquierda se ve la reja y portón rojo del perímetro, un andador de loseta, jardineras con setos recortados y árboles; pasa una persona por ese lado. A la derecha aparece una caseta o módulo de vigilancia con el escudo del IPN y un guardia, junto a un pasillo techado hacia estacionamiento con autos. También se distinguen botes de basura de colores y áreas verdes. Es un día soleado con cielo despejado; esta escena funciona como punto de llegada y control de acceso antes de ingresar al centro.",
+      "equipos_destacados": [],
+      "hotspots": [
+        { "destino": "lobby_lmdpf", "texto": "Lobby", "pitch": 0, "yaw": -90, "yaw_llegada": 90 }
+      ]
+    },
+    "lobby_lmdpf": {
+      "titulo": "Lobby",
+      "imagen_url": "/assets/CIITEC/2.jpg",
+      "contexto_ia": "Panorámica en el acceso interior del CIITEC, bajo una gran techumbre curva de vidrio con estructura metálica; el sol se ve al centro del domo. Frente a la cámara hay un vestíbulo de muros blancos con una franja gris, que en el centro tiene un pasillo/entrada hacia el interior del edificio (se alcanza a ver un salón o lobby al fondo). En el muro izquierdo se observan placas y cuadros institucionales, incluyendo textos de “Visión” y “Misión”, además de varios avisos enmarcados. A ambos lados del vestíbulo hay puertas de vidrio abiertas: a la izquierda conectan con el andador exterior donde se ven barandales/reja roja; a la derecha conectan con otro pasillo techado. En el área de entrada hay macetas rectangulares con plantas bajas y varios pendones/roll-ups de bienvenida y difusión de un evento académico (9° Coloquio Estudiantil Multidisciplinario), junto con un cartel morado informativo. El piso es de loseta gris con una franja amarilla-beige que guía el paso hacia el acceso central.",
+      "equipos_destacados": [],
+      "hotspots": [
+        { "destino": "pasillo_principal", "texto": "Pasillo Principal", "pitch": 0, "yaw": -80, "yaw_llegada": 90 },
+        { "destino": "entrada_lmdpf", "texto": "Salida", "pitch": 0, "yaw": 95, "yaw_llegada": -90 }
+      ]
+    },
+    "pasillo_principal": {
+      "titulo": "Pasillo Principal",
+      "imagen_url": "/assets/CIITEC/3.jpg",
+      "contexto_ia": "Panorámica dentro del vestíbulo/pasillo principal del CIITEC. El espacio es amplio, con techo blanco curvo y luces lineales, tipo túnel cubierto. Al centro hay una zona elevada con piso oscuro que funciona como rampa/plataforma de acceso; tiene franjas de precaución amarillo-negro en el borde y un símbolo de accesibilidad (silla de ruedas) pintado en azul, indicando paso preferente para personas con discapacidad. Al fondo se ve una puerta/entrada central que conduce a un corredor interior iluminado. A los lados del vestíbulo hay barandales bajos que delimitan la plataforma y conectan con pasillos laterales. En el lado izquierdo hay un muro con un directorio/plano institucional y un extintor; cerca de la salida lateral se observan macetas rectangulares con plantas y una puerta de vidrio hacia el exterior. En el lado derecho hay una fila de bancas verdes de espera, una pantalla/televisor montado en la pared, un pequeño módulo/repisa informativa y más macetas; también se ve una puerta de vidrio hacia el exterior. En ambos costados se distinguen pendones y material de difusión académica. La escena corresponde a la zona de circulación interna y punto de transición entre el acceso y el interior del edificio.",
+      "equipos_destacados": [],
+      "hotspots": [
+        { "destino": "pasillo_antesala", "texto": "Antesala/Recepción", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "lobby_lmdpf", "texto": "Salida", "pitch": 0, "yaw": 100, "yaw_llegada": -90 }
+      ]
+    },
+    "pasillo_antesala": {
+      "titulo": "Pasillo",
+      "imagen_url": "/assets/CIITEC/4.jpg",
+      "contexto_ia": "Panorámica de la explanada/atrium central interior del CIITEC. El espacio está cubierto por una gran estructura de techo alto con arcos y celosía metálica negra y paneles traslúcidos, dejando entrar mucha luz natural. Al centro se encuentra la fachada del edificio principal con muros blancos y grises y una entrada amplia que conduce a un pasillo interno iluminado; frente a esa entrada hay sillas de espera. A la izquierda y derecha se extienden alas laterales de un nivel con ventanales y áreas tipo oficinas/servicios, separadas por muros bajos que delimitan el paso hacia la explanada. El piso de la zona central es de loseta oscura amplia, con líneas de precaución amarillas y señalética de accesibilidad en el suelo. En el costado derecho hay plantas en macetas y varios pendones/lonas grandes de difusión institucional y de posgrado/eventos académicos. Esta escena funciona como patio techado de distribución: conecta las salidas laterales y el acceso principal hacia el interior del centro.",
+      "equipos_destacados": [],
+      "hotspots": [
+        { "destino": "pasillo_labs", "texto": "Pasillo Laboratorios", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "pasillo_principal", "texto": "Salida", "pitch": 0, "yaw": 100, "yaw_llegada": -90 }
+      ]
+    },
+    "pasillo_labs": {
+      "titulo": "Pasillo",
+      "imagen_url": "/assets/CIITEC/5.jpg",
+      "contexto_ia": "Panorámica de un pasillo interior del CIITEC, de muros blancos y piso de loseta clara brillante, con techo curvo alto y varias luminarias circulares empotradas. Al centro se extiende un corredor largo y recto con puertas a ambos lados y macetas rectangulares con plantas bajas; al fondo se ve una zona más iluminada que conecta con otra área del edificio. A la izquierda hay una puerta de vidrio con letrero vertical de “Unidad de Informática”, junto a tres sillas verdes de espera y un pequeño bote de basura. A la derecha se observa la entrada a sanitarios (señal de baño en la pared), una fila de sillas negras de espera, un extintor y señalética de seguridad. En ambos extremos laterales del panorama se abren accesos hacia la explanada techada exterior del centro. Esta escena corresponde a un corredor administrativo/servicios que distribuye a oficinas internas y áreas de apoyo.",
+      "equipos_destacados": [],
+      "hotspots": [
+        { "destino": "pasillo_labs2", "texto": "Pasillo Laboratorios", "pitch": 0, "yaw": -90, "yaw_llegada": 45 },
+        { "destino": "pasillo_antesala", "texto": "Salida", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
+      ]
+    },
+    "pasillo_labs2": {
+      "titulo": "Pasillo",
+      "imagen_url": "/assets/CIITEC/7.jpg",
+      "contexto_ia": "Panorámica de un corredor interior del CIITEC en la zona de laboratorios de servicio. El pasillo es amplio, con techo blanco abovedado y perforaciones circulares de iluminación/ventilación, y piso de loseta clara brillante. A la izquierda se ve la entrada al “Laboratorio de Caracterización Estructural”, señalizada con un letrero vertical; frente a esa puerta hay un mueble vitrina bajo y, más atrás, equipo fijo naranja en la pared y señalética de seguridad. Al centro del pasillo hay un módulo rojo/ventanilla de atención o control, una báscula/plataforma y un acceso tipo portón metálico blanco que conduce a un área de servicio o salida posterior. A la derecha está la entrada al “Laboratorio de Metrología Dimensional y Pruebas Físicas”, también marcada con letrero vertical; cerca de esta zona hay tambores/recipientes industriales (amarillos y rojos), señales de precaución y una flecha verde de ruta. A lo largo de las paredes hay jardineras bajas con plantas. La escena funciona como punto de distribución entre laboratorios especializados y áreas de apoyo/logística.",
+      "equipos_destacados": [],
+      "hotspots": [
+        { "destino": "lab1", "texto": "Entrada Laboratorio", "pitch": 0, "yaw": -45, "yaw_llegada": 90 },
+        { "destino": "pasillo_labs", "texto": "Salida", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
+      ]
+    },
+    "lab1": {
+      "titulo": "Laboratorio de Metrología Dimensional y Pruebas Físicas",
+      "imagen_url": "/assets/CIITEC/8.jpg",
+      "contexto_ia": "Panorámica interior de un laboratorio del CIITEC con áreas de trabajo y medición. El espacio es amplio, de muros claros y piso de loseta gris, iluminado por plafones rectangulares de luz blanca en el techo. En primer plano, a la izquierda, hay un módulo/mesa de recepción con cubierta metálica y papelería, frascos y herramientas; detrás se ve una oficina o cubículo con ventanal de vidrio, estanterías y equipo de trabajo donde está una persona. En la pared izquierda hay un pizarrón grande con tablas/registro de actividades. Al centro y al fondo se observan equipos de laboratorio para pruebas físicas o mecánicas: mesas de ensayo, racks verdes con materiales, máquinas tipo prensa o banco de pruebas y zonas delimitadas con líneas amarillas de seguridad en el piso. A la derecha hay un arco abierto que comunica con otra sala de laboratorio con mesas azules e instrumentos. En el muro derecho se ven señalética de seguridad, botiquín, extintor y una puerta abierta hacia el pasillo. La escena corresponde a un laboratorio operativo donde se realizan ensayos, mediciones y trabajo técnico especializado.",
+      "equipos_destacados": [],
+      "hotspots": [
+        { "destino": "lab1_frente_derecho", "texto": "Primera Sección", "pitch": -5, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "lab2_izquierda_frente", "texto": "Segunda Sección", "pitch": 0, "yaw": -45, "yaw_llegada": 90 },
+        { "destino": "pasillo_labs2", "texto": "Salida", "pitch": 0, "yaw": 70, "yaw_llegada": -90 }
+      ]
+    },
+    "lab1_frente_derecho": {
+      "titulo": "Laboratorio de Metrología Dimensional y Pruebas Físicas",
+      "imagen_url": "/assets/CIITEC/9.jpg",
+      "contexto_ia": "Panorámica de un laboratorio Laboratorio de Metrología Dimensional y Pruebas Físicas del CIITEC. El cuarto es amplio, con muros claros, piso de loseta gris y señalización amarilla en el suelo que delimita áreas de trabajo y seguridad alrededor de los equipos. En primer plano se observa una mesa metálica curvada con tapete de corte verde y herramientas pequeñas. Al lado izquierdo hay un módulo de trabajo/recepción con cubierta de acero, cajoneras azules, frascos, papelería e instrumentos; detrás se ve una oficina o cubículo con ventanal y estanterías. En la zona central y al fondo hay equipo para ensayos y medición mecánica: racks metálicos verdes con materiales y herramientas, máquinas de prueba y una máquina grande tipo prensa/universal de ensayos con columnas verticales. A la derecha se encuentra una estación de cómputo con escritorio, monitor, impresoras/equipos electrónicos y una silla de trabajo; en el muro derecho hay extintor y señalética. También se aprecia un arco abierto que comunica con otra sala de laboratorio con mesas e instrumentos, y una puerta hacia el pasillo. La escena representa el área principal de trabajo técnico donde se realizan pruebas físicas, mediciones y preparación de muestras.",
+      "equipos_destacados": [],
+      "hotspots": [
+        { "destino": "lab1_detras_derecho", "texto": "Frente", "pitch": -10, "yaw": 270, "yaw_llegada": 0 },
+        { "destino": "lab1_frente_izquierda", "texto": "Izquierda", "pitch": 0, "yaw": 180, "yaw_llegada": 0 },
+        { "destino": "lab1", "texto": "Atras", "pitch": -10, "yaw": 90, "yaw_llegada": -90 },
+        { "destino": "lab2_izquierda_frente", "texto": "Segunda Sección", "pitch": 0, "yaw": 0, "yaw_llegada": 90 }
+      ]
+    },
+    "lab1_frente_izquierda": {
+      "titulo": "Laboratorio de Metrología Dimensional y Pruebas Físicas",
+      "imagen_url": "/assets/CIITEC/10.jpg",
+      "contexto_ia": "Estás dentro de un laboratorio de pruebas y caracterización de materiales. El espacio es amplio, con paredes blancas, piso de loseta clara y luminarias fluorescentes en el techo; entra luz natural por ventanales largos con persianas verticales del lado derecho. En primer plano a la izquierda hay un equipo grande protegido por una jaula metálica de seguridad, delimitado con líneas amarillas en el piso. Al centro se ve una columna estructural y, junto a ella, un gabinete/locker metálico alto con algunos recipientes encima. Hacia la derecha hay estanterías verdes con piezas y muestras metálicas organizadas, además de varias mesas de trabajo. En primer plano derecho destaca una máquina industrial robusta de tipo prensa o equipo de ensayo mecánico, también marcada con señalización amarilla de seguridad. Al fondo se observan más instrumentos de medición y prueba sobre bancos, cables y accesorios, dando la impresión de un área destinada a ensayos físicos, mediciones dimensionales y preparación de muestras.",
+      "equipos_destacados": [],
+      "hotspots": [
+        { "destino": "lab1_detras_izquierda", "texto": "Frente", "pitch": 0, "yaw": 0, "yaw_llegada": 0 },
+        { "destino": "lab1_frente_derecho", "texto": "Primera Sección", "pitch": 0, "yaw": 90, "yaw_llegada": 0 }
+      ]
+    },
+    "lab1_detras_izquierda": {
+      "titulo": "Laboratorio de Metrología Dimensional y Pruebas Físicas",
+      "imagen_url": "/assets/CIITEC/11.jpg",
+      "contexto_ia": "Estás dentro de un laboratorio de pruebas físicas y caracterización de materiales del CIITEC. El espacio es amplio y limpio, con paredes blancas, piso de loseta clara y luminarias fluorescentes; entra luz natural por ventanales largos con persianas verticales. En el área izquierda se aprecia un equipo grande resguardado por una jaula metálica de seguridad y delimitado con líneas amarillas en el piso. Al centro hay una columna estructural y un gabinete metálico alto con recipientes encima. A la derecha se observan estanterías verdes con muestras y piezas metálicas organizadas, varias mesas de trabajo y bancos con instrumentos. En primer plano derecho destaca una máquina industrial robusta tipo prensa/equipo de ensayo mecánico, también señalizada con marcas amarillas. Al fondo se ven más equipos de medición, cables y accesorios, confirmando que es un área destinada a ensayos mecánicos, mediciones dimensionales y preparación de muestras.",
+      "equipos_destacados": [],
+      "hotspots": [
+        { "destino": "lab1_detras_derecho", "texto": "Izquierda", "pitch": 0, "yaw": -90, "yaw_llegada": 0 },
+        { "destino": "lab1_frente_izquierda", "texto": "Regresar", "pitch": 0, "yaw": 0, "yaw_llegada": 180 }
+      ]
+    },
+    "lab1_detras_derecho": {
+      "titulo": "Laboratorio de Metrología Dimensional y Pruebas Físicas",
+      "imagen_url": "/assets/CIITEC/12.jpg",
+      "contexto_ia": "Es un espacio amplio, con paredes claras, piso de loseta y luminarias fluorescentes; hay ventanas laterales con persianas verticales y señalización de seguridad. A la derecha domina una máquina universal de ensayos MTS de gran tamaño (marco de carga con platos/cabezales), usada para pruebas de tensión/compresión u otras pruebas mecánicas en materiales. Frente a ella hay una mesa de trabajo con herramientas e instrumentos pequeños para preparación y medición de probetas. En la zona central se ven mesas metálicas para manipular muestras y una estación de cómputo/instrumentación sobre mesa azul, además de anaqueles verdes con equipo auxiliar. A la izquierda está el área de escritorio del operador con computadora, documentos y silla, y un gabinete alto para resguardo. Al fondo se aprecia la entrada/pasillo del laboratorio con extintor y acceso a otras áreas.",
+      "equipos_destacados": [],
+      "hotspots": [
+        { "destino": "lab1_frente_derecho", "texto": "Regresar", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "lab1_detras_izquierda", "texto": "Frente", "pitch": 0, "yaw": 0, "yaw_llegada": 0 }
+      ]
+    },
+    "lab2_izquierda_frente": {
+      "titulo": "Laboratorio de Metrología Dimensional y Pruebas Físicas",
+      "imagen_url": "/assets/CIITEC/14.jpg",
+      "contexto_ia": "Es un espacio amplio y bien iluminado, con techo modular y lámparas fluorescentes, piso de loseta y líneas amarillas que delimitan áreas de seguridad. A la izquierda hay un equipo vertical de ensayos mecánicos de menor tamaño (tipo banco de tensión/compresión) con su base de control, junto a una pequeña mesa con laptop para operación. En el centro se observa una mesa grande azul para trabajo y manipulación de muestras, con sillas alrededor. Al fondo hay bancadas largas con varios instrumentos de medición y preparación de probetas, gabinetes de almacenamiento y una ventana. A la derecha del centro se ve equipo de pruebas/medición adicional sobre mesas y soportes. En primer plano derecho hay una pantalla/monitor grande frente a un pizarrón con anotaciones técnicas, indicando uso para explicación de resultados o capacitación. Hacia el extremo derecho se aprecia la entrada a un área contigua con más mesas de laboratorio",
+      "equipos_destacados": [],
+      "hotspots": [
+        { "destino": "lab1", "texto": "Salir", "pitch": 0, "yaw": 90, "yaw_llegada": 90 },
+        { "destino": "lab2_izquierda_detras", "texto": "Izquierda", "pitch": 0, "yaw": 180, "yaw_llegada": 90 },
+        { "destino": "lab2_centro", "texto": "Centro", "pitch": -15, "yaw": -120, "yaw_llegada": 45 },
+        { "destino": "lab2_derecha_frente", "texto": "Derecha", "pitch": 0, "yaw": -90, "yaw_llegada": 0 }
+      ]
+    },
+    "lab2_izquierda_detras": {
+      "titulo": "Laboratorio de Metrología Dimensional y Pruebas Físicas",
+      "imagen_url": "/assets/CIITEC/15.jpg",
+      "contexto_ia": "El área es amplia, ordenada y bien iluminada con techo modular y lámparas fluorescentes; piso de loseta claro con líneas amarillas que marcan zonas de trabajo/seguridad. A la izquierda hay un fregadero y mesa para limpieza/preparación de muestras, con recipientes e insumos, y gabinetes superiores azules con vidrio y material de laboratorio. Cerca de esa zona se observa un equipo vertical de medición/ensayo con columna y base de control. Al fondo hay una bancada larga con varios instrumentos de medición y preparación de probetas, además de una ventana que aporta luz natural. En el centro destaca una mesa grande azul para manipulación y montaje de muestras, con sillas alrededor y un soporte/trípode para accesorios de prueba. A la derecha se ve un pizarrón/área de registro y un monitor para visualización de resultados, junto a una puerta hacia un espacio contiguo. En primer plano derecho hay una mesa curva con un sistema de medición o ensayo de precisión (instrumentación electrónica, base y columna) y otros módulos de control, indicando el uso del área para caracterización y pruebas específicas de materiales.",
+      "equipos_destacados": [],
+      "hotspots": [
+        { "destino": "lab2_derecha_detras", "texto": "Avanzar", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "lab2_izquierda_frente", "texto": "Atrás", "pitch": 0, "yaw": 0, "yaw_llegada": 90 }
+      ]
+    },
+    "lab2_derecha_detras": {
+      "titulo": "Laboratorio de Metrología Dimensional y Pruebas Físicas",
+      "imagen_url": "/assets/CIITEC/16.jpg",
+      "contexto_ia": "El espacio es claro y ordenado, con piso de loseta, techo modular y luminarias fluorescentes; ventanas laterales aportan luz natural. Líneas amarillas en el piso delimitan ruta de circulación y zonas de trabajo/seguridad. A la izquierda hay una bancada curva metálica con varios instrumentos de medición y caracterización (balanzas, equipos de inspección óptica/microscopios y módulos electrónicos), usada para análisis detallado de muestras. Cerca del centro se encuentra una mesa grande azul para manipulación y preparación de probetas, con sillas/bancos alrededor y soportes para montaje. Al fondo se observan equipos de prueba más voluminosos y estructuras de ensayo, además de acceso a otra área del laboratorio. A la derecha hay varias mesas negras con instrumentos adicionales de medición/ensayo de precisión, herramientas y accesorios para preparación de muestras, junto a gabinetes superiores azules para resguardo de material. En conjunto, esta zona se usa para preparar, medir y evaluar propiedades físicas y mecánicas de materiales antes o después de los ensayos principales.",
+      "equipos_destacados": [],
+      "hotspots": [
+        { "destino": "lab2_derecha_frente", "texto": "Avanzar", "pitch": 0, "yaw": -90, "yaw_llegada": 180 },
+        { "destino": "lab2_izquierda_detras", "texto": "Atrás", "pitch": 0, "yaw": 0, "yaw_llegada": -90 }
+      ]
+    },
+    "lab2_derecha_frente": {
+      "titulo": "Laboratorio de Metrología Dimensional y Pruebas Físicas",
+      "imagen_url": "/assets/CIITEC/17.jpg",
+      "contexto_ia": "Es un espacio amplio, con piso de loseta clara, techo modular con luminarias fluorescentes y señalización de seguridad en el piso (líneas amarillas para circulación y áreas de trabajo). En el centro hay una mesa grande azul para manipulación y preparación de muestras, con sillas alrededor. A la izquierda se observa una estación curva con instrumentación de medición y un equipo vertical de ensayo/medición con dial y pesas (usado para pruebas físicas de materiales), además de bancos auxiliares. En la parte izquierda-media, dentro de un área parcialmente separada, destaca una estructura mecánica roja con un gran disco/rueda y bastidores, utilizada para ensayos especiales de materiales (p. ej., fatiga, desgaste o pruebas dinámicas). Al fondo y hacia la derecha hay varias bancadas con instrumentos de laboratorio y preparación de probetas, gabinetes superiores azules y ventanas que aportan luz natural. En el lado derecho se encuentra un equipo grande automatizado de caracterización/ensayo de materiales (tipo durómetro/medidor de dureza con sistema óptico) y otra estación de medición en mesa curva con módulos electrónicos. En las paredes hay carteles técnicos y mapas, y se ve el acceso a pasillos/otras áreas del laboratorio.",
+      "equipos_destacados": [],
+      "hotspots": [
+        { "destino": "lab2_izquierda_frente", "texto": "Avanzar", "pitch": 0, "yaw": -90, "yaw_llegada": -90 },
+        { "destino": "lab2_derecha_detras", "texto": "Atrás", "pitch": 0, "yaw": 0, "yaw_llegada": 0 }
+      ]
+    },
+    "lab2_centro": {
+      "titulo": "Laboratorio de Metrología Dimensional y Pruebas Físicas",
+      "imagen_url": "/assets/CIITEC/Centro2.jpg",
+      "contexto_ia": "sección principal del laboratorio de metrología/pruebas físicas del CIITEC, con ambiente amplio, limpio y bien iluminado (techo modular con lámparas fluorescentes, piso de loseta clara). En primer plano se aprecia una mesa grande azul usada para preparación y manipulación de muestras. En el lado izquierdo hay una pantalla/monitor grande frente a un pizarrón, y una puerta que comunica con un área contigua de laboratorio. Cerca de esa zona se ve un equipo vertical de ensayo o medición con dos columnas y base de control, junto a una estación de trabajo del operador con computadora e instrumentación. A lo largo de la pared central hay gabinetes superiores azules, mesas pequeñas y una tarja/zona de limpieza con insumos. En el lado derecho se encuentra una bancada curva de acero con varios instrumentos de caracterización y medición de materiales (equipos ópticos/medidores de dureza y módulos electrónicos), además de un equipo automatizado de prueba más grande. En el extremo derecho destaca una estructura mecánica roja con gran disco/rueda y bastidores para ensayos especiales (dinámicos, desgaste o fatiga), junto a estantería/cajas de resguardo. Las líneas amarillas en el piso delimitan rutas de circulación y áreas de seguridad.",
+      "equipos_destacados": [],
+      "hotspots": [
+        { "destino": "lab2_izquierda_frente", "texto": "Atrás", "pitch": 0, "yaw": 135, "yaw_llegada": -45 }
+      ]
+    }
+  }
+}

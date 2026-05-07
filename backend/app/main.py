@@ -19,7 +19,8 @@ app = FastAPI(
     title="Backend Chatbot 360",
     docs_url=None if ENTORNO == "produccion" else "/docs",
     redoc_url=None if ENTORNO == "produccion" else "/redoc",
-    openapi_url=None if ENTORNO == "produccion" else "/openapi.json"
+    openapi_url=None if ENTORNO == "produccion" else "/openapi.json",
+    lifespan=lifespan
 )
 
 origenes_permitidos = [

@@ -1,6 +1,18 @@
 version: '3.9'
 
 services:
+
+  mongodb:
+    image: mongo:6.0
+    container_name: visor360-db
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - visor360-network
+
   # ===== BACKEND =====
   backend:
     build:
@@ -16,6 +28,8 @@ services:
       #- ENTORNO=produccion
     volumes:
       - ../backend/app:/app
+    depends_on:
+      - mongodb
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/"]
@@ -45,6 +59,9 @@ services:
       start_period: 5s
     networks:
       - visor360-network
+
+volumes:
+  mongo_data:
 
 networks:
   visor360-network:
