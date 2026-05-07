@@ -93,6 +93,23 @@ case "${1}" in
         print_header "Accediendo a frontend"
         $DOCKER_COMPOSE exec frontend sh
         ;;
+    
+    bash-worker)
+        print_header "Accediendo a worker"
+        $DOCKER_COMPOSE exec worker bash
+        ;;
+
+    ingestar-todo)
+        print_header "Iniciando ingesta completa en el Worker..."
+
+        echo -e "${YELLOW}1/2 Procesando JSONs base...${NC}"
+        $DOCKER_COMPOSE exec worker python /app/scripts/ingesta.py
+
+        echo -e "${YELLOW}2/2 Procesando PDFs...${NC}"
+        $DOCKER_COMPOSE exec worker python /app/data_ingestion/pdf_processor.py
+
+        print_success "Ingesta finalizada"
+        ;;
 
     build)
         print_header "Construyendo imágenes..."
@@ -156,6 +173,8 @@ case "${1}" in
         echo "  ${GREEN}logs${NC}            - Ver logs (ej: logs backend)"
         echo "  ${GREEN}logs-backend${NC}    - Ver logs del backend"
         echo "  ${GREEN}logs-frontend${NC}   - Ver logs del frontend"
+        echo "  ${GREEN}bash-worker${NC}     - Acceder a shell del worker"
+        echo "  ${GREEN}ingestar-todo${NC}   - Ejecutar ingesta completa"
         echo "  ${GREEN}bash-backend${NC}    - Acceder a shell del backend"
         echo "  ${GREEN}bash-frontend${NC}   - Acceder a shell del frontend"
         echo "  ${GREEN}build${NC}           - Construir imágenes"

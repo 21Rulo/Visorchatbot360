@@ -25,9 +25,12 @@ services:
       - GROQ_API_KEY=${GROQ_API_KEY}
       - MODELO_CHAT=llama-3.3-70b-versatile
       - MONGO_URI=${MONGO_URI}
+      - HF_HOME=/home/appuser/.cache/huggingface
       #- ENTORNO=produccion
     volumes:
       - ../backend/app:/app
+      - chroma_data:/home/appuser/chroma_data
+      - hf_cache:/home/appuser/.cache/huggingface
     depends_on:
       - mongodb
     restart: unless-stopped
@@ -40,7 +43,26 @@ services:
     networks:
       - visor360-network
 
-  # ===== FRONTEND =====
+  # ===== WORKER (Tractor de Ingesta) =====
+  worker:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile_Worker
+    container_name: visor360-worker
+    environment:
+      - MONGO_URI=${MONGO_URI}
+      # Apunta al mismo caché de HuggingFace para no descargar el modelo dos veces
+      - HF_HOME=/home/appuser/.cache/huggingface
+    volumes:
+      - ../backend/app:/app
+      # Comparte la misma base de datos vectorial que el backend
+      - chroma_data:/home/appuser/chroma_data
+      - hf_cache:/home/appuser/.cache/huggingface
+    depends_on:
+      - mongodb
+    restart: unless-stopped
+    networks:
+      - visor360-network
   frontend:
     build:
       context: ..
@@ -62,6 +84,8 @@ services:
 
 volumes:
   mongo_data:
+  chroma_data:
+  hf_cache:
 
 networks:
   visor360-network:

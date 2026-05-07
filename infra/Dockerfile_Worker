@@ -1,47 +1,39 @@
-# ===== BUILDER STAGE (Compilación) =====
+# ===== BUILDER STAGE =====
 FROM python:3.11-slim as builder
 
 WORKDIR /build
 
-# Copiar requirements
+# Copiamos ambos archivos de requerimientos
 COPY backend/app/requirements.txt .
+COPY backend/app/requirements_worker.txt .
 
+# Instalamos torch en versión CPU para que los embeddings funcionen
 RUN pip install --user --no-cache-dir \
     torch --index-url https://download.pytorch.org/whl/cpu
 
-# Instalar dependencias en caché
+# Instalamos dependencias base + dependencias pesadas del worker
 RUN pip install --user --no-cache-dir -r requirements.txt
+RUN pip install --user --no-cache-dir -r requirements_worker.txt
 
-# ===== RUNTIME STAGE (Producción) =====
+# ===== RUNTIME STAGE =====
 FROM python:3.11-slim
 
 WORKDIR /app
 RUN apt-get update && apt-get install -y ca-certificates && rm -rf /var/lib/apt/lists/*
 
-# Crear usuario no-root por seguridad
 RUN useradd -m -u 1000 appuser
 
-# Copiar dependencias compiladas del builder
 COPY --from=builder /root/.local /home/appuser/.local
 ENV PATH=/home/appuser/.local/bin:$PATH
 
-# Copiar código de la aplicación
 COPY backend/app/ ./app/
 
-# Cambiar permisos
 RUN chown -R appuser:appuser /app
-
-# Cambiar a usuario no-root
 USER appuser
 
-# Variables de entorno
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONPATH=/
 
-# Exponer puerto
-EXPOSE 8000
-
-
-# Comando para ejecutar
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# El comando mágico: 'tail -f /dev/null' mantiene el contenedor vivo en segundo plano sin consumir CPU
+CMD ["tail", "-f", "/dev/null"]
