@@ -99,18 +99,35 @@ case "${1}" in
         $DOCKER_COMPOSE exec worker bash
         ;;
 
-    ingestar-todo)
-        print_header "Iniciando ingesta completa en el Worker..."
-
-        echo -e "${YELLOW}1/2 Procesando JSONs base...${NC}"
-        $DOCKER_COMPOSE exec worker python /app/scripts/ingesta.py
-
-        echo -e "${YELLOW}2/2 Procesando PDFs...${NC}"
-        $DOCKER_COMPOSE exec worker python /app/data_ingestion/pdf_processor.py
-
-        print_success "Ingesta finalizada"
+    ingestar-base)
+        print_header "Procesando únicamente JSONs base..."
+        MSYS_NO_PATHCONV=1 $DOCKER_COMPOSE exec worker python /app/scripts/ingesta.py
+        print_success "JSONs actualizados"
         ;;
 
+    ingestar-pdfs)
+        print_header "Procesando PDFs..."
+        # Si pasamos un argumento extra, procesa solo ese archivo
+        if [ -z "$2" ]; then
+            MSYS_NO_PATHCONV=1 $DOCKER_COMPOSE exec worker python /app/data_ingestion/pdf_processor.py
+        else
+            echo "Archivo específico: $2"
+            MSYS_NO_PATHCONV=1 $DOCKER_COMPOSE exec worker python /app/data_ingestion/pdf_processor.py "$2"
+        fi
+        print_success "PDFs actualizados"
+        ;;
+
+    ingestar-web)
+        print_header "Ejecutando Web Scraper..."
+        if [ -z "$2" ]; then
+            echo -e "${YELLOW}No se proporcionó URL. Ejecutando scraping masivo desde urls_scraping.json...${NC}"
+            MSYS_NO_PATHCONV=1 $DOCKER_COMPOSE exec worker python /app/data_ingestion/web_scraper.py
+        else
+            echo -e "${YELLOW}Scrapeando URL específica: $2${NC}"
+            MSYS_NO_PATHCONV=1 $DOCKER_COMPOSE exec worker python /app/data_ingestion/web_scraper.py "$2"
+        fi
+        ;;
+    
     build)
         print_header "Construyendo imágenes..."
         $DOCKER_COMPOSE build
