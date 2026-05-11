@@ -68,7 +68,7 @@ class WebIngestor:
             texto_final += "\n"
         return texto_final
 
-    def ingest_to_chroma(self, text, url):
+    def ingest_to_chroma(self, text, url, institucion):
         """Sube el texto scrapeado a la base de datos vectorial"""
         if not text.strip(): return
         
@@ -83,14 +83,19 @@ class WebIngestor:
             
             clean_text = f"Información extraída de: {url}\nSección: {chunk.strip()}"
             texts.append(clean_text)
-            metadatas.append({"source": url, "type": "web_scraping"})
+            metadatas.append({
+                "source": url, 
+                "type": "web_scraping",
+                "institucion": institucion.upper()
+            })
             ids.append(f"web_{hash(url)}_chunk_{i}")
             
         if texts:
             vector_db.add_documents(texts, metadatas, ids)
             print(f"📦 URL {url} indexada en ChromaDB ({len(texts)} fragmentos)")
 
-    def scrapear_e_ingestar(self, url):
+    
+    def scrapear_e_ingestar(self, url, institucion="GENERAL"):
         """Ejecuta el flujo completo para una URL"""
         print(f"Buscando en: {url}")
         resultado = self.extraer_contenido_desde_url(url)
@@ -102,7 +107,7 @@ class WebIngestor:
 
         if resultado.get("contenido"):
             texto_formateado = self.formatear_a_texto(resultado["contenido"], url)
-            self.ingest_to_chroma(texto_formateado, url)
+            self.ingest_to_chroma(texto_formateado, url, institucion)
             print("✅ Web scrapeada e ingestada con éxito.")
         else:
             print("⚠️ No se encontró contenido útil en la página.")
@@ -138,7 +143,8 @@ if __name__ == "__main__":
     # Si le pasas una URL por consola, scrappea SOLO ESA URL
     if len(sys.argv) > 1:
         url_objetivo = sys.argv[1]
-        ingestor.scrapear_e_ingestar(url_objetivo)
+        institucion_objetivo = sys.argv[2] if len(sys.argv) > 2 else "GENERAL"
+        ingestor.scrapear_e_ingestar(url_objetivo, institucion_objetivo)
     else:
         # Si NO le pasas nada, procesa TODA LA LISTA del archivo JSON
         ingestor.procesar_desde_archivo()

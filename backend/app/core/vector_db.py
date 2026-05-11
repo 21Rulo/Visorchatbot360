@@ -34,13 +34,30 @@ class ChromaManager:
             ids=ids
         )
 
-    def search(self, query: str, n_results: int = 3):
-        """Busca los fragmentos más relevantes para una pregunta."""
+    def search(self, query: str, n_results: int = 3, institucion: str = None):
+        """
+        Busca los fragmentos más relevantes para una pregunta.
+        
+        Args:
+            query: La pregunta o consulta del usuario
+            n_results: Número de fragmentos a retornar (default: 3)
+            institucion: Filtrar resultados por institución (ej: "ENCB", "CMPL"). 
+                        Si es None, busca en todas las instituciones.
+        
+        Returns:
+            Resultados de ChromaDB con documentos, metadatos y distancias
+        """
         query_embedding = self.model.encode([query]).tolist()
+        
+        # Construir filtro si se especifica institución
+        where_filter = None
+        if institucion:
+            where_filter = {"institucion": institucion}
         
         results = self.collection.query(
             query_embeddings=query_embedding,
-            n_results=n_results
+            n_results=n_results,
+            where=where_filter
         )
         return results
 

@@ -41,7 +41,7 @@ async def procesar_mensaje(
         print(f"🧠 [ORQUESTADOR] session={session_id} | intención={intencion}")
 
         if "INFO" in intencion:
-            respuesta = obtener_respuesta_info(mensaje, historial)
+            respuesta = obtener_respuesta_info(mensaje, historial, contexto_ubicacion)
         else:
             respuesta = obtener_respuesta_guia(mensaje, contexto_ubicacion, historial)
 
