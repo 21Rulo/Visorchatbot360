@@ -517,7 +517,7 @@ body {
             bottom: 0;
             left: 0;
             width: 100%;
-            background: rgba(108, 28, 52, 0.85); /* Usa tu color institucional #6c1c34 con transparencia */
+            background: rgba(223, 218, 219, 0.85); /* Usa tu color institucional #6c1c34 con transparencia */
             backdrop-filter: blur(10px);
             transition: transform 0.3s ease-in-out;
             z-index: 40; /* Por debajo del chat pero encima del visor */
@@ -543,8 +543,8 @@ body {
             height: 40px;
             border-radius: 15px 15px 0 0;
             border-bottom: none;
-            background: rgba(108, 28, 52, 0.85);
-            color: white;
+            background: rgba(223, 218, 219, 0.85);
+            color: rgba(108, 28, 52,1);
             z-index: 41;
             border: none;
             box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
@@ -562,7 +562,7 @@ body {
 
         /* Ocultar scrollbar visual pero permitir scroll táctil/ratón */
         #carrusel-scroll::-webkit-scrollbar { height: 6px; }
-        #carrusel-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.4); border-radius: 10px; }
+        #carrusel-scroll::-webkit-scrollbar-thumb { background: rgba(108, 28, 52, 0.4); border-radius: 10px; }
         #carrusel-scroll::-webkit-scrollbar-track { background: transparent; }
 
         .miniatura {
