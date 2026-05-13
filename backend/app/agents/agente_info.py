@@ -1,81 +1,93 @@
 import json
-from groq import Groq
-from app.core.config import settings
+import asyncio
+from app.core.config import settings, SharedResources
 from app.core.vector_db import vector_db
+from app.models.schemas import AgentState, Institucion
+from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_exception_type
+import groq
 
-client = Groq(api_key=settings.GROQ_API_KEY)
+@retry(
+    wait=wait_exponential(multiplier=1, min=2, max=10),
+    stop=stop_after_attempt(4),
+    retry=retry_if_exception_type(groq.RateLimitError), # Solo reintenta si es por límite gratuito
+    reraise=True # Si falla 4 veces, lanza el error para que nuestro try/except lo atrape
+)
 
-def reescribir_consulta(mensaje: str, historial: list) -> dict:
+async def llamar_llm_con_reintentos(mensajes, client):
+    """Función de apoyo para llamar a Groq con protección contra Rate Limits"""
+    return await client.chat.completions.create(
+        model=settings.MODELO_CHAT,
+        messages=mensajes,
+        temperature=0.7,
+        max_tokens=300
+    )
+
+async def nodo_info(state: AgentState) -> dict:
     """
-    Analiza el historial y el mensaje actual para crear una consulta de búsqueda perfecta
-    y detectar de qué escuela se está hablando.
+    Nodo de Información: RAG integrado y Reescritura de Consulta.
     """
-    # Formatear el historial para que Groq lo entienda rápido
-    historial_texto = "\n".join([f"{msg['role']}: {msg['content']}" for msg in historial[-4:]])
+    client = SharedResources.get_groq_client()
+    mensaje_actual = state["mensaje"]
+    historial = state.get("historial", [])
     
-    prompt = f"""
-    Eres un analista de consultas del IPN. Tu tarea es analizar el último mensaje del usuario y el historial reciente para extraer parámetros de búsqueda.
+    # --- PASO 1: Reescritura ---
+    historial_texto = "\n".join([f"{msg['role']}: {msg['content']}" for msg in historial[-4:]])
+    prompt_reescritura = f"""
+    Eres un analista de consultas del IPN. Analiza el último mensaje y el historial para extraer parámetros de búsqueda.
     
     Historial reciente:
     {historial_texto}
     
-    Último mensaje del usuario: {mensaje}
+    Último mensaje: {mensaje_actual}
     
     Reglas:
-    1. "consulta_optimizada": Reescribe el mensaje del usuario para que sea una pregunta completa y clara para buscar en una base de datos.
-    2. "institucion": Identifica la escuela mencionada (ESFM, ESIT, CIITEC, ESIMEZ, CMPL, ENCB). Si no se sabe o es general del IPN, escribe "GENERAL".
+    1. "consulta_optimizada": Reescribe el mensaje para buscar en una base de datos.
+    2. "institucion": Identifica la escuela (ESFM, ESIT, CIITEC, ESIMEZ, CMPL, ENCB). Si es general, escribe "GENERAL".
     
-    Responde ÚNICAMENTE con un JSON válido, sin texto adicional:
-    {{"consulta_optimizada": "texto", "institucion": "SIGLAS"}}
+    Responde ÚNICAMENTE con un JSON: {{"consulta_optimizada": "texto", "institucion": "SIGLAS"}}
     """
     
     try:
-        response = client.chat.completions.create(
-            model="llama3-8b-8192", # Modelo rápido y eficiente para reescritura
-            messages=[{"role": "user", "content": prompt}],
+        res_reescritura = await client.chat.completions.create(
+            model=settings.MODELO_CHAT,
+            messages=[{"role": "user", "content": prompt_reescritura}],
             temperature=0.0,
             response_format={"type": "json_object"} 
         )
-        
-        resultado = json.loads(response.choices[0].message.content)
-        return resultado
+        analisis = json.loads(res_reescritura.choices[0].message.content)
     except Exception as e:
         print(f"⚠️ Error en reescritura: {e}")
-        return {"consulta_optimizada": mensaje, "institucion": "GENERAL"}
+        analisis = {"consulta_optimizada": mensaje_actual, "institucion": "GENERAL"}
 
-
-def obtener_respuesta_info(mensaje: str, historial: list, contexto_ubicacion: str = None) -> str:
-    """
-    Agente de Información con RAG integrado y Reescritura de Consulta.
-    """
-    # 1. Reescribir la consulta para aislar la intención
-    analisis = reescribir_consulta(mensaje, historial)
-    query_optimizada = analisis.get("consulta_optimizada", mensaje)
-    institucion_detectada = analisis.get("institucion", "GENERAL")
+    query_optimizada = analisis.get("consulta_optimizada", mensaje_actual)
+    institucion_str = analisis.get("institucion", "GENERAL").upper()
     
-    # 2. Configurar el filtro
-    filtro_institucion = None
-    if institucion_detectada != "GENERAL":
-        filtro_institucion = institucion_detectada
-        print(f"🏫 Institución detectada por IA: {filtro_institucion}")
-    else:
-        print("🏫 Búsqueda general (sin filtro de institución)")
-        
-    print(f"🔍 Buscando en ChromaDB: '{query_optimizada}'")
+    # Validación segura (Type-safe) con el Enum
+    try:
+        institucion_detectada = Institucion(institucion_str)
+    except ValueError:
+        institucion_detectada = Institucion.GENERAL
 
-    # 3. Búsqueda Vectorial (RAG)
+    filtro = institucion_detectada.value if institucion_detectada != Institucion.GENERAL else None
+    print(f"🔍 Buscando en ChromaDB: '{query_optimizada}' | Filtro: {filtro}")
+
+    # --- PASO 2: Búsqueda Vectorial ---
     contexto_extraido = "No se encontró información en la base de datos."
     try:
-        resultados = vector_db.search(query=query_optimizada, n_results=4, institucion=filtro_institucion)
+        # Asumo que vector_db.search es síncrono por tu código original
+        resultados = await asyncio.to_thread(
+            vector_db.search, 
+            query=query_optimizada, 
+            n_results=4, 
+            institucion=filtro
+        )
         documentos = resultados.get("documents", [[]])[0]
-        
         if documentos:
             contexto_extraido = "\n\n---\n\n".join(documentos)
-            
     except Exception as e:
         print(f"⚠️ Error buscando en ChromaDB: {e}")
 
-    # 4. Construcción del Prompt Final
+    # --- PASO 3: Generación ---
     system_prompt = f"""
     Eres Jasper, un asistente especializado del Instituto Politécnico Nacional (IPN).
     Tu objetivo es responder las dudas del usuario basándote ÚNICAMENTE en la siguiente información oficial recuperada.
@@ -90,19 +102,28 @@ def obtener_respuesta_info(mensaje: str, historial: list, contexto_ubicacion: st
     """
 
     mensajes = [{"role": "system", "content": system_prompt}]
-    mensajes.extend(historial)
-    mensajes.append({"role": "user", "content": mensaje})
+    if historial:
+        mensajes.extend(historial)
+    mensajes.append({"role": "user", "content": mensaje_actual})
 
-    # 5. Llamada al LLM
     try:
-        response = client.chat.completions.create(
+        res_final = await client.chat.completions.create(
             model=settings.MODELO_CHAT, 
             messages=mensajes,
             temperature=0.3, 
             max_tokens=400
         )
-        return response.choices[0].message.content
-
+        respuesta_generada = res_final.choices[0].message.content
     except Exception as e:
         print(f"❌ Error en Agente Info: {e}")
-        return "Lo siento, tuve un problema al procesar tu consulta en este momento."
+        respuesta_generada = "Lo siento, tuve un problema al procesar tu consulta."
+
+    # Devolvemos la respuesta Y la institución detectada para guardarlo en el State
+    return {
+        "respuesta": respuesta_generada,
+        "institucion": institucion_detectada.value,
+        "historial": [
+            {"role": "user", "content": state["mensaje"]},
+            {"role": "assistant", "content": respuesta_generada}
+        ]
+    }
