@@ -67,7 +67,7 @@ function estilizarFlecha(el, direccion) {
     }
 }
 
-export function iniciarVisor(mapa) {
+export function iniciarVisor(mapa, onNodeChange) {
     const escena = new THREE.Scene();
     const camara = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camara.position.set(0, 0, 0.1);
@@ -271,6 +271,7 @@ export function iniciarVisor(mapa) {
 
                 controles.reset();
                 telon.style.opacity = '0';
+                if (onNodeChange) onNodeChange(idNodo);
             });
         }, 200);
     }

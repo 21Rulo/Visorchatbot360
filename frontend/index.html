@@ -24,7 +24,7 @@
                     Escuela Superior de Física y Matemáticas (ESFM)
                 </button>
                 
-                <button class="btn-recorrido" data-lab="lanta">
+                <button class="btn-recorrido" data-lab="esimez">
                     <span class="material-symbols-outlined">satellite_alt</span>
                     Laboratorio Nacional de Antenas (LANTA)
                 </button>
@@ -75,6 +75,7 @@
       <h1 id="titulo-ubicacion">Cargando...</h1>
     </div>
 
+
     <div id="tooltip-hotspot" class="oculto"></div>
 
     <script type="module" src="/js/app.js"></script>
@@ -102,6 +103,13 @@
             <input type="text" id="chat-input" placeholder="Pregúntale a Jasper...">
             <button id="btn-chat-send"><span class="material-symbols-outlined">send</span></button>
         </div>
+    </div>
+    <div id="carrusel-container" class="oculto">
+        <button id="btn-toggle-carrusel" class="btn-control">
+            <span class="material-symbols-outlined" id="icono-carrusel">expand_more</span>
+        </button>
+        <div id="carrusel-scroll">
+            </div>
     </div>
   </body>
 </html>

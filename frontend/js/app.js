@@ -29,7 +29,22 @@ async function cargarRecorrido(nombreLab) {
         if (!respuesta.ok) throw new Error("Laboratorio no encontrado");
 
         const mapa = await respuesta.json();
-        visorActual = iniciarVisor(mapa);
+        visorActual = iniciarVisor(mapa, (idNodoActual) => {
+            actualizarCarruselActivo(idNodoActual);
+            
+            if (carruselContainer.classList.contains('oculto')) {
+                carruselContainer.classList.remove('oculto');
+                
+                setTimeout(() => {
+                    carruselContainer.classList.remove('colapsado');
+                    document.body.classList.add('carrusel-abierto');
+                }, 50);
+            }
+        });
+        renderizarCarrusel(mapa);
+        carruselContainer.classList.add('oculto');
+        carruselContainer.classList.add('colapsado');
+        document.body.classList.remove('carrusel-abierto');
 
         const chatContainer = document.getElementById('chat-container');
         chatContainer.classList.add('oculto');
@@ -73,15 +88,23 @@ const chatContainer = document.getElementById('chat-container');
 const btnSend = document.getElementById('btn-chat-send');
 const inputChat = document.getElementById('chat-input');
 const messagesDiv = document.getElementById('chat-messages');
+const carruselContainer = document.getElementById('carrusel-container');
+const carruselScroll = document.getElementById('carrusel-scroll');
+const btnToggleCarrusel = document.getElementById('btn-toggle-carrusel');
+const iconoCarrusel = document.getElementById('icono-carrusel');
 
 btnHome.addEventListener('click', () => {
     // 1. Mostrar el menú de inicio con animación
     const menuInicio = document.getElementById('menu-inicio');
     menuInicio.style.display = 'flex';
+    
 
     setTimeout(() => {
         menuInicio.style.opacity = '1';
     }, 10);
+
+    carruselContainer.classList.add('oculto');
+    document.body.classList.remove('carrusel-abierto');
 
     // 2. Mostrar el chat automáticamente
     document.getElementById('chat-container').classList.add('oculto');
@@ -188,3 +211,68 @@ function agregarMensajeUI(texto, tipo) {
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
     return div.id;
 }
+
+// --- LÓGICA DEL CARRUSEL ---
+
+function renderizarCarrusel(mapa) {
+    carruselScroll.innerHTML = ''; // Limpiar carrusel anterior
+
+    Object.keys(mapa.nodos).forEach(idNodo => {
+        const nodo = mapa.nodos[idNodo];
+
+        const miniatura = document.createElement('div');
+        miniatura.className = 'miniatura';
+        miniatura.id = `thumb-${idNodo}`;
+
+        // Usamos la imagen panorámica como miniatura (el CSS background-size: cover hace la magia)
+        miniatura.style.backgroundImage = `url('${nodo.imagen_url}')`;
+
+        const titulo = document.createElement('div');
+        titulo.className = 'miniatura-titulo';
+        titulo.innerText = nodo.titulo;
+        titulo.title = nodo.titulo; // Tooltip nativo por si el texto es muy largo
+
+        miniatura.appendChild(titulo);
+
+        // Evento para viajar a ese nodo al hacer clic
+        miniatura.addEventListener('click', () => {
+            if (visorActual && !miniatura.classList.contains('activa')) {
+                // Opcional: Cerrar chat en móviles al navegar para ver bien la pantalla
+                if (window.innerWidth <= 768) {
+                    chatContainer.classList.add('oculto');
+                }
+                visorActual.cargarNodo(idNodo);
+            }
+        });
+
+        carruselScroll.appendChild(miniatura);
+    });
+}
+
+function actualizarCarruselActivo(idNodoActual) {
+    // Quitar clase activa a todos
+    document.querySelectorAll('.miniatura').forEach(thumb => {
+        thumb.classList.remove('activa');
+    });
+
+    // Poner clase activa al nodo actual
+    const miniaturaActiva = document.getElementById(`thumb-${idNodoActual}`);
+    if (miniaturaActiva) {
+        miniaturaActiva.classList.add('activa');
+        // Hacer scroll automático para que la miniatura activa quede visible en el centro
+        miniaturaActiva.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+}
+
+// Botón para colapsar/expandir el carrusel
+btnToggleCarrusel.addEventListener('click', () => {
+    carruselContainer.classList.toggle('colapsado');
+
+    if (carruselContainer.classList.contains('colapsado')) {
+        iconoCarrusel.innerText = 'expand_less'; // Flecha hacia arriba
+        document.body.classList.remove('carrusel-abierto');
+    } else {
+        iconoCarrusel.innerText = 'expand_more'; // Flecha hacia abajo
+        document.body.classList.add('carrusel-abierto');
+    }
+});

@@ -511,6 +511,113 @@ body {
           transform: scale(1.1);
       }
 
+      /* ====== CARRUSEL DE MINIATURAS (SCENE SELECTOR) ====== */
+        #carrusel-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(108, 28, 52, 0.85); /* Usa tu color institucional #6c1c34 con transparencia */
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease-in-out;
+            z-index: 40; /* Por debajo del chat pero encima del visor */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #carrusel-container.colapsado {
+            transform: translateY(100%);
+        }
+
+        #carrusel-container.oculto {
+            display: none !important;
+        }
+
+        #btn-toggle-carrusel {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 40px;
+            border-radius: 15px 15px 0 0;
+            border-bottom: none;
+            background: rgba(108, 28, 52, 0.85);
+            color: white;
+            z-index: 41;
+            border: none;
+            box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
+        }
+
+        #carrusel-scroll {
+            display: flex;
+            gap: 15px;
+            padding: 15px 20px;
+            overflow-x: auto;
+            width: 100%;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        /* Ocultar scrollbar visual pero permitir scroll táctil/ratón */
+        #carrusel-scroll::-webkit-scrollbar { height: 6px; }
+        #carrusel-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.4); border-radius: 10px; }
+        #carrusel-scroll::-webkit-scrollbar-track { background: transparent; }
+
+        .miniatura {
+            min-width: 130px;
+            width: 130px;
+            height: 85px;
+            border-radius: 8px;
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid transparent;
+            transition: transform 0.2s, border-color 0.2s;
+            flex-shrink: 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .miniatura:hover {
+            transform: scale(1.05);
+        }
+
+        .miniatura.activa {
+            border-color: #61cb35; /* Verde institucional brillante */
+            transform: scale(1.05);
+            box-shadow: 0 0 12px rgba(97, 203, 53, 0.8);
+        }
+
+        .miniatura-titulo {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            font-size: 11px;
+            padding: 5px;
+            text-align: center;
+            box-sizing: border-box;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Transiciones para que la UI flote cuando se abre el carrusel */
+        #contenedor-info-escena, #contenedor-brujula {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        body.carrusel-abierto #contenedor-info-escena,
+        body.carrusel-abierto #contenedor-brujula {
+            transform: translateY(-115px); /* Sube la UI la altura del carrusel */
+        }
+
       /* ====== RESPONSIVE: TABLETS (max 768px) ====== */
       @media (max-width: 768px) {
 
