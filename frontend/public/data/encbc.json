@@ -65,7 +65,7 @@
     "encb_1": {
       "titulo": "Fachada ENCB",
       "yaw_inicio": 90,
-      "imagen_url": "/assets/ENCB_Casco/UDIBI/1.jpg",
+      "imagen_url": "/visor_v2/assets/ENCB_Casco/UDIBI/1.jpg",
       "contexto_ia": "Te encuentras frente a la entrada principal de la Escuela Nacional de Ciencias Biológicas (ENCB) del Instituto Politécnico Nacional, en su Unidad Santo Tomás. Esta zona es uno de los accesos más transitados por la comunidad estudiantil. A tu alrededor puedes observar el pasillo de ingreso con torniquetes, el letrero institucional semicircular con el nombre de la escuela y una zona arbolada que caracteriza al campus. Frente a la entrada se encuentran varios locales y puestos donde estudiantes y visitantes suelen comprar comida, bebidas o artículos diversos. Esta área funciona como punto de reunión, de llegada y salida, y como referencia general para ubicarse dentro del plantel.",
       "equipos_destacados": [],
       "hotspots": [
