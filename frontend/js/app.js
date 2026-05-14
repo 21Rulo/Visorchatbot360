@@ -25,7 +25,7 @@ async function cargarRecorrido(nombreLab) {
         // Cambiamos el texto temporalmente para que el usuario sepa que está cargando
         document.querySelector('.titulo-main').innerText = "Cargando recorrido...";
         
-        const respuesta = await fetch(`/data/${nombreLab}.json`);
+        const respuesta = await fetch(`/visor_v2/data/${nombreLab}.json`);
         if (!respuesta.ok) throw new Error("Laboratorio no encontrado");
 
         const mapa = await respuesta.json();

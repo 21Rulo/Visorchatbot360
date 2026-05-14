@@ -26,7 +26,7 @@ app = FastAPI(
 origenes_permitidos = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "https://tu-dominio-real.com"
+    "https://visor.siis.ipn.mx"
 ]
 
 app.add_middleware(
