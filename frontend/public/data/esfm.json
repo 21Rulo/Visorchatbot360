@@ -56,7 +56,7 @@
     "root": {
       "titulo": "Entrada Principal",
       "yaw_inicio": -90,
-      "imagen_url": "/assets/ESFM/root.webp",
+      "imagen_url": "/visor_v2/assets/ESFM/root.webp",
       "contexto_ia": "Te encuentras en el exterior del edificio de la ESFM. Este punto marca el acceso principal al laboratorio. Desde aquí puedes observar a estudiantes y visitantes transitando entre edificios, en un entorno universitario activo.",
       "equipos_destacados": [],
       "hotspots": [
@@ -65,7 +65,7 @@
     },
     "pas1": {
       "titulo": "Pasillo",
-      "imagen_url": "/assets/ESFM/root_ext2.webp",
+      "imagen_url": "/visor_v2/assets/ESFM/root_ext2.webp",
       "yaw_inicio": -90,
       "contexto_ia": "Este pasillo conecta distintas áreas académicas de la ESFM Zacatenco. A lo largo de este recorrido se encuentran oficinas, laboratorios y zonas comunes.",
       "equipos_destacados": [],
@@ -76,7 +76,7 @@
     },
     "ent": {
       "titulo": "Entrada al Laboratorio",
-      "imagen_url": "/assets/ESFM/root_ext1.webp",
+      "imagen_url": "/visor_v2/assets/ESFM/root_ext1.webp",
       "yaw_inicio": -90,
       "contexto_ia": "Estás en la entrada al área del Sistema de Física de Materiales (SFM).",
       "equipos_destacados": [],
@@ -87,7 +87,7 @@
     },
     "rep": {
       "titulo": "Recepción Laboratorios SFM",
-      "imagen_url": "/assets/ESFM/ext1_res.webp",
+      "imagen_url": "/visor_v2/assets/ESFM/ext1_res.webp",
       "yaw_inicio": 90,
       "contexto_ia": "Has llegado a la recepción del SFM, punto central de atención y control administrativo. Aquí se coordinan actividades, se recibe a visitantes y se realiza la gestión de acceso a las áreas técnicas.",
       "equipos_destacados": [],
@@ -98,7 +98,7 @@
     },
     "res": {
       "titulo": "Pasillo Laboratorios",
-      "imagen_url": "/assets/ESFM/res_pas.webp",
+      "imagen_url": "/visor_v2/assets/ESFM/res_pas.webp",
       "yaw_inicio": -100,
       "contexto_ia": "Este pasillo interior conecta las diferentes áreas técnicas del laboratorio del SFM. A lo largo del recorrido se encuentran las antesalas de los laboratorios de temperatura y gravedad.",
       "equipos_destacados": [],
@@ -110,7 +110,7 @@
     },
     "pasTemp": {
       "titulo": "Pasillo Laboratorio de Temperatura",
-      "imagen_url": "/assets/ESFM/pas_antLabTemp.webp",
+      "imagen_url": "/visor_v2/assets/ESFM/pas_antLabTemp.webp",
       "yaw_inicio": 80,
       "contexto_ia": "Estás en la antesala del Laboratorio de Temperatura. Este espacio funciona como zona intermedia que garantiza el acceso ordenado al laboratorio, preservando sus condiciones de trabajo.",
       "equipos_destacados": [],
@@ -122,7 +122,7 @@
     },
     "labTemp": {
       "titulo": "Laboratorio de Temperatura",
-      "imagen_url": "/assets/ESFM/mainLabTemp_CaliLabTemp.webp",
+      "imagen_url": "/visor_v2/assets/ESFM/mainLabTemp_CaliLabTemp.webp",
       "yaw_inicio": 90,
       "contexto_ia": "Este es el Laboratorio de Temperatura del SFM, especializado en la calibración y ensayo de instrumentos térmicos. Aquí se trabaja bajo estrictas normativas internacionales.",
       "equipos_destacados": [
@@ -142,7 +142,7 @@
     },
     "mainTemp": {
       "titulo": "Calibración de Temperatura",
-      "imagen_url": "/assets/ESFM/antLabTemp_mainLabTemp.webp",
+      "imagen_url": "/visor_v2/assets/ESFM/antLabTemp_mainLabTemp.webp",
       "yaw_inicio": 180,
       "contexto_ia": "Área principal de calibración térmica. El personal técnico realiza aquí procedimientos asegurando la trazabilidad de las mediciones.",
       "equipos_destacados": [
@@ -157,7 +157,7 @@
     },
     "pasGal": {
       "titulo": "Pasillo Laboratorio Gravedad",
-      "imagen_url": "/assets/ESFM/pas_antLabGrav.webp",
+      "imagen_url": "/visor_v2/assets/ESFM/pas_antLabGrav.webp",
       "yaw_inicio": 220,
       "contexto_ia": "Te encuentras en la antesala del Laboratorio de Gravedad. Esta zona actúa como un punto de transición para resguardar elementos antes del ingreso al laboratorio principal de masa y peso.",
       "equipos_destacados": [],
@@ -168,7 +168,7 @@
     },
     "labGal": {
       "titulo": "Laboratorio de Gravedad",
-      "imagen_url": "/assets/ESFM/antLabGrav_labGrav.webp",
+      "imagen_url": "/visor_v2/assets/ESFM/antLabGrav_labGrav.webp",
       "yaw_inicio": 190,
       "contexto_ia": "Este es el Laboratorio de Gravedad, dedicado a la calibración de balanzas, pesas patrón y sistemas de medición de masa con trazabilidad al Sistema Internacional de Unidades.",
       "equipos_destacados": [

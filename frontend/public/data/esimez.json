@@ -61,7 +61,7 @@
     "exterior": {
       "titulo": "Exterior LANTA",
       "yaw_inicio": -60,
-      "imagen_url": "/assets/LANTA/Exte_antenas.webp",
+      "imagen_url": "/visor_v2/assets/LANTA/Exte_antenas.webp",
       "contexto_ia": "¡Hola! Soy Jasper. Nos encontramos en el exterior del Laboratorio Nacional de Telecomunicaciones y Antenas (LANTA).",
       "equipos_destacados": [],
       "hotspots": [
@@ -70,7 +70,7 @@
     },
     "recepcion": {
       "titulo": "Recepción",
-      "imagen_url": "/assets/LANTA/Recep_antenas.webp",
+      "imagen_url": "/visor_v2/assets/LANTA/Recep_antenas.webp",
       "yaw_inicio": 240,
       "contexto_ia": "Te encuentras en la recepción del Laboratorio Nacional de Telecomunicaciones y Antenas. Este es el punto de control y bienvenida.",
       "equipos_destacados": [],
@@ -82,7 +82,7 @@
     },
     "oficina": {
       "titulo": "Oficina Técnica",
-      "imagen_url": "/assets/LANTA/Equipo_antenas.webp",
+      "imagen_url": "/visor_v2/assets/LANTA/Equipo_antenas.webp",
       "yaw_inicio": 0,
       "contexto_ia": "Estás en la oficina técnica del laboratorio. Aquí el personal analiza datos y configura los equipos de medición.",
       "equipos_destacados": [
@@ -97,7 +97,7 @@
     },
     "antesalaCamNec": {
       "titulo": "Antesala Cámara Anecoica",
-      "imagen_url": "/assets/LANTA/Ant_Antenas.webp",
+      "imagen_url": "/visor_v2/assets/LANTA/Ant_Antenas.webp",
       "yaw_inicio": 100,
       "contexto_ia": "Ahora estás en la antesala de la cámara anecoica, la zona de preparación antes de entrar al entorno de pruebas aislado.",
       "equipos_destacados": [],
@@ -108,7 +108,7 @@
     },
     "labCamNec": {
       "titulo": "Cámara Anecoica",
-      "imagen_url": "/assets/LANTA/Lab_antenas.webp",
+      "imagen_url": "/visor_v2/assets/LANTA/Lab_antenas.webp",
       "yaw_inicio": -90,
       "contexto_ia": "Has ingresado a la cámara anecoica, un recinto diseñado para eliminar reflexiones electromagnéticas y simular un entorno libre de interferencias externas.",
       "equipos_destacados": [

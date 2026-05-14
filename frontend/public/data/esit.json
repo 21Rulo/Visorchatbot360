@@ -34,7 +34,7 @@
     },
     "estacionamiento": {
       "titulo": "Estacionamiento ESIT",
-      "imagen_url": "/assets/ESIT/EXT8.webp",
+      "imagen_url": "/visor_v2/assets/ESIT/EXT8.webp",
       "yaw_inicio": -94,
       "contexto_ia": "Continuación del estacionamiento principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
@@ -45,7 +45,7 @@
     },
     "entrada": {
       "titulo": "Entrada Principal ESIT",
-      "imagen_url": "/assets/ESIT/EXT7.webp",
+      "imagen_url": "/visor_v2/assets/ESIT/EXT7.webp",
       "yaw_inicio": 170,
       "contexto_ia": "Entrada principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicada en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
@@ -56,7 +56,7 @@
     },
     "pasillo1": {
       "titulo": "Pasillo ESIT",
-      "imagen_url": "/assets/ESIT/EXT6.webp",
+      "imagen_url": "/visor_v2/assets/ESIT/EXT6.webp",
       "yaw_inicio": 180,
       "contexto_ia": "Pasillo principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
@@ -67,7 +67,7 @@
     },
     "pasillo2": {
       "titulo": "Pasillo ESIT",
-      "imagen_url": "/assets/ESIT/EXT5.webp",
+      "imagen_url": "/visor_v2/assets/ESIT/EXT5.webp",
       "yaw_inicio": 0,
       "contexto_ia": "Pasillo principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
@@ -78,7 +78,7 @@
     },
     "pasillo3": {
       "titulo": "Pasillo ESIT",
-      "imagen_url": "/assets/ESIT/EXT4.webp",
+      "imagen_url": "/visor_v2/assets/ESIT/EXT4.webp",
       "yaw_inicio": 90,
       "contexto_ia": "Pasillo principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
@@ -89,7 +89,7 @@
     },
     "pasillo4": {
       "titulo": "Pasillo ESIT",
-      "imagen_url": "/assets/ESIT/EXT3.webp",
+      "imagen_url": "/visor_v2/assets/ESIT/EXT3.webp",
       "yaw_inicio": 90,
       "contexto_ia": "Pasillo principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
@@ -100,7 +100,7 @@
     },
     "pasillo5": {
       "titulo": "Pasillo ESIT",
-      "imagen_url": "/assets/ESIT/EXT2.webp",
+      "imagen_url": "/visor_v2/assets/ESIT/EXT2.webp",
       "yaw_inicio": 90,
       "contexto_ia": "Pasillo principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
@@ -111,7 +111,7 @@
     },
     "pasillo6": {
       "titulo": "Entradas Laboratorio",
-      "imagen_url": "/assets/ESIT/EXT1.webp",
+      "imagen_url": "/visor_v2/assets/ESIT/EXT1.webp",
       "yaw_inicio": -90,
       "contexto_ia": "Pasillo principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
@@ -123,7 +123,7 @@
     },
     "antesala1": {
       "titulo": "Antesala Laboratorio de Ensayos Textiles",
-      "imagen_url": "/assets/ESIT/1.webp",
+      "imagen_url": "/visor_v2/assets/ESIT/1.webp",
       "yaw_inicio": -90,
       "contexto_ia": "Antesala del Laboratorio de Ensayos Textiles de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
@@ -134,7 +134,7 @@
     },
     "camara": {
       "titulo": "Cámara de Condiciones Controladas",
-      "imagen_url": "/assets/ESIT/2.webp",
+      "imagen_url": "/visor_v2/assets/ESIT/2.webp",
       "yaw_inicio": 85,
       "contexto_ia": "Cámara de condiciones controladas del Laboratorio de Ensayos Textiles de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
@@ -145,7 +145,7 @@
     },
     "laboratorio_esquina_inferior_izquierda": {
       "titulo": "Laboratorio de Ensayos Textiles",
-      "imagen_url": "/assets/ESIT/11.webp",
+      "imagen_url": "/visor_v2/assets/ESIT/11.webp",
       "yaw_inicio": 30,
       "contexto_ia": "Laboratorio de Ensayos Textiles de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [
@@ -164,7 +164,7 @@
     },
     "laboratorio_medio_inferior": {
       "titulo": "Laboratorio de Ensayos Textiles",
-      "imagen_url": "/assets/ESIT/3.webp",
+      "imagen_url": "/visor_v2/assets/ESIT/3.webp",
       "yaw_inicio": 180,
       "contexto_ia": "Laboratorio de Ensayos Textiles de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
@@ -178,7 +178,7 @@
     },
     "laboratorio_esquina_inferior_derecha": {
       "titulo": "Laboratorio de Ensayos Textiles",
-      "imagen_url": "/assets/ESIT/6.webp",
+      "imagen_url": "/visor_v2/assets/ESIT/6.webp",
       "yaw_inicio": 55,
       "contexto_ia": "Laboratorio de Ensayos Textiles de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
@@ -190,7 +190,7 @@
     },
     "laboratorio_medio_medio": {
       "titulo": "Laboratorio de Ensayos Textiles",
-      "imagen_url": "/assets/ESIT/4.webp",
+      "imagen_url": "/visor_v2/assets/ESIT/4.webp",
       "yaw_inicio": 80,
       "contexto_ia": "Laboratorio de Ensayos Textiles de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
@@ -201,7 +201,7 @@
     },
     "laboratorio_esquina_superior_derecha": {
       "titulo": "Laboratorio de Ensayos Textiles",
-      "imagen_url": "/assets/ESIT/7.webp",
+      "imagen_url": "/visor_v2/assets/ESIT/7.webp",
       "yaw_inicio": 35,
       "contexto_ia": "Laboratorio de Ensayos Textiles de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
@@ -212,7 +212,7 @@
     },
     "laboratorio_medio_superior": {
       "titulo": "Laboratorio de Ensayos Textiles",
-      "imagen_url": "/assets/ESIT/9.webp",
+      "imagen_url": "/visor_v2/assets/ESIT/9.webp",
       "yaw_inicio": 140,
       "contexto_ia": "Laboratorio de Ensayos Textiles de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
@@ -223,7 +223,7 @@
     },
     "laboratorio_medio_medio_superior": {
       "titulo": "Laboratorio de Ensayos Textiles",
-      "imagen_url": "/assets/ESIT/5.webp",
+      "imagen_url": "/visor_v2/assets/ESIT/5.webp",
       "yaw_inicio": 0,
       "contexto_ia": "Laboratorio de Ensayos Textiles de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
@@ -235,7 +235,7 @@
     },
     "laboratorio_esquina_superior_izquierda": {
       "titulo": "Laboratorio de Ensayos Textiles",
-      "imagen_url": "/assets/ESIT/8.webp",
+      "imagen_url": "/visor_v2/assets/ESIT/8.webp",
       "yaw_inicio": -90,
       "contexto_ia": "Laboratorio de Ensayos Textiles de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
@@ -246,7 +246,7 @@
     },
     "laboratorio_medio_izquierda": {
       "titulo": "Laboratorio de Ensayos Textiles",
-      "imagen_url": "/assets/ESIT/10.webp",
+      "imagen_url": "/visor_v2/assets/ESIT/10.webp",
       "yaw_inicio": -90,
       "contexto_ia": "Laboratorio de Ensayos Textiles de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
