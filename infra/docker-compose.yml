@@ -7,7 +7,7 @@ services:
     container_name: visor360-db
     restart: unless-stopped
     ports:
-      - "27017:27017"
+      - "27018:27017"
     volumes:
       - mongo_data:/data/db
     networks:
