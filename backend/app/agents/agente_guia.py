@@ -1,22 +1,7 @@
-from app.core.config import settings, SharedResources
+from app.core.config import SharedResources
 from app.models.schemas import AgentState
-from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_exception_type
+from app.core.utils import llamar_llm_con_reintentos
 import groq
-
-@retry(
-    wait=wait_exponential(multiplier=1, min=2, max=10),
-    stop=stop_after_attempt(4),
-    retry=retry_if_exception_type(groq.RateLimitError), # Solo reintenta si es por límite gratuito
-    reraise=True # Si falla 4 veces, lanza el error para que nuestro try/except lo atrape
-)
-async def llamar_llm_con_reintentos(mensajes, client):
-    """Función de apoyo para llamar a Groq con protección contra Rate Limits"""
-    return await client.chat.completions.create(
-        model=settings.MODELO_CHAT,
-        messages=mensajes,
-        temperature=0.7,
-        max_tokens=300
-    )
 
 async def nodo_guia(state: AgentState) -> dict:
     """

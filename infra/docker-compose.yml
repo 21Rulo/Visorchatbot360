@@ -23,7 +23,7 @@ services:
       - "8000:8000"
     environment:
       - GROQ_API_KEY=${GROQ_API_KEY}
-      - MODELO_CHAT=llama-3.3-70b-versatile
+      - MODELO_CHAT=llama-3.1-8b-instant
       - MONGO_URI=${MONGO_URI}
       - HF_HOME=/home/appuser/.cache/huggingface
       - ENTORNO=produccion

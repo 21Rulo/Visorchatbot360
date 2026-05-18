@@ -43,4 +43,8 @@ class AgentState(TypedDict):
     # Datos generados durante el flujo
     intencion: Optional[str]
     institucion: Optional[str]
+    query_optimizada: Optional[str]
+    documentos_recuperados: Optional[str]
+    
+    # Salida
     respuesta: Optional[str]

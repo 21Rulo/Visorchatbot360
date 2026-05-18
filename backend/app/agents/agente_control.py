@@ -3,9 +3,27 @@ from langgraph.graph import StateGraph, END
 from app.models.schemas import AgentState
 from app.core.config import settings, SharedResources
 from app.agents.agente_guia import nodo_guia
-from app.agents.agente_info import nodo_info
+from app.agents.agente_info import nodo_analista_ipn, nodo_recuperador_chroma, nodo_sintesis_jasper
 from app.memory.checkpointer import memory_saver
 from app.models.database import get_db
+
+async def nodo_fuera_dominio(state: AgentState) -> dict:
+    """
+    Maneja preguntas que no tienen nada que ver con el IPN o el recorrido.
+    Es rapidísimo y no gasta tokens de Groq.
+    """
+    respuesta = (
+        "Como guía virtual de este recorrido, mi conocimiento se enfoca exclusivamente "
+        "en el Instituto Politécnico Nacional, sus instalaciones y su oferta educativa. "
+        "¿Hay algo específico de la escuela en lo que te pueda ayudar?"
+    )
+    return {
+        "respuesta": respuesta,
+        "historial": [
+            {"role": "user", "content": state["mensaje"]},
+            {"role": "assistant", "content": respuesta}
+        ]
+    }
 
 # --- NODO CLASIFICADOR ---
 async def nodo_clasificador(state: AgentState) -> dict:
@@ -19,6 +37,7 @@ async def nodo_clasificador(state: AgentState) -> dict:
     Responde ÚNICAMENTE con UNA palabra:
     - GUIA: Saludos, conversación general o sobre el recorrido virtual.
     - INFO: Dudas sobre carreras, trámites, becas o info institucional.
+    - FUERA_DOMINIO: Preguntas sobre cocina, política, programación, otras universidades, o cualquier tema irrelevante.
     """
 
     try:
@@ -52,7 +71,10 @@ workflow = StateGraph(AgentState)
 # 1. Agregar los Nodos
 workflow.add_node("clasificador", nodo_clasificador)
 workflow.add_node("agente_guia", nodo_guia)
-workflow.add_node("agente_info", nodo_info)
+workflow.add_node("analista_ipn", nodo_analista_ipn)
+workflow.add_node("recuperador_chroma", nodo_recuperador_chroma)
+workflow.add_node("sintesis_jasper", nodo_sintesis_jasper)
+workflow.add_node("fuera_dominio", nodo_fuera_dominio)
 
 # 2. Configurar el Flujo (Aristas)
 workflow.set_entry_point("clasificador")
@@ -61,13 +83,18 @@ workflow.add_conditional_edges(
     "clasificador",
     enrutador_de_intencion,
     {
-        "agente_info": "agente_info",
-        "agente_guia": "agente_guia"
+        "agente_info": "analista_ipn",
+        "agente_guia": "agente_guia",
+        "fuera_dominio": "fuera_dominio"
     }
 )
+workflow.add_edge("analista_ipn", "recuperador_chroma")
+workflow.add_edge("recuperador_chroma", "sintesis_jasper")
 
+workflow.add_edge("sintesis_jasper", END)
 workflow.add_edge("agente_guia", END)
-workflow.add_edge("agente_info", END)
+workflow.add_edge("fuera_dominio", END)
+
 
 # 3. Compilar con Memoria Persistente (MongoDB Asíncrono)
 app_chatbot = workflow.compile(checkpointer=memory_saver)
