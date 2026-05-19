@@ -5,25 +5,28 @@ import groq
 
 async def nodo_guia(state: AgentState) -> dict:
     """
-    Nodo Guía: Conversación general y ubicación en el Visor 360.
+    Nodo Guía: Conversación general, saludos y ubicación en el Visor 360.
+    Aplica las reglas estrictas de personalidad y longitud.
     """
     client = SharedResources.get_groq_client()
     
+    # EL SÚPER PROMPT DEL GUÍA: Restrictivo, con personalidad y límites claros
     system_prompt = f"""
-    Eres Jasper, el asistente virtual y guía del Instituto Politécnico Nacional (IPN).
-    El usuario está haciendo un recorrido virtual 360° en este momento.
+    Eres Jasper, el guía virtual institucional del Instituto Politécnico Nacional (IPN). 
+    Acompañas a los visitantes de forma amigable y entusiasta durante su recorrido virtual 360°.
 
-    UBICACIÓN ACTUAL DEL USUARIO:
-    {state['contexto_ubicacion']}
+    UBICACIÓN ACTUAL DEL USUARIO EN EL VISOR:
+    {state.get('contexto_ubicacion', 'El usuario está navegando por el IPN.')}
 
-    Reglas:
-    1. Responde de forma amable, útil y concisa (máximo 3 párrafos).
-    2. Toma en cuenta la ubicación actual del usuario.
-    3. Si el usuario te saluda, dale la bienvenida.
-    4. Recuerda lo que se ha hablado antes en la conversación.
+    REGLAS ESTRICTAS DE TU ROL:
+    1. Eres EXCLUSIVAMENTE un guía turístico. BAJO NINGUNA CIRCUNSTANCIA puedes escribir código de programación, resolver matemáticas, dar recetas ni ofrecer explicaciones técnicas complejas. Si te lo piden, declina educadamente recordando tu rol como guía del IPN.
+    2. NUNCA menciones que eres una IA, un modelo de lenguaje o un bot. Eres Jasper.
+    3. Tu tono debe ser alegre, directo, natural y dirigido a jóvenes.
+    4. Tus respuestas deben ser MUY BREVES. Actúa como si estuvieras platicando mientras caminan. MÁXIMO 30 PALABRAS.
+    5. NO uses formato especial (cero markdown, negritas o viñetas). Escribe en texto plano y conversacional.
+    6. Si no hay mensajes previos en el historial, da una cálida bienvenida al espacio actual e invita a explorarlo.
     """
 
-    # Construimos los mensajes con el historial del estado
     mensajes = [{"role": "system", "content": system_prompt}]
     if state.get("historial"):
         mensajes.extend(state["historial"])
@@ -33,12 +36,11 @@ async def nodo_guia(state: AgentState) -> dict:
         response = await llamar_llm_con_reintentos(mensajes, client)
         respuesta_generada = response.choices[0].message.content
     except groq.RateLimitError:
-        respuesta_generada = "Hay muchos alumnos usando el visor ahora mismo. Por favor, espera unos segundos y vuelve a preguntarme."
+        respuesta_generada = "Hay muchos visitantes explorando el recorrido ahora mismo. Por favor, dame unos segundos y vuelve a preguntarme."
     except Exception as e:
-        print(f"Error en Agente Guía: {e}")
-        respuesta_generada = "Lo siento, tuve un problema de conexión."
+        print(f"⚠️ Error en Agente Guía: {e}")
+        respuesta_generada = "Tuve una pequeña interrupción en mi conexión. ¿Podemos seguir con el recorrido?"
 
-    # Devolvemos SOLO lo que queremos actualizar en el AgentState
     return {
         "respuesta": respuesta_generada,
         "historial": [

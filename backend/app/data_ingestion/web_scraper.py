@@ -22,7 +22,7 @@ class WebIngestor:
         print("🌐 Inicializando Web Ingestor...")
 
     def extraer_contenido_desde_url(self, url_completa):
-        """Tu función original, optimizada para extraer HTML a Diccionario"""
+        """Extrae HTML a Diccionario (¡Ahora con soporte para Tablas del legacy!)"""
         try:
             response = requests.get(url_completa, headers=headers, verify=False, timeout=10)
             response.raise_for_status()
@@ -33,7 +33,8 @@ class WebIngestor:
         contenido = {}
         seccion_actual = "General"
         
-        for tag in soup.find_all(['h1', 'h2', 'h3', 'h4', 'p', 'ul', 'ol', 'li']):
+        # AGREGAMOS 'table' A LA LISTA DE BÚSQUEDA
+        for tag in soup.find_all(['h1', 'h2', 'h3', 'h4', 'p', 'ul', 'ol', 'table']):
             if tag.name in ['h1', 'h2', 'h3', 'h4']:
                 seccion_actual = tag.get_text(strip=True)
                 contenido.setdefault(seccion_actual, [])
@@ -45,6 +46,15 @@ class WebIngestor:
                 lista = [li.get_text(strip=True) for li in tag.find_all('li') if li.get_text(strip=True)]
                 if lista:
                     contenido.setdefault(seccion_actual, []).append({"lista": lista})
+            # LÓGICA RESCATADA DEL LEGACY PARA EXTRAER TABLAS
+            elif tag.name == 'table':
+                tabla = []
+                for fila in tag.find_all('tr'):
+                    columnas = [celda.get_text(strip=True) for celda in fila.find_all(['td', 'th'])]
+                    if columnas:
+                        tabla.append(columnas)
+                if tabla:
+                    contenido.setdefault(seccion_actual, []).append({"tabla": tabla})
 
         return {
             "url": url_completa, 
@@ -53,7 +63,7 @@ class WebIngestor:
         }
 
     def formatear_a_texto(self, contenido_dict, url):
-        """Convierte el diccionario extraído en un formato de texto estructurado para el LLM"""
+        """Convierte el diccionario en texto estructurado para el LLM y ChromaDB"""
         if not contenido_dict: return ""
         
         texto_final = f"Fuente Web: {url}\n\n"
@@ -65,6 +75,11 @@ class WebIngestor:
                 elif isinstance(item, dict) and "lista" in item:
                     for li in item["lista"]:
                         texto_final += f"- {li}\n"
+                # FORMATEO DE TABLAS PARA QUE EL LLM LAS ENTIENDA
+                elif isinstance(item, dict) and "tabla" in item:
+                    texto_final += "Tabla de datos:\n"
+                    for fila in item["tabla"]:
+                        texto_final += " | ".join(fila) + "\n"
             texto_final += "\n"
         return texto_final
 
@@ -72,7 +87,6 @@ class WebIngestor:
         """Sube el texto scrapeado a la base de datos vectorial"""
         if not text.strip(): return
         
-        # Dividimos el texto usando los encabezados (##) como separador lógico
         chunks = text.split("## ")
         texts = []
         metadatas = []
@@ -100,7 +114,6 @@ class WebIngestor:
         print(f"Buscando en: {url}")
         resultado = self.extraer_contenido_desde_url(url)
         
-        # Usamos .get("error") en lugar de ["error"]
         if resultado.get("error"):
             print(f"❌ Error: {resultado.get('error')}")
             return
@@ -125,7 +138,7 @@ class WebIngestor:
             for institucion, urls in datos.items():
                 print(f"🏫 === Procesando institución: {institucion} ===")
                 for url in urls:
-                    self.scrapear_e_ingestar(url)
+                    self.scrapear_e_ingestar(url, institucion)
                     
             print("\n✅ Scraping masivo finalizado.")
             
@@ -140,11 +153,9 @@ class WebIngestor:
 if __name__ == "__main__":
     ingestor = WebIngestor()
     
-    # Si le pasas una URL por consola, scrappea SOLO ESA URL
     if len(sys.argv) > 1:
         url_objetivo = sys.argv[1]
         institucion_objetivo = sys.argv[2] if len(sys.argv) > 2 else "GENERAL"
         ingestor.scrapear_e_ingestar(url_objetivo, institucion_objetivo)
     else:
-        # Si NO le pasas nada, procesa TODA LA LISTA del archivo JSON
         ingestor.procesar_desde_archivo()
