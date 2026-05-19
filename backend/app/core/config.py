@@ -9,7 +9,7 @@ load_dotenv(dotenv_path=env_path)
 
 class Settings:
     GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-    MODELO_CHAT = "llama-3.1-8b-instant"
+    MODELO_CHAT = "llama-3.3-70b-versatile"
     
     MONGO_URI = os.getenv("MONGO_URI")
     DATABASE_NAME = "visor360_db"
