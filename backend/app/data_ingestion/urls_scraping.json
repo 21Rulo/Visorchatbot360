@@ -35,7 +35,7 @@
     "https://www.cmpl.ipn.mx/investigaci%c3%b3n/lineas-de-investigacion.html",
     "https://www.cmpl.ipn.mx/servicios/"
   ],
-  "ENCBC": [
+  "ENCB": [
     "https://www.encb.ipn.mx",
     "https://www.encb.ipn.mx/oferta-educativa/",
     "https://www.encb.ipn.mx/oferta-educativa/ver-carrera.html?lg=es&id=4&nombre=Ingenier%C3%ADa-Bioqu%C3%ADmica",
@@ -53,6 +53,20 @@
     "https://www.encb.ipn.mx/servicios/cursos.html",
     "https://www.encb.ipn.mx/servicios/servicios-externos.html",
     "https://www.encb.ipn.mx/herbario.html",
+    "https://www.encb.ipn.mx/udimeb/",
+    "https://udibi.com.mx/",
+    "https://udibi.com.mx/quienes-somos/",
+    "https://udibi.com.mx/noticias/",
+    "https://udibi.com.mx/productos/",
+    "https://udibi.com.mx/ensayos-biologicos/",
+    "https://udibi.com.mx/modelos-animales/",
+    "https://udibi.com.mx/ingenieria-de-anticuerpos/",
+    "https://udibi.com.mx/eventos/",
+    "https://udibi.com.mx/proyectos-y-desarrollos/",
+    "https://udibi.com.mx/servicios/",
+    "https://udibi.com.mx/contacto/"
+  ],
+  "UDIBI": [
     "https://www.encb.ipn.mx/udimeb/",
     "https://udibi.com.mx/",
     "https://udibi.com.mx/quienes-somos/",

@@ -9,6 +9,7 @@ class Institucion(str, Enum):
     ESIMEZ = "ESIMEZ"
     CMPL = "CMPL"
     ENCB = "ENCB"
+    UDIBI = "UDIBI"
     GENERAL = "GENERAL"
 
 def gestionar_historial(historial_actual: List[Dict[str, str]], nuevos_mensajes: List[Dict[str, str]]) -> List[Dict[str, str]]:

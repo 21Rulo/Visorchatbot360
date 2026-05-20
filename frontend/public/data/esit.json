@@ -20,93 +20,16 @@
     }
   ],
   "departamentos": [],
-  "nodo_inicial": "logo",
+  "nodo_inicial": "estacionamiento",
   "nodos": {
-    "logo": {
-      "titulo": "Estacionamiento ESIT",
-      "yaw_inicio": -90,
-      "imagen_url": "/visor_v2/assets/ESIT/EXT9.webp",
-      "contexto_ia": "Estacionamiento principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
-      "equipos_destacados": [],
-      "hotspots": [
-        { "destino": "estacionamiento", "texto": "continuar", "pitch": -4, "yaw": 200, "yaw_llegada": -94 }
-      ]
-    },
     "estacionamiento": {
-      "titulo": "Estacionamiento ESIT",
+      "titulo": "Entrada Principal ESIT",
       "imagen_url": "/visor_v2/assets/ESIT/EXT8.webp",
       "yaw_inicio": -94,
-      "contexto_ia": "Continuación del estacionamiento principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
-      "equipos_destacados": [],
-      "hotspots": [
-        { "destino": "logo", "texto": "volver", "pitch": -1, "yaw": 350, "yaw_llegada": 20 },
-        { "destino": "entrada", "texto": "entrada", "pitch": -1, "yaw": 85, "yaw_llegada": 170 }
-      ]
-    },
-    "entrada": {
-      "titulo": "Entrada Principal ESIT",
-      "imagen_url": "/visor_v2/assets/ESIT/EXT7.webp",
-      "yaw_inicio": 170,
       "contexto_ia": "Entrada principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicada en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "estacionamiento", "texto": "volver", "pitch": 0, "yaw": 20, "yaw_llegada": 0 },
-        { "destino": "pasillo1", "texto": "entradr al pasillo", "pitch": 0, "yaw": 190, "yaw_llegada": 180 }
-      ]
-    },
-    "pasillo1": {
-      "titulo": "Pasillo ESIT",
-      "imagen_url": "/visor_v2/assets/ESIT/EXT6.webp",
-      "yaw_inicio": 180,
-      "contexto_ia": "Pasillo principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
-      "equipos_destacados": [],
-      "hotspots": [
-        { "destino": "entrada", "texto": "salir", "pitch": 0, "yaw": 0, "yaw_llegada": 0 },
-        { "destino": "pasillo2", "texto": "pasillo", "pitch": 0, "yaw": 180, "yaw_llegada": 0 }
-      ]
-    },
-    "pasillo2": {
-      "titulo": "Pasillo ESIT",
-      "imagen_url": "/visor_v2/assets/ESIT/EXT5.webp",
-      "yaw_inicio": 0,
-      "contexto_ia": "Pasillo principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
-      "equipos_destacados": [],
-      "hotspots": [
-        { "destino": "pasillo1", "texto": "volver", "pitch": -2, "yaw": 100, "yaw_llegada": 0 },
-        { "destino": "pasillo3", "texto": "pasillo", "pitch": 0, "yaw": 5, "yaw_llegada": 90 }
-      ]
-    },
-    "pasillo3": {
-      "titulo": "Pasillo ESIT",
-      "imagen_url": "/visor_v2/assets/ESIT/EXT4.webp",
-      "yaw_inicio": 90,
-      "contexto_ia": "Pasillo principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
-      "equipos_destacados": [],
-      "hotspots": [
-        { "destino": "pasillo2", "texto": "volver", "pitch": 0, "yaw": 90, "yaw_llegada": -90 },
-        { "destino": "pasillo4", "texto": "pasillo", "pitch": 0, "yaw": -90, "yaw_llegada": 90 }
-      ]
-    },
-    "pasillo4": {
-      "titulo": "Pasillo ESIT",
-      "imagen_url": "/visor_v2/assets/ESIT/EXT3.webp",
-      "yaw_inicio": 90,
-      "contexto_ia": "Pasillo principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
-      "equipos_destacados": [],
-      "hotspots": [
-        { "destino": "pasillo3", "texto": "volver", "pitch": 0, "yaw": 90, "yaw_llegada": -90 },
-        { "destino": "pasillo5", "texto": "pasillo", "pitch": 0, "yaw": -90, "yaw_llegada": 90 }
-      ]
-    },
-    "pasillo5": {
-      "titulo": "Pasillo ESIT",
-      "imagen_url": "/visor_v2/assets/ESIT/EXT2.webp",
-      "yaw_inicio": 90,
-      "contexto_ia": "Pasillo principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
-      "equipos_destacados": [],
-      "hotspots": [
-        { "destino": "pasillo4", "texto": "volver", "pitch": 0, "yaw": 90, "yaw_llegada": -90 },
-        { "destino": "pasillo6", "texto": "pasillo", "pitch": 0, "yaw": -90, "yaw_llegada": -90 }
+        { "destino": "pasillo6", "texto": "Avanzar", "pitch": -1, "yaw": 85, "yaw_llegada": -90 }
       ]
     },
     "pasillo6": {
@@ -116,7 +39,7 @@
       "contexto_ia": "Pasillo principal de la Escuela Superior de Ingeniería Textil (ESIT), ubicado en la Unidad Profesional Adolfo López Mateos, Ciudad de México.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "pasillo5", "texto": "volver", "pitch": 0, "yaw": 178, "yaw_llegada": -90 },
+        { "destino": "estacionamiento", "texto": "Atrás", "pitch": 0, "yaw": 178, "yaw_llegada": 90 },
         { "destino": "laboratorio_esquina_inferior_izquierda", "texto": "laboratorio", "pitch": 0, "yaw": 60, "yaw_llegada": 30 },
         { "destino": "antesala1", "texto": "antesala", "pitch": 0, "yaw": 135, "yaw_llegada": -90 }
       ]

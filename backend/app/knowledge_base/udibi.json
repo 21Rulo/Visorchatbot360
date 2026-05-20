@@ -1,0 +1,328 @@
+{
+  "institucion": {
+    "nombre": "Unidad de Desarrollo e Investigación en Bioterapéuticos",
+    "siglas": "udibi",
+    "descripcion": "La UDIBI esta integrada por un equipo multidisciplinario de profesionales altamente calificados en el descubrimiento, desarrollo, producción y caracterización de productos farmacéuticos y biofármacos. Gracias a nuestra infraestructura y experiencia brindamos soluciones innovadoras y de alta calidad.",
+    "mision": "Ofrecer a nuestros clientes soluciones especializadas en el campo de la salud humana a través de productos y servicios basados en la innovación científica, que cumplan con altos estándares de calidad",
+    "vision": "Ser un laboratorio referente nacional en investigación y desarrollo, prestación de servicios especializados y en la generación de productos que contribuyan a mejorar la salud y calidad de vida de nuestra sociedad",
+    "url": "https://udibi.com.mx/",
+    "fechaCreacion": "2010",
+    "ubicacion": "Ciudad de México, (Unidad Profesional “Lázaro Cárdenas”, Col. Santo Tomás)",
+    "historia": "La Unidad de Investigación, Desarrollo e Innovación Médica y Biotecnológica (UDIMEB) nació en 2010 teniendo como antecedente al proyecto Factor de Transferencia, transformándose en una unidad productora del inmunomodulador Transferon, que cuenta con áreas de soporte técnico, científico y regulatorio. Actualmente realiza actividades de desarrollo de medicamentos inmunomoduladores, anticuerpos terapéuticos y dispositivos médicos, así como investigación clínica. También brinda servicios de consulta médica especializada y pruebas de laboratorio clínico a la comunidad politécnica y público en general, Además da acompañamiento técnico regulatorio a la industria farmacéutica y de insumos para la salud en apego a la normatividad vigente. Cuenta con laboratorios terceros autorizados por la COFEPRIS y bioterios autorizados por SENASICA, completando así un engranaje que promueve la investigación, desarrollo e innovación de productos y servicios de base biotecnológica para el mejoramiento de la salud humana.",
+    "titular": "Dra. Sonia Mayra Pérez Tapia"
+  },
+  "programasAcademicos": [
+  ],
+  "departamentos": [],
+  "nodo_inicial": "udibi_8",
+  "nodos": {
+    "udibi_8": {
+      "titulo": "Entrada principal UDIBI",
+      "imagen_url": "/visor_v2/assets/ENCB_Casco/UDIBI/8.jpg",
+      "yaw_inicio": 80,
+      "contexto_ia": "Has llegado al nivel superior de la rampa del edificio de aulas de la ENCB, donde se encuentra la entrada de la UDIBI, la Unidad de Desarrollo e Investigación en Microbiología y Biotecnología. Frente a ti se ve claramente el acceso principal con su letrero institucional y los íconos de sus áreas de trabajo. Este punto marca la incorporación directa a los laboratorios y espacios de investigación especializados. A tu derecha, el pasillo continúa hacia otras zonas del edificio; a tu izquierda quedan las ventanas con vista a la estructura externa. Si el recorrido sigue hacia la UDIBI, este es el punto de entrada; si continúa por el edificio, la ruta sigue por el pasillo lateral.",
+      "equipos_destacados": [],
+      "hotspots": [
+        {
+          "destino": "udibi_10",
+          "texto": "Entrada principal UDIBI",
+          "pitch": 0,
+          "yaw": -80,
+          "yaw_llegada": 90
+        }
+      ]
+    },
+    "udibi_10": {
+      "titulo": "Recepción UDIBI",
+      "imagen_url": "/visor_v2/assets/ENCB_Casco/UDIBI/10.jpg",
+      "yaw_inicio": 50,
+      "contexto_ia": "Te encuentras dentro de la recepción de la UDIBI, la Unidad de Investigación Médica y Biotecnológica de la ENCB. Este espacio es el punto de acceso y espera para visitantes, estudiantes e investigadores. Frente a ti está el módulo de recepción, donde se gestiona el ingreso a los laboratorios y áreas especializadas. A la izquierda se observa una sala de espera con pantallas informativas que muestran noticias, proyectos y actividades de la unidad. Detrás de ti queda la puerta de vidrio por la cual accediste desde la rampa del edificio de aulas. Al fondo, el pasillo iluminado conduce directamente hacia los distintos laboratorios y áreas operativas de la UDIBI. Este es el punto de bienvenida y control para quienes ingresan a la unidad.",
+      "equipos_destacados": [],
+      "hotspots": [
+        {
+          "destino": "udibi_12",
+          "texto": "Laboratorios UDIBI",
+          "pitch": 0,
+          "yaw": -55,
+          "yaw_llegada": 90
+        },
+        {
+          "destino": "udibi_23",
+          "texto": "Área corporativa UDIBI",
+          "pitch": 0,
+          "yaw": 120,
+          "yaw_llegada": 90
+        },
+        {
+          "destino": "udibi_8",
+          "texto": "Salida",
+          "pitch": 0,
+          "yaw": 60,
+          "yaw_llegada": -90
+        }
+      ]
+    },
+    "udibi_12": {
+      "titulo": "Pasillo de laboratorios UDIBI",
+      "imagen_url": "/visor_v2/assets/ENCB_Casco/UDIBI/12.jpg",
+      "yaw_inicio": 90,
+      "contexto_ia": "Interior del pasillo de la UDIBI, en la zona donde inician los laboratorios especializados. A la izquierda se ve un cuarto técnico con puerta de vidrio, y a la derecha comienzan los laboratorios visibles a través de paneles transparentes donde trabaja el personal. El pasillo es estrecho y con un piso en tonos azul y blanco que guía el recorrido hacia el fondo. En la parte superior se observan canalizaciones y cableado expuesto típicos de un laboratorio moderno. Detrás de este punto quedó la recepción de la UDIBI, y el recorrido continúa hacia adelante siguiendo la curva del pasillo para llegar a más laboratorios.",
+      "equipos_destacados": [],
+      "hotspots": [
+        {
+          "destino": "udibi_13",
+          "texto": "Avanzar",
+          "pitch": 0,
+          "yaw": -90,
+          "yaw_llegada": 90
+        },
+        {
+          "destino": "udibi_10",
+          "texto": "Atrás",
+          "pitch": 0,
+          "yaw": 90,
+          "yaw_llegada": -90
+        }
+      ]
+    },
+    "udibi_13": {
+      "titulo": "Laboratorios UDIBI",
+      "imagen_url": "/visor_v2/assets/ENCB_Casco/UDIBI/13.jpg",
+      "yaw_inicio": 90,
+      "contexto_ia": "Te encuentras dentro del área de laboratorios de la UDIBI. A tu izquierda hay un muro de 'Publicaciones' donde se exhiben artículos y trabajos de investigación realizados por el personal del laboratorio. Frente a ti se extiende un pasillo limpio y controlado que conduce a diferentes salas de laboratorio. A la derecha pueden verse laboratorios activos a través de ventanas de vidrio, donde el personal técnico realiza actividades científicas especializadas. Esta zona forma parte del corredor principal interno de UDIBI, por donde continúa el recorrido hacia más módulos de trabajo y áreas de experimentación.",
+      "equipos_destacados": [],
+      "hotspots": [
+        {
+          "destino": "udibi_14",
+          "texto": "Avanzar",
+          "pitch": 0,
+          "yaw": -90,
+          "yaw_llegada": 90
+        },
+        {
+          "destino": "udibi_12",
+          "texto": "Atrás",
+          "pitch": 0,
+          "yaw": 90,
+          "yaw_llegada": -90
+        }
+      ]
+    },
+    "udibi_14": {
+      "titulo": "Laboratorios UDIBI",
+      "imagen_url": "/visor_v2/assets/ENCB_Casco/UDIBI/14.jpg",
+      "yaw_inicio": 90,
+      "contexto_ia": "Te encuentras dentro de UDIBI, avanzando por un pasillo amplio y bien iluminado que forma parte de la zona de laboratorios y oficinas. A tu izquierda se observa un área acristalada que funciona como sala colaborativa o sala de capacitación, donde el personal de UDIBI trabaja y asiste a reuniones. A la derecha se aprecian cajas y equipo en proceso de resguardo o traslado, indicando que es una zona operativa interna. El recorrido continúa de frente siguiendo el pasillo principal; este corredor conecta varias áreas técnicas y administrativas de UDIBI. El espacio mantiene un diseño industrial, con ductos y cableado expuesto en el techo, característico de zonas de laboratorio de alto nivel. Esta escena forma parte del recorrido interno dentro de UDIBI, después de haber ingresado por recepción.",
+      "equipos_destacados": [],
+      "hotspots": [
+        {
+          "destino": "udibi_15",
+          "texto": "Avanzar",
+          "pitch": 0,
+          "yaw": -90,
+          "yaw_llegada": 90
+        },
+        {
+          "destino": "udibi_13",
+          "texto": "Atrás",
+          "pitch": 0,
+          "yaw": 90,
+          "yaw_llegada": -90
+        },
+        {
+          "destino": "udibi_22",
+          "texto": "Sala de reuniones UDIBI",
+          "pitch": 0,
+          "yaw": 180,
+          "yaw_llegada": 90
+        }
+      ]
+    },
+    "udibi_15": {
+      "titulo": "Laboratorios UDIBI",
+      "imagen_url": "/visor_v2/assets/ENCB_Casco/UDIBI/15.jpg",
+      "yaw_inicio": 90,
+      "contexto_ia": "Esta escena muestra un tramo intermedio del pasillo técnico dentro de UDIBI, donde se localizan múltiples laboratorios y áreas de trabajo especializado. A la izquierda se observa un laboratorio con personal realizando actividades experimentales; la zona está delimitada por paredes de vidrio, lo que permite ver equipos, mesas de trabajo y material de laboratorio. A la derecha se encuentra otra área de trabajo con pizarras llenas de diagramas y notas técnicas, utilizada para planeación, análisis o sesiones internas del equipo. El pasillo continúa hacia el fondo con una ligera curva, indicando que el recorrido sigue derecho por el pasillo principal. La infraestructura expuesta en el techo (tuberías, cableado y luminarias) es característica de las áreas de biofabricación y control ambiental de UDIBI, reforzando que el usuario se encuentra en la zona activa de laboratorios especializados.",
+      "equipos_destacados": [],
+      "hotspots": [
+        {
+          "destino": "udibi_16",
+          "texto": "Avanzar",
+          "pitch": 0,
+          "yaw": -90,
+          "yaw_llegada": 90
+        },
+        {
+          "destino": "udibi_14",
+          "texto": "Atrás",
+          "pitch": 0,
+          "yaw": 90,
+          "yaw_llegada": -90
+        },
+        {
+          "destino": "udibi_18",
+          "texto": "Laboratorio accesible",
+          "pitch": 0,
+          "yaw": 180,
+          "yaw_llegada": 90
+        }
+      ]
+    },
+    "udibi_16": {
+      "titulo": "Laboratorios UDIBI",
+      "imagen_url": "/visor_v2/assets/ENCB_Casco/UDIBI/16.jpg",
+      "yaw_inicio": 90,
+      "contexto_ia": "Esta escena corresponde a un tramo avanzado del recorrido dentro de UDIBI, específicamente en la zona donde se distribuyen varios laboratorios especializados y oficinas técnicas. A la izquierda se encuentra un laboratorio completamente acristalado, con mesas, reactivos y equipo visible, lo que indica que es un área de trabajo experimental activo. También se observan anotaciones y diagramas escritos en los cristales, señal de procesos en curso o coordinación de protocolos. A la derecha hay una oficina o sala de trabajo administrativo, con personal realizando actividades de análisis o documentación. El pasillo continúa derecho y presenta una ligera curva al fondo, lo que indica que el recorrido debe seguir avanzando por el corredor principal. Esta sección mantiene el diseño característico de UDIBI: tubería aérea expuesta, iluminación lineal, altos estándares de orden y visibilidad en cada área científica.",
+      "equipos_destacados": [],
+      "hotspots": [
+        {
+          "destino": "udibi_15",
+          "texto": "Atrás",
+          "pitch": 0,
+          "yaw": 90,
+          "yaw_llegada": -90
+        }
+      ]
+    },
+    "udibi_18": {
+      "titulo": "Laboratorios UDIBI",
+      "imagen_url": "/visor_v2/assets/ENCB_Casco/UDIBI/18.jpg",
+      "yaw_inicio": 90,
+      "contexto_ia": "Esta escena de la UDIBI muestra un área de trabajo técnico donde personal especializado realiza actividades de laboratorio en una mesa equipada con instrumentos y documentación. A la derecha se observan equipos resguardados y material embalado, posiblemente instrumentos de laboratorio o insumos en proceso de instalación. El espacio está delimitado por ventanales que permiten ver hacia otros laboratorios y oficinas contiguas, lo que indica que esta zona forma parte del corredor interno de trabajo científico. La iluminación y distribución del mobiliario reflejan un entorno operativo activo, donde se desarrollan tareas de preparación, análisis y verificación de procedimientos.",
+      "equipos_destacados": [],
+      "hotspots": [
+        {
+          "destino": "udibi_20",
+          "texto": "Avanzar",
+          "pitch": 0,
+          "yaw": -90,
+          "yaw_llegada": 90
+        },
+        {
+          "destino": "udibi_15",
+          "texto": "Atrás",
+          "pitch": 0,
+          "yaw": 90,
+          "yaw_llegada": 0
+        }
+      ]
+    },
+    "udibi_19": {
+      "titulo": "Laboratorios UDIBI",
+      "imagen_url": "/visor_v2/assets/ENCB_Casco/UDIBI/19.jpg",
+      "yaw_inicio": 90,
+      "contexto_ia": "Esta escena de la UDIBI corresponde a un laboratorio operativo donde se realizan procesos experimentales y de análisis. A la izquierda se observan estantes con carpetas, reactivos y documentación técnica organizada, así como una zona de lavado con insumos y material de laboratorio. En el centro destaca un refrigerador especializado para almacenamiento de muestras biológicas, junto a equipo embalado que sugiere recepción reciente de instrumentos. A la derecha, personal con bata y protección trabaja en mesas equipadas con centrifugadoras y material de laboratorio, reflejando actividades de preparación, procesamiento y observación de muestras. El espacio está completamente iluminado y conectado visualmente con otras áreas del laboratorio gracias a sus ventanales, mostrando un entorno activo, controlado y dedicado al trabajo científico.",
+      "equipos_destacados": [],
+      "hotspots": [
+        {
+          "destino": "udibi_20",
+          "texto": "Atrás",
+          "pitch": 0,
+          "yaw": -90,
+          "yaw_llegada": 180
+        }
+      ]
+    },
+    "udibi_20": {
+      "titulo": "Laboratorios UDIBI",
+      "imagen_url": "/visor_v2/assets/ENCB_Casco/UDIBI/20.jpg",
+      "yaw_inicio": 90,
+      "contexto_ia": "Esta escena de la UDIBI corresponde a un laboratorio activo donde dos especialistas trabajan en análisis y preparación de muestras sobre una mesa de acero inoxidable. Al centro del espacio se observa un pallet aún embalado, lo que indica la reciente llegada de equipo o insumos. A la izquierda se encuentra una estación con computadoras y equipo especializado, mientras que a la derecha se ubican refrigeradores de almacenamiento biológico y mesas de trabajo equipadas con material de laboratorio. La iluminación uniforme y la distribución del mobiliario muestran que es un laboratorio de procesamiento y análisis biotecnológico, diseñado para actividades de manipulación, registro y validación de muestras en condiciones controladas.",
+      "equipos_destacados": [],
+      "hotspots": [
+        {
+          "destino": "udibi_18",
+          "texto": "Salida",
+          "pitch": 0,
+          "yaw": 180,
+          "yaw_llegada": -90
+        },
+        {
+          "destino": "udibi_21",
+          "texto": "Extensión de laboratorio accesible",
+          "pitch": 0,
+          "yaw": 90,
+          "yaw_llegada": 110
+        },
+        {
+          "destino": "udibi_19",
+          "texto": "Avanzar",
+          "pitch": 0,
+          "yaw": 0,
+          "yaw_llegada": -90
+        }
+      ]
+    },
+    "udibi_21": {
+      "titulo": "Laboratorios UDIBI",
+      "imagen_url": "/visor_v2/assets/ENCB_Casco/UDIBI/21.jpg",
+      "yaw_inicio": 90,
+      "contexto_ia": "La escena muestra un laboratorio de la UDIBI con varios equipos especializados para análisis biotecnológico y procesamiento de muestras. Al centro se observan instrumentos de alta precisión como analizadores automatizados y sistemas de citometría o diagnóstico, acompañados de estaciones de cómputo donde el personal trabaja en la adquisición y procesamiento de datos experimentales. A la derecha, se encuentra una zona de trabajo con mesas de acero inoxidable donde se manipulan reactivos y muestras, mientras que al fondo se aprecia un pallet embalado que sugiere la llegada reciente de equipo o insumos. A la izquierda se ubican refrigeradores y unidades de almacenamiento biológico junto a una mesa con material de laboratorio. La escena representa un espacio de trabajo activo y altamente controlado dentro del flujo operativo de investigación y producción de la UDIBI.",
+      "equipos_destacados": [],
+      "hotspots": [
+        {
+          "destino": "udibi_20",
+          "texto": "Atrás",
+          "pitch": 0,
+          "yaw": 90,
+          "yaw_llegada": 90
+        }
+      ]
+    },
+    "udibi_22": {
+      "titulo": "Sala de reuniones UDIBI",
+      "imagen_url": "/visor_v2/assets/ENCB_Casco/UDIBI/22.jpg",
+      "yaw_inicio": 90,
+      "contexto_ia": "Esta escena corresponde al área de trabajo colaborativo de la UDIBI, un espacio amplio y moderno destinado a reuniones, análisis en equipo y actividades administrativas o de investigación no experimental. Se observan varias mesas largas con computadoras y documentos, donde el personal trabaja en revisión de datos, preparación de reportes y coordinación de proyectos. El ambiente es abierto y luminoso, con pantallas de apoyo para presentaciones, zonas de descanso, una pequeña área de cafetería y ventanales que permiten la entrada de luz natural. Este espacio funciona como punto de encuentro entre equipos científicos y administrativos, complementando las actividades de laboratorio con trabajo intelectual y organizacional.",
+      "equipos_destacados": [],
+      "hotspots": [
+        {
+          "destino": "udibi_14",
+          "texto": "Salida",
+          "pitch": 0,
+          "yaw": 90,
+          "yaw_llegada": 0
+        }
+      ]
+    },
+    "udibi_23": {
+      "titulo": "Área corporativa UDIBI",
+      "imagen_url": "/visor_v2/assets/ENCB_Casco/UDIBI/23.jpg",
+      "yaw_inicio": 90,
+      "contexto_ia": "La escena muestra el área corporativa de la UDIBI, específicamente un pasillo que conduce a una sala de juntas acristalada donde un equipo participa en una reunión formal. Dentro de la sala se observa una presentación proyectada con gráficos, mientras el personal analiza información y discute resultados o avances operativos. A la izquierda del pasillo hay un tablero informativo con fotografías y avisos internos, típico de espacios administrativos. Al fondo se aprecia una zona de oficinas con escritorios y personal trabajando en actividades de gestión, administración de proyectos y coordinación institucional. Este entorno representa la parte ejecutiva de la UDIBI, donde se desarrollan reuniones estratégicas, planeación y seguimiento de procesos.",
+      "equipos_destacados": [],
+      "hotspots": [
+        {
+          "destino": "udibi_25",
+          "texto": "Sala de reuniones UDIBI",
+          "pitch": 0,
+          "yaw": -90,
+          "yaw_llegada": 90
+        },
+        {
+          "destino": "udibi_10",
+          "texto": "Salida",
+          "pitch": 0,
+          "yaw": 90,
+          "yaw_llegada": 50
+        }
+      ]
+    },
+    "udibi_25": {
+      "titulo": "Área corporativa UDIBI",
+      "imagen_url": "/visor_v2/assets/ENCB_Casco/UDIBI/25.jpg",
+      "yaw_inicio": 90,
+      "contexto_ia": "Esta área corresponde a una sala de juntas dentro de las instalaciones de UDIBI. Es un espacio cerrado con paredes de cristal donde se observa a un grupo de personas reunidas alrededor de una mesa grande, participando en una presentación o capacitación dirigida por un facilitador. En la pantalla se muestran datos y gráficas, lo que indica que se están revisando resultados, métricas o avances de proyectos. La sala está bien iluminada, equipada con mobiliario moderno y forma parte de la zona administrativa de UDIBI, utilizada para reuniones internas, sesiones de trabajo colaborativas y actividades de coordinación entre equipos de investigación y gestión.",
+      "equipos_destacados": [],
+      "hotspots": [
+        {
+          "destino": "udibi_23",
+          "texto": "Salida",
+          "pitch": 0,
+          "yaw": 120,
+          "yaw_llegada": -90
+        }
+      ]
+    }
+  }
+}

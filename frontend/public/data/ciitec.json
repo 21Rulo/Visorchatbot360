@@ -35,51 +35,7 @@
       "contexto_ia": "Panorámica exterior de acceso principal al CIITEC. La cámara está bajo una techumbre/arcada de vidrio y estructura metálica que cubre la entrada. Al frente se observa el edificio principal de fachada baja y moderna, con un vestíbulo de vidrio en forma de pirámide truncada y puertas al fondo; hay rampa y guarniciones amarillas, además de señal de accesibilidad (símbolo de silla de ruedas) en el piso. A la izquierda se ve la reja y portón rojo del perímetro, un andador de loseta, jardineras con setos recortados y árboles; pasa una persona por ese lado. A la derecha aparece una caseta o módulo de vigilancia con el escudo del IPN y un guardia, junto a un pasillo techado hacia estacionamiento con autos. También se distinguen botes de basura de colores y áreas verdes. Es un día soleado con cielo despejado; esta escena funciona como punto de llegada y control de acceso antes de ingresar al centro.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "lobby_lmdpf", "texto": "Lobby", "pitch": 0, "yaw": -90, "yaw_llegada": 90 }
-      ]
-    },
-    "lobby_lmdpf": {
-      "titulo": "Lobby",
-      "yaw_inicio": 90,
-      "imagen_url": "/visor_v2/assets/CIITEC/2.jpg",
-      "contexto_ia": "Panorámica en el acceso interior del CIITEC, bajo una gran techumbre curva de vidrio con estructura metálica; el sol se ve al centro del domo. Frente a la cámara hay un vestíbulo de muros blancos con una franja gris, que en el centro tiene un pasillo/entrada hacia el interior del edificio (se alcanza a ver un salón o lobby al fondo). En el muro izquierdo se observan placas y cuadros institucionales, incluyendo textos de “Visión” y “Misión”, además de varios avisos enmarcados. A ambos lados del vestíbulo hay puertas de vidrio abiertas: a la izquierda conectan con el andador exterior donde se ven barandales/reja roja; a la derecha conectan con otro pasillo techado. En el área de entrada hay macetas rectangulares con plantas bajas y varios pendones/roll-ups de bienvenida y difusión de un evento académico (9° Coloquio Estudiantil Multidisciplinario), junto con un cartel morado informativo. El piso es de loseta gris con una franja amarilla-beige que guía el paso hacia el acceso central.",
-      "equipos_destacados": [],
-      "hotspots": [
-        { "destino": "pasillo_principal", "texto": "Pasillo Principal", "pitch": 0, "yaw": -80, "yaw_llegada": 90 },
-        { "destino": "entrada_lmdpf", "texto": "Salida", "pitch": 0, "yaw": 95, "yaw_llegada": -90 }
-      ]
-    },
-    "pasillo_principal": {
-      "titulo": "Pasillo Principal",
-      "yaw_inicio": 90,
-      "imagen_url": "/visor_v2/assets/CIITEC/3.jpg",
-      "contexto_ia": "Panorámica dentro del vestíbulo/pasillo principal del CIITEC. El espacio es amplio, con techo blanco curvo y luces lineales, tipo túnel cubierto. Al centro hay una zona elevada con piso oscuro que funciona como rampa/plataforma de acceso; tiene franjas de precaución amarillo-negro en el borde y un símbolo de accesibilidad (silla de ruedas) pintado en azul, indicando paso preferente para personas con discapacidad. Al fondo se ve una puerta/entrada central que conduce a un corredor interior iluminado. A los lados del vestíbulo hay barandales bajos que delimitan la plataforma y conectan con pasillos laterales. En el lado izquierdo hay un muro con un directorio/plano institucional y un extintor; cerca de la salida lateral se observan macetas rectangulares con plantas y una puerta de vidrio hacia el exterior. En el lado derecho hay una fila de bancas verdes de espera, una pantalla/televisor montado en la pared, un pequeño módulo/repisa informativa y más macetas; también se ve una puerta de vidrio hacia el exterior. En ambos costados se distinguen pendones y material de difusión académica. La escena corresponde a la zona de circulación interna y punto de transición entre el acceso y el interior del edificio.",
-      "equipos_destacados": [],
-      "hotspots": [
-        { "destino": "pasillo_antesala", "texto": "Antesala/Recepción", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
-        { "destino": "lobby_lmdpf", "texto": "Salida", "pitch": 0, "yaw": 100, "yaw_llegada": -90 }
-      ]
-    },
-    "pasillo_antesala": {
-      "titulo": "Pasillo",
-      "yaw_inicio": 90,
-      "imagen_url": "/visor_v2/assets/CIITEC/4.jpg",
-      "contexto_ia": "Panorámica de la explanada/atrium central interior del CIITEC. El espacio está cubierto por una gran estructura de techo alto con arcos y celosía metálica negra y paneles traslúcidos, dejando entrar mucha luz natural. Al centro se encuentra la fachada del edificio principal con muros blancos y grises y una entrada amplia que conduce a un pasillo interno iluminado; frente a esa entrada hay sillas de espera. A la izquierda y derecha se extienden alas laterales de un nivel con ventanales y áreas tipo oficinas/servicios, separadas por muros bajos que delimitan el paso hacia la explanada. El piso de la zona central es de loseta oscura amplia, con líneas de precaución amarillas y señalética de accesibilidad en el suelo. En el costado derecho hay plantas en macetas y varios pendones/lonas grandes de difusión institucional y de posgrado/eventos académicos. Esta escena funciona como patio techado de distribución: conecta las salidas laterales y el acceso principal hacia el interior del centro.",
-      "equipos_destacados": [],
-      "hotspots": [
-        { "destino": "pasillo_labs", "texto": "Pasillo Laboratorios", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
-        { "destino": "pasillo_principal", "texto": "Salida", "pitch": 0, "yaw": 100, "yaw_llegada": -90 }
-      ]
-    },
-    "pasillo_labs": {
-      "titulo": "Pasillo",
-      "yaw_inicio": 90,
-      "imagen_url": "/visor_v2/assets/CIITEC/5.jpg",
-      "contexto_ia": "Panorámica de un pasillo interior del CIITEC, de muros blancos y piso de loseta clara brillante, con techo curvo alto y varias luminarias circulares empotradas. Al centro se extiende un corredor largo y recto con puertas a ambos lados y macetas rectangulares con plantas bajas; al fondo se ve una zona más iluminada que conecta con otra área del edificio. A la izquierda hay una puerta de vidrio con letrero vertical de “Unidad de Informática”, junto a tres sillas verdes de espera y un pequeño bote de basura. A la derecha se observa la entrada a sanitarios (señal de baño en la pared), una fila de sillas negras de espera, un extintor y señalética de seguridad. En ambos extremos laterales del panorama se abren accesos hacia la explanada techada exterior del centro. Esta escena corresponde a un corredor administrativo/servicios que distribuye a oficinas internas y áreas de apoyo.",
-      "equipos_destacados": [],
-      "hotspots": [
-        { "destino": "pasillo_labs2", "texto": "Pasillo Laboratorios", "pitch": 0, "yaw": -90, "yaw_llegada": 45 },
-        { "destino": "pasillo_antesala", "texto": "Salida", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
+        { "destino": "pasillo_labs2", "texto": "Lobby", "pitch": 0, "yaw": -90, "yaw_llegada": 45 }
       ]
     },
     "pasillo_labs2": {
@@ -90,7 +46,7 @@
       "equipos_destacados": [],
       "hotspots": [
         { "destino": "lab1", "texto": "Entrada Laboratorio", "pitch": 0, "yaw": -45, "yaw_llegada": 90 },
-        { "destino": "pasillo_labs", "texto": "Salida", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
+        { "destino": "entrada_lmdpf", "texto": "Salida", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
       ]
     },
     "lab1": {

@@ -35,29 +35,7 @@
       "contexto_ia": "Esta escena muestra la entrada principal del Centro Mexicano para la Producción Más Limpia (CMP+L). Al frente se observa el edificio central con su fachada de vidrio y el letrero institucional. El espacio exterior está conformado por una amplia explanada peatonal y áreas verdes con arbustos podados. A la derecha se encuentra la caseta de acceso y un área con techumbre ligera y mesas, mientras que a la izquierda se aprecia un arco vegetal y la zona de estacionamiento. El entorno general transmite una entrada organizada, iluminada y adecuada para recibir a los visitantes del centro.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "2", "texto": "Entrada Principal", "pitch": 0, "yaw": -90, "yaw_llegada": 90 }
-      ]
-    },
-    "2": {
-      "titulo": "Entrada principal del edificio CMP+L",
-      "yaw_inicio": 90,
-      "imagen_url": "/visor_v2/assets/CMPL/2.webp",
-      "contexto_ia": "Esta escena muestra una vista cercana de la entrada principal del Centro Mexicano para la Producción Más Limpia. Se aprecia de forma destacada la fachada curva del edificio, cubierta con ventanales amplios y sostenida por columnas blancas. Al centro se observan las escaleras de acceso y la puerta principal, mientras que a los costados hay macetas con vegetación ornamental. A la izquierda se distingue la reja perimetral y áreas verdes del complejo, y a la derecha se observa parte de la explanada y la zona techada con mesas donde el personal y visitantes pueden descansar. La iluminación natural resalta la arquitectura y la amplitud del espacio exterior.",
-      "equipos_destacados": [],
-      "hotspots": [
-        { "destino": "3", "texto": "Vestíbulo", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
-        { "destino": "1", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
-      ]
-    },
-    "3": {
-      "titulo": "Vestíbulo principal del CMP+L",
-      "yaw_inicio": 90,
-      "imagen_url": "/visor_v2/assets/CMPL/3.webp",
-      "contexto_ia": "Esta escena muestra el vestíbulo principal del Centro Mexicano para la Producción Más Limpia. Desde aquí se aprecia la puerta de acceso al exterior con grandes ventanales que permiten la entrada de luz natural y una vista hacia la explanada. Al centro se encuentra la escalera que conduce al nivel superior y, debajo de ella, un área con contenedores de separación de residuos, reforzando el enfoque ambiental del centro. A la derecha se ubica la zona de recepción y oficinas en módulos acristalados, donde el personal atiende a visitantes, estudiantes e investigadores.",
-      "equipos_destacados": [],
-      "hotspots": [
-        { "destino": "4", "texto": "Pasillo", "pitch": 0, "yaw": -90, "yaw_llegada": 45 },
-        { "destino": "2", "texto": "Salida", "pitch": 0, "yaw": 50, "yaw_llegada": -90 }
+        { "destino": "4", "texto": "Pasillo administrativo y área de oficinas", "pitch": 0, "yaw": -90, "yaw_llegada": 60 }
       ]
     },
     "4": {
@@ -67,21 +45,10 @@
       "contexto_ia": "Esta escena muestra el pasillo administrativo del Centro Mexicano para la Producción Más Limpia. A la izquierda se observa la conexión con el vestíbulo principal, caracterizada por ventanales amplios y una zona con extintores y contenedores de separación de residuos. Al frente se extiende un pasillo iluminado con módulos de oficinas y salas de trabajo distribuidas a ambos lados. A la derecha se aprecia un cubículo acristalado donde el personal realiza actividades administrativas. El espacio combina áreas de tránsito con zonas de atención y trabajo, mostrando la organización interna del centro.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "7", "texto": "Sala de espera", "pitch": 0, "yaw": -80, "yaw_llegada": 50 },
-        { "destino": "5", "texto": "Primer Laboratorio", "pitch": 0, "yaw": -20, "yaw_llegada": 90 },
-        { "destino": "3", "texto": "Salida", "pitch": 0, "yaw": 110, "yaw_llegada": -90 }
-      ]
-    },
-    "5": {
-      "titulo": "Zona de espera y acceso a laboratorio",
-      "yaw_inicio": 90,
-      "imagen_url": "/visor_v2/assets/CMPL/5.webp",
-      "contexto_ia": "Esta escena muestra el área de espera del Centro Mexicano para la Producción Más Limpia, equipada con sillones donde los visitantes y personal pueden permanecer antes de ingresar a las oficinas o laboratorios. Al centro se aprecia la puerta abierta de un laboratorio, donde se observan mesas de trabajo, equipos y material especializado. A la derecha se encuentra un cubículo acristalado identificado como aula de clases, donde se desarrollan actividades académicas y administrativas. El espacio combina áreas de tránsito, trabajo y espera, reflejando la operación cotidiana del centro.",
-      "equipos_destacados": [],
-      "hotspots": [
-        { "destino": "6", "texto": "Laboratorio", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
-        { "destino": "4", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": 45 },
-        { "destino": "7", "texto": "Sala de espera", "pitch": 0, "yaw": 180, "yaw_llegada": 45 }
+        { "destino": "12", "texto": "Acceso Laboratorio", "pitch": 0, "yaw": -80, "yaw_llegada": 90 },
+        { "destino": "9", "texto": "Laboratorio Área Analítica", "pitch": 0, "yaw": -95, "yaw_llegada": 90 },
+        { "destino": "6", "texto": "Primer Laboratorio", "pitch": 0, "yaw": -30, "yaw_llegada": 90 },
+        { "destino": "1", "texto": "Salida", "pitch": 0, "yaw": 110, "yaw_llegada": -90 }
       ]
     },
     "6": {
@@ -91,30 +58,7 @@
       "contexto_ia": "Esta escena muestra el interior de un laboratorio de análisis del Centro Mexicano para la Producción Más Limpia. A lo largo de las mesas de trabajo se observan equipos especializados, como analizadores, sistemas de medición, computadora con software de registro de datos y material de laboratorio dispuesto para diferentes procedimientos. En la parte superior hay gabinetes con puertas de vidrio para el resguardo de reactivos y utensilios. El espacio está diseñado para realizar ensayos y mediciones relacionadas con la calidad de agua, energía y procesos industriales, en un ambiente controlado y seguro.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "5", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": 180 }
-      ]
-    },
-    "7": {
-      "titulo": "Área de descanso y acceso a laboratorios",
-      "yaw_inicio": 90,
-      "imagen_url": "/visor_v2/assets/CMPL/7.webp",
-      "contexto_ia": "Esta escena muestra una zona de descanso dentro del Centro Mexicano para la Producción Más Limpia, equipada con varios sillones donde estudiantes, investigadores y personal pueden esperar o convivir. A la izquierda se observa un laboratorio visible a través de ventanales interiores, con estantes y equipo resguardado. Al fondo se encuentran puertas que conducen a más laboratorios y áreas especializadas. La iluminación, los ventanales y la distribución abierta del espacio generan un entorno cómodo y funcional para el tránsito y las actividades del centro.",
-      "equipos_destacados": [],
-      "hotspots": [
-        { "destino": "8", "texto": "Laboratorio Área Analítica", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
-        { "destino": "11", "texto": "Acceso Laboratorio", "pitch": 0, "yaw": -45, "yaw_llegada": 90 },
-        { "destino": "4", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": 50 }
-      ]
-    },
-    "8": {
-      "titulo": "Pasillo",
-      "imagen_url": "/visor_v2/assets/CMPL/8.webp",
-      "yaw_inicio": 90,
-      "contexto_ia": "Esta escena muestra un pasillo interior del Centro Mexicano para la Producción Más Limpia. A la derecha se encuentra la entrada al auditorio, marcada con su señalización correspondiente, mientras que justo a un lado se abre la puerta de un laboratorio equipado con instrumentos y mesas de trabajo. Hacia el fondo del pasillo se observan ventanales y áreas comunes que conectan con oficinas y zonas de descanso. El espacio está bien iluminado y señalizado, permitiendo una circulación clara entre aulas, laboratorios y áreas administrativas.",
-      "equipos_destacados": [],
-      "hotspots": [
-        { "destino": "9", "texto": "Laboratorio", "pitch": 0, "yaw": 255, "yaw_llegada": 90 },
-        { "destino": "7", "texto": "Atrás", "pitch": 0, "yaw": 180, "yaw_llegada": 50 }
+        { "destino": "4", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": 60 }
       ]
     },
     "9": {
@@ -125,7 +69,7 @@
       "equipos_destacados": [],
       "hotspots": [
         { "destino": "10", "texto": "Laboratorio", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
-        { "destino": "8", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": 180 }
+        { "destino": "4", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": 60 }
       ]
     },
     "10": {
@@ -138,17 +82,6 @@
         { "destino": "9", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
       ]
     },
-    "11": {
-      "titulo": "Acceso principal a laboratorio CMP+L",
-      "imagen_url": "/visor_v2/assets/CMPL/11.webp",
-      "yaw_inicio": 90,
-      "contexto_ia": "Esta escena muestra el acceso principal a uno de los laboratorios del Centro Mexicano para la Producción Más Limpia. Al centro se encuentra la puerta doble con el letrero de 'Laboratorio', a través de la cual se alcanza a ver el interior del área de trabajo. A la izquierda se observa un laboratorio separado por ventanales interiores, mientras que a la derecha se ubica una zona de espera con sillones y señalización de seguridad. El pasillo conecta las áreas de laboratorio con los espacios comunes, facilitando el tránsito de estudiantes, investigadores y personal técnico.",
-      "equipos_destacados": [],
-      "hotspots": [
-        { "destino": "12", "texto": "Entrada", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
-        { "destino": "7", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": 55 }
-      ]
-    },
     "12": {
       "titulo": "Acceso principal al laboratorio  CMP+L",
       "imagen_url": "/visor_v2/assets/CMPL/12.webp",
@@ -157,7 +90,7 @@
       "equipos_destacados": [],
       "hotspots": [
         { "destino": "13", "texto": "Avanzar", "pitch": 0, "yaw": -90, "yaw_llegada": 40 },
-        { "destino": "11", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": 90 }
+        { "destino": "4", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": 60 }
       ]
     },
     "13": {
@@ -223,7 +156,7 @@
       "contexto_ia": "Esta escena muestra un área del laboratorio dedicada al procesamiento de muestras bajo condiciones controladas. A la izquierda se observa una mesa con material de vidrio y equipos auxiliares, mientras que en el centro un analista trabaja frente a un equipo de centrifugado de gran capacidad. A la derecha se encuentra la campana de extracción, utilizada para manipular reactivos y procesos que requieren ventilación localizada, junto a incubadoras y otros instrumentos de apoyo. Al fondo se aprecia una puerta que conecta con el exterior y forma parte de la ruta de evacuación del laboratorio, reforzando las medidas de seguridad del LaNDACBio.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "21", "texto": "Conexión LaNDACBio", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
+        { "destino": "24", "texto": "Conexión LaNDACBio", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
         { "destino": "17", "texto": "Atrás", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
       ]
     },
@@ -248,39 +181,6 @@
         { "destino": "19", "texto": "Atrás", "pitch": 0, "yaw": 50, "yaw_llegada": -90 }
       ]
     },
-    "21": {
-      "titulo": "Salida del laboratorio",
-      "imagen_url": "/visor_v2/assets/CMPL/21.webp",
-      "yaw_inicio": 90,
-      "contexto_ia": "Esta escena muestra el patio de servicio contiguo a los laboratorios del Centro Mexicano para la Producción más Limpia. A la derecha se observa la puerta de acceso directo al área de trabajo, junto con ductos de extracción de aire que ayudan a ventilar de forma segura los procesos que se realizan en el interior. Al fondo se aprecia una zona de resguardo con caseta y contenedores donde se almacenan temporalmente materiales, envases y residuos para su manejo adecuado. Este espacio funciona como área de apoyo logístico, ventilación y ruta de salida hacia el exterior del laboratorio.",
-      "equipos_destacados": [],
-      "hotspots": [
-        { "destino": "22", "texto": "Pasillo LaNDACBio", "pitch": 0, "yaw": 270, "yaw_llegada": 90 },
-        { "destino": "18", "texto": "Entrada Laboratorio", "pitch": 0, "yaw": 45, "yaw_llegada": -90 }
-      ]
-    },
-    "22": {
-      "titulo": "Conexión exterior de laboratorios y acceso al estacionamiento",
-      "imagen_url": "/visor_v2/assets/CMPL/22.webp",
-      "yaw_inicio": 90,
-      "contexto_ia": "Esta escena muestra el área exterior que conecta los laboratorios del Centro Mexicano para la Producción más Limpia con el estacionamiento del campus. A la izquierda se encuentra la puerta de salida del laboratorio, rodeada de ductos de extracción y un pequeño tramo de escaleras. Al centro y a la derecha se observan senderos peatonales con jardineras y arbustos recortados, así como bodegas y contenedores donde se resguardan materiales y equipos de apoyo. Al fondo se aprecia la zona de estacionamiento y luminarias del exterior. Este espacio funciona como ruta de evacuación, acceso de servicio y transición entre el área experimental y el entorno abierto del centro.",
-      "equipos_destacados": [],
-      "hotspots": [
-        { "destino": "23", "texto": "Pasillo LaNDACBio", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
-        { "destino": "21", "texto": "Entrada Laboratorio", "pitch": 0, "yaw": 150, "yaw_llegada": -60 }
-      ]
-    },
-    "23": {
-      "titulo": "Acceso exterior a LaNDACBio",
-      "imagen_url": "/visor_v2/assets/CMPL/23.webp",
-      "yaw_inicio": 90,
-      "contexto_ia": "Esta escena muestra el entorno exterior del Centro Mexicano para la Producción más Limpia, justo frente al módulo de LaNDACBio. A la izquierda se observa el estacionamiento principal, donde arriban visitantes, personal académico y estudiantes. Al centro se encuentra la fachada del laboratorio LaNDACBio, con su acceso peatonal y un pasillo lateral que conduce hacia la parte posterior del edificio. A la derecha se aprecia el área de servicios, donde se ubican equipos de apoyo como el generador eléctrico de emergencia y estructuras auxiliares. Este espacio funciona como punto de llegada desde el estacionamiento y como zona de circulación técnica alrededor del laboratorio.",
-      "equipos_destacados": [],
-      "hotspots": [
-        { "destino": "24", "texto": "Entrada LaNDACBio", "pitch": 0, "yaw": -110, "yaw_llegada": 90 },
-        { "destino": "22", "texto": "Salida", "pitch": 0, "yaw": 95, "yaw_llegada": -140 }
-      ]
-    },
     "24": {
       "titulo": "Acceso principal al laboratorio LaNDACBio",
       "imagen_url": "/visor_v2/assets/CMPL/24.webp",
@@ -289,7 +189,7 @@
       "equipos_destacados": [],
       "hotspots": [
         { "destino": "25", "texto": "LaNDACBio", "pitch": 0, "yaw": -90, "yaw_llegada": 90 },
-        { "destino": "23", "texto": "Salida", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
+        { "destino": "18", "texto": "Salida", "pitch": 0, "yaw": 90, "yaw_llegada": -90 }
       ]
     },
     "25": {

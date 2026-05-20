@@ -15,7 +15,7 @@ INSTITUCION_MAP = {
     "esfm": "ESFM",
     "esimez": "ESIMEZ",
     "esit": "ESIT",
-    "lanta": "LANTA",
+    "udibi": "UDIBI",
 }
 
 def inferir_institucion(nombre_archivo, institucion_param=None):

@@ -51,49 +51,16 @@
       "descripcion": "Administra los procesos escolares como inscripciones, reinscripciones y trámites de documentos oficiales."
     }
   ],
-  "nodo_inicial": "root",
+  "nodo_inicial": "ent",
   "nodos": {
-    "root": {
-      "titulo": "Entrada Principal",
-      "yaw_inicio": -90,
-      "imagen_url": "/visor_v2/assets/ESFM/root.webp",
-      "contexto_ia": "Te encuentras en el exterior del edificio de la ESFM. Este punto marca el acceso principal al laboratorio. Desde aquí puedes observar a estudiantes y visitantes transitando entre edificios, en un entorno universitario activo.",
-      "equipos_destacados": [],
-      "hotspots": [
-        { "destino": "pas1", "texto": "Pasillo", "pitch": -2.5, "yaw": 90, "yaw_llegada": -90 }
-      ]
-    },
-    "pas1": {
-      "titulo": "Pasillo",
-      "imagen_url": "/visor_v2/assets/ESFM/root_ext2.webp",
-      "yaw_inicio": -90,
-      "contexto_ia": "Este pasillo conecta distintas áreas académicas de la ESFM Zacatenco. A lo largo de este recorrido se encuentran oficinas, laboratorios y zonas comunes.",
-      "equipos_destacados": [],
-      "hotspots": [
-        { "destino": "ent", "texto": "Entrada al Laboratorio", "pitch": -2, "yaw": 90, "yaw_llegada": -90 },
-        { "destino": "root", "texto": "Entrada Principal", "pitch": -3.5, "yaw": -95, "yaw_llegada": 90 }
-      ]
-    },
     "ent": {
       "titulo": "Entrada al Laboratorio",
       "imagen_url": "/visor_v2/assets/ESFM/root_ext1.webp",
-      "yaw_inicio": -90,
+      "yaw_inicio": 180,
       "contexto_ia": "Estás en la entrada al área del Sistema de Física de Materiales (SFM).",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "pas1", "texto": "Pasillo", "pitch": -15, "yaw": -90, "yaw_llegada": 90 },
-        { "destino": "rep", "texto": "Recepción Principal", "pitch": -15, "yaw": 180, "yaw_llegada": 90 }
-      ]
-    },
-    "rep": {
-      "titulo": "Recepción Laboratorios SFM",
-      "imagen_url": "/visor_v2/assets/ESFM/ext1_res.webp",
-      "yaw_inicio": 90,
-      "contexto_ia": "Has llegado a la recepción del SFM, punto central de atención y control administrativo. Aquí se coordinan actividades, se recibe a visitantes y se realiza la gestión de acceso a las áreas técnicas.",
-      "equipos_destacados": [],
-      "hotspots": [
-        { "destino": "ent", "texto": "Entrada al Laboratorio", "pitch": -14, "yaw": 90, "yaw_llegada": 90 },
-        { "destino": "res", "texto": "Pasillo Laboratorio", "pitch": -15, "yaw": -90, "yaw_llegada": -100 }
+        { "destino": "res", "texto": "Pasillo Laboratorio", "pitch": -15, "yaw": 180, "yaw_llegada": -110 }
       ]
     },
     "res": {
@@ -103,7 +70,7 @@
       "contexto_ia": "Este pasillo interior conecta las diferentes áreas técnicas del laboratorio del SFM. A lo largo del recorrido se encuentran las antesalas de los laboratorios de temperatura y gravedad.",
       "equipos_destacados": [],
       "hotspots": [
-        { "destino": "rep", "texto": "Recepción Principal", "pitch": -15, "yaw": -80, "yaw_llegada":-90},
+        { "destino": "ent", "texto": "Entrada al Laboratorio", "pitch": -15, "yaw": -80, "yaw_llegada":90},
         { "destino": "pasTemp", "texto": "Laboratorio de Temperatura", "pitch": -15, "yaw": 10, "yaw_llegada": 80 },
         { "destino": "pasGal", "texto": "Pasillo Laboratorio Gravedad", "pitch": -15, "yaw": 100, "yaw_llegada": 220 }
       ]
