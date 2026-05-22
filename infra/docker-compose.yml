@@ -6,7 +6,7 @@ services:
     container_name: visor360-db
     restart: unless-stopped
     ports:
-      - "27018:27017"
+      - "127.0.0.1:27018:27017"
     volumes:
       - mongo_data:/data/db
     networks:
@@ -26,6 +26,7 @@ services:
       - MONGO_URI=${MONGO_URI}
       - HF_HOME=/home/appuser/.cache/huggingface
       - ENTORNO=produccion
+      - TZ=America/Mexico_City
     volumes:
       - ../backend/app:/app
       - chroma_data:/home/appuser/chroma_data
@@ -51,13 +52,14 @@ services:
     container_name: visor360-worker
     environment:
       - MONGO_URI=${MONGO_URI}
-      # Apunta al mismo caché de HuggingFace para no descargar el modelo dos veces
       - HF_HOME=/home/appuser/.cache/huggingface
+      - TZ=America/Mexico_City
     volumes:
       - ../backend/app:/app
       # Comparte la misma base de datos vectorial que el backend
       - chroma_data:/home/appuser/chroma_data
       - hf_cache:/home/appuser/.cache/huggingface
+      - ../servidor_logs:/app/logs
       
     depends_on:
       - mongodb

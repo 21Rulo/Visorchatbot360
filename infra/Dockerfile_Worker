@@ -36,4 +36,4 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONPATH=/
 
 # El comando mágico: 'tail -f /dev/null' mantiene el contenedor vivo en segundo plano sin consumir CPU
-CMD ["tail", "-f", "/dev/null"]
+CMD ["python", "worker_main.py"]
