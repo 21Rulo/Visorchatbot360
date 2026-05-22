@@ -1,13 +1,19 @@
+import groq
+import time
 from app.core.config import SharedResources
 from app.models.schemas import AgentState
+from app.core.logger import logger
 from app.core.utils import llamar_llm_con_reintentos
-import groq
 
+@logger.catch
 async def nodo_guia(state: AgentState) -> dict:
     """
     Nodo Guía: Conversación general, saludos y ubicación en el Visor 360.
     Aplica las reglas estrictas de personalidad y longitud.
     """
+    inicio = time.time()
+    logger.info("Iniciando nodo_guia")
+    
     client = SharedResources.get_groq_client()
     
     # EL SÚPER PROMPT DEL GUÍA: Restrictivo, con personalidad y límites claros
@@ -38,8 +44,10 @@ async def nodo_guia(state: AgentState) -> dict:
     except groq.RateLimitError:
         respuesta_generada = "Hay muchos visitantes explorando el recorrido ahora mismo. Por favor, dame unos segundos y vuelve a preguntarme."
     except Exception as e:
-        print(f"⚠️ Error en Agente Guía: {e}")
+        logger.error(f"⚠️ Error en Agente Guía: {e}")
         respuesta_generada = "Tuve una pequeña interrupción en mi conexión. ¿Podemos seguir con el recorrido?"
+
+    logger.success(f"Agente Guía completado en {time.time() - inicio:.2f}s")
 
     return {
         "respuesta": respuesta_generada,

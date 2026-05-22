@@ -1,7 +1,9 @@
+import time
 from datetime import datetime, timezone
 from langgraph.graph import StateGraph, END
 from app.models.schemas import AgentState
 from app.core.config import settings, SharedResources
+from app.core.logger import logger
 from app.agents.agente_guia import nodo_guia
 from app.agents.agente_info import nodo_analista_ipn, nodo_recuperador_chroma, nodo_sintesis_jasper
 from app.memory.checkpointer import memory_saver
@@ -26,11 +28,15 @@ async def nodo_fuera_dominio(state: AgentState) -> dict:
     }
 
 # --- NODO CLASIFICADOR ---
+@logger.catch
 async def nodo_clasificador(state: AgentState) -> dict:
     """
     Analiza el mensaje para decidir a qué agente enviarlo.
     Utiliza un Prompt Restrictivo agresivo para evitar inyecciones de código.
     """
+    inicio = time.time()
+    logger.info("Iniciando nodo_clasificador")
+
     client = SharedResources.get_groq_client()
     
     # EL SÚPER PROMPT: Exhaustivo y estricto (Inspirado en el Legacy)
@@ -46,7 +52,7 @@ async def nodo_clasificador(state: AgentState) -> dict:
        - Conversación casual corta directamente relacionada con el rol de guía turístico.
     
     2. INFO:
-       - Dudas académicas: carreras, escuelas (ESCOM, ESIME, ESFM, ESIT, etc.), planes de estudio.
+       - Dudas académicas: carreras, escuelas (ENCB, ESIME, ESFM, ESIT, etc.), planes de estudio.
        - Trámites: inscripciones, reinscripciones, constancias, becas, servicio social.
        - Información institucional: historia del IPN, secretarías, direcciones, servicios estudiantiles.
        
@@ -74,24 +80,30 @@ async def nodo_clasificador(state: AgentState) -> dict:
         )
         intencion = response.choices[0].message.content.strip().upper()
     except Exception as e:
-        print(f"⚠️ Error en clasificador: {e}")
+        logger.error(f"⚠️ Error en clasificador: {e}")
         intencion = "GUIA" # Fallback seguro
+    
+    logger.success(f"Clasificador completado en {time.time() - inicio:.2f}s")
 
     return {"intencion": intencion}
 
 # --- LÓGICA DE ENRUTAMIENTO (Router) ---
+@logger.catch
 def enrutador_de_intencion(state: AgentState):
     """
     Función que decide el siguiente paso en el grafo.
     """
+    inicio = time.time()
+    logger.info("Iniciando router")
     intencion = state.get("intencion", "")
-    print(f"🧭 [ROUTER] Intención detectada: {intencion}")
+    logger.info(f"🧭 [ROUTER] Intención detectada: {intencion}")
     
     if "INFO" in intencion:
         return "agente_info"
     elif "FUERA_DOMINIO" in intencion:
         return "fuera_dominio"
     
+    logger.success(f"Router completado en {time.time() - inicio:.2f}s")
     # Si es GUIA, o si hubo un error extraño, nos vamos a guía por defecto
     return "agente_guia"
 
@@ -129,6 +141,7 @@ workflow.add_edge("fuera_dominio", END)
 app_chatbot = workflow.compile(checkpointer=memory_saver)
 
 # --- FUNCIÓN PRINCIPAL PARA FASTAPI ---
+@logger.catch
 async def procesar_mensaje(
     session_id: str,
     mensaje: str,
@@ -146,7 +159,7 @@ async def procesar_mensaje(
                 upsert=True
             )
         except Exception as e:
-            print(f"⚠️ Error actualizando TTL de la sesión: {e}")
+            logger.error(f"⚠️ Error actualizando TTL de la sesión: {e}")
 
     config = {"configurable": {"thread_id": session_id}}
     
@@ -160,5 +173,5 @@ async def procesar_mensaje(
         resultado = await app_chatbot.ainvoke(inputs, config=config)
         return resultado.get("respuesta", "Lo siento, ocurrió un error inesperado.")
     except Exception as e:
-        print(f"❌ Error crítico en LangGraph/MongoDB: {e}")
+        logger.error(f"❌ Error crítico en LangGraph/MongoDB: {e}")
         return "Tuve un problema técnico accediendo a la base de datos de mis memorias. Por favor, intenta de nuevo."

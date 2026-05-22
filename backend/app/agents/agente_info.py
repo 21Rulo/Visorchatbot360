@@ -1,13 +1,19 @@
 import json
 import asyncio
+import time
 from app.core.config import SharedResources
 from app.core.vector_db import vector_db
 from app.models.schemas import AgentState, Institucion
 from app.core.utils import llamar_llm_con_reintentos
+from app.core.logger import logger
 
 # --- NODO 1: ANALISTA (Con Inteligencia Legacy de Expansión) ---
+@logger.catch
 async def nodo_analista_ipn(state: AgentState) -> dict:
     """Extrae la institución y aplica Query Expansion para mejorar el RAG"""
+    inicio = time.time()
+    logger.info("Iniciando nodo_analista_ipn")
+    
     client = SharedResources.get_groq_client()
     historial_texto = "\n".join([f"{msg['role']}: {msg['content']}" for msg in state.get("historial", [])[-4:]])
     
@@ -31,20 +37,22 @@ async def nodo_analista_ipn(state: AgentState) -> dict:
     """
     
     try:
-        # Pedimos el formato JSON explícitamente a Groq
         res = await llamar_llm_con_reintentos([{"role": "user", "content": prompt}], client, {"type": "json_object"})
         analisis = json.loads(res.choices[0].message.content)
     except Exception as e:
-        print(f"⚠️ Error en Analista IPN: {e}")
+        logger.error(f"Error en Analista IPN al llamar a Groq: {e}")
         analisis = {"consulta_optimizada": state["mensaje"], "institucion": "GENERAL"}
 
     try:
         institucion_detectada = Institucion(analisis.get("institucion", "GENERAL").upper())
     except ValueError:
+        logger.warning(f"Institución '{analisis.get('institucion')}' no válida. Cayendo a GENERAL.")
         institucion_detectada = Institucion.GENERAL
 
-    print(f"🧠 [ANALISTA] Pregunta original: {state['mensaje']}")
-    print(f"✨ [ANALISTA] Query Expandida: {analisis.get('consulta_optimizada')}")
+    logger.debug(f"Pregunta original: {state['mensaje']}")
+    logger.debug(f"Query Expandida: {analisis.get('consulta_optimizada')}")
+    
+    logger.success(f"Analista completado en {time.time() - inicio:.2f}s")
 
     return {
         "query_optimizada": analisis.get("consulta_optimizada", state["mensaje"]),
@@ -53,13 +61,16 @@ async def nodo_analista_ipn(state: AgentState) -> dict:
 
 
 # --- NODO 2: RECUPERADOR (ChromaDB Ultrarrápido) ---
+@logger.catch
 async def nodo_recuperador_chroma(state: AgentState) -> dict:
     """Ejecuta la búsqueda vectorial sin bloquear FastAPI"""
+    inicio = time.time()
+    
     query = state.get("query_optimizada", state["mensaje"])
     inst = state.get("institucion", "GENERAL")
     filtro = inst if inst != "GENERAL" else None
     
-    print(f"🔍 [CHROMA] Buscando: '{query}' | Filtro: {filtro}")
+    logger.info(f"Iniciando búsqueda en ChromaDB | Query: '{query}' | Filtro: {filtro}")
     contexto = "No se encontró información oficial específica sobre este tema."
     
     try:
@@ -72,15 +83,24 @@ async def nodo_recuperador_chroma(state: AgentState) -> dict:
         documentos = resultados.get("documents", [[]])[0]
         if documentos:
             contexto = "\n\n---\n\n".join(documentos)
+            logger.info(f"Se recuperaron {len(documentos)} fragmentos de ChromaDB.")
+        else:
+            logger.warning("Búsqueda en ChromaDB no devolvió resultados.")
     except Exception as e:
-        print(f"⚠️ Error accediendo a ChromaDB: {e}")
+        logger.error(f"Error accediendo a ChromaDB: {e}")
 
+    logger.success(f"Recuperación completada en {time.time() - inicio:.2f}s")
+    
     return {"documentos_recuperados": contexto}
 
 
 # --- NODO 3: SÍNTESIS (El Jasper Institucional del Legacy) ---
+@logger.catch
 async def nodo_sintesis_jasper(state: AgentState) -> dict:
     """Genera la respuesta aplicando las reglas estrictas del IPN"""
+    inicio = time.time()
+    logger.info("Iniciando nodo_sintesis_jasper")
+    
     client = SharedResources.get_groq_client()
     
     system_prompt = f"""
@@ -107,9 +127,12 @@ async def nodo_sintesis_jasper(state: AgentState) -> dict:
     try:
         res = await llamar_llm_con_reintentos(mensajes, client)
         respuesta = res.choices[0].message.content
+        logger.info("Respuesta generada exitosamente por Groq")
     except Exception as e:
-        print(f"⚠️ Error en Síntesis Jasper: {e}")
+        logger.error(f"Error en Síntesis Jasper al llamar a Groq: {e}")
         respuesta = "Tuve un pequeño problema procesando los documentos oficiales. ¿Podemos intentarlo de nuevo?"
+
+    logger.success(f"Síntesis completada en {time.time() - inicio:.2f}s")
 
     return {
         "respuesta": respuesta,

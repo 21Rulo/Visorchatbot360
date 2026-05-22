@@ -1,5 +1,5 @@
 import os
-import fitz  # PyMuPDF
+import fitz
 import sys
 
 # Para importar la base de datos vectorial
@@ -90,23 +90,51 @@ class DataIngestor:
             return None
 
     def ingest_to_chroma(self, text, source_name, institucion=None):
-        """Divide el Markdown en fragmentos (chunks) y los sube a ChromaDB."""
-        # Si es un PDF, dividimos por páginas. Si es un MD manual, dividimos por encabezados dobles (##)
-        chunks = text.split("## ")
-        texts = []
-        metadatas = []
-        ids = []
+        """Divide el Markdown en fragmentos por tamaño y los sube a ChromaDB."""
         
         # Inferir institución si no se proporciona
         if institucion is None:
             institucion = inferir_institucion(source_name)
+            
+        # 1. Limpiamos las marcas de página que rompen el contexto
+        import re
+        texto_limpio = re.sub(r'## Página \d+', '', text)
+        
+        # 2. Separamos por párrafos reales (doble salto de línea)
+        parrafos = texto_limpio.split("\n\n")
+        
+        chunks = []
+        chunk_actual = ""
+        max_caracteres = 800 # Tamaño ideal para que Jasper lo entienda rápido
+        
+        # 3. Agrupamos párrafos hasta llegar al límite de caracteres
+        for p in parrafos:
+            p_limpio = p.strip()
+            if not p_limpio:
+                continue
+                
+            if len(chunk_actual) + len(p_limpio) < max_caracteres:
+                chunk_actual += p_limpio + "\n\n"
+            else:
+                if chunk_actual:
+                    chunks.append(chunk_actual.strip())
+                chunk_actual = p_limpio + "\n\n"
+        
+        if chunk_actual:
+            chunks.append(chunk_actual.strip())
+
+        # 4. Preparamos para ChromaDB
+        texts = []
+        metadatas = []
+        ids = []
         
         for i, chunk in enumerate(chunks):
-            if not chunk.strip(): continue
+            # Inyectamos el contexto de qué trata este documento en CADA fragmento
+            nombre_limpio = source_name.replace('.md', '').replace('.pdf', '')
+            clean_text = f"Documento: {nombre_limpio} ({institucion})\nContenido:\n{chunk}"
             
-            clean_text = f"Fuente: {source_name}\nContenido: {chunk.strip()}"
             texts.append(clean_text)
-            # Etiquetamos el tipo de documento e incluimos la institución
+            
             doc_type = "pdf_document" if source_name.endswith('.pdf') else "manual_md"
             metadatas.append({
                 "source": source_name,
@@ -115,8 +143,9 @@ class DataIngestor:
             })
             ids.append(f"doc_{source_name}_chunk_{i}")
             
-        vector_db.add_documents(texts, metadatas, ids)
-        print(f"📦 {source_name} indexado en ChromaDB ({len(texts)} fragmentos) | Institución: {institucion}")
+        if texts:
+            vector_db.add_documents(texts, metadatas, ids)
+            print(f"📦 {source_name} indexado en ChromaDB ({len(texts)} fragmentos inteligentes) | Institución: {institucion}")
 
     def process_all_pdfs(self):
         print("Procesando todos los PDFs en la carpeta raw_pdfs...")
