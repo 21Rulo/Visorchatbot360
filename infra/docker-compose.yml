@@ -19,7 +19,7 @@ services:
       dockerfile: infra/Dockerfile_Back
     container_name: visor360-backend
     ports:
-      - "8000:8000"
+      - "127.0.0.1:8000:8000"
     environment:
       - GROQ_API_KEY=${GROQ_API_KEY}
       - MODELO_CHAT=llama-3.3-70b-versatile
@@ -72,7 +72,7 @@ services:
       dockerfile: infra/Dockerfile_Front
     container_name: visor360-frontend
     ports:
-      - "3000:3000"
+      - "127.0.0.1:3000:3000"
     depends_on:
       - backend
     restart: unless-stopped

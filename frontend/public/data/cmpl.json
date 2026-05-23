@@ -41,7 +41,7 @@
     "4": {
       "titulo": "Pasillo administrativo y área de oficinas",
       "yaw_inicio": 90,
-      "imagen_url": "/visor_v2/assets/CMPL/4.webp",
+      "imagen_url": "/visor_v2/assets/CMPL/4.jpg",
       "contexto_ia": "Esta escena muestra el pasillo administrativo del Centro Mexicano para la Producción Más Limpia. A la izquierda se observa la conexión con el vestíbulo principal, caracterizada por ventanales amplios y una zona con extintores y contenedores de separación de residuos. Al frente se extiende un pasillo iluminado con módulos de oficinas y salas de trabajo distribuidas a ambos lados. A la derecha se aprecia un cubículo acristalado donde el personal realiza actividades administrativas. El espacio combina áreas de tránsito con zonas de atención y trabajo, mostrando la organización interna del centro.",
       "equipos_destacados": [],
       "hotspots": [
@@ -84,7 +84,7 @@
     },
     "12": {
       "titulo": "Acceso principal al laboratorio  CMP+L",
-      "imagen_url": "/visor_v2/assets/CMPL/12.webp",
+      "imagen_url": "/visor_v2/assets/CMPL/12.jpg",
       "yaw_inicio": 90,
       "contexto_ia": "Esta escena muestra la entrada y zona de seguridad del laboratorio principal del Centro Mexicano para la Producción Más Limpia. Al frente se observan la regadera y el lavaojos de emergencia, así como extintor y señalización de no fumar y uso obligatorio de mascarilla. A la derecha se encuentra un refrigerador y área de resguardo de reactivos y muestras, mientras que al fondo se aprecia el área de trabajo con mesas, equipos y personal con bata realizando actividades experimentales. Este espacio marca la transición entre el pasillo general y el área de trabajo controlado, enfatizando las normas de bioseguridad del laboratorio.",
       "equipos_destacados": [],
@@ -151,7 +151,7 @@
     },
     "18": {
       "titulo": "Zona de centrifugado y campana de extracción",
-      "imagen_url": "/visor_v2/assets/CMPL/18.webp",
+      "imagen_url": "/visor_v2/assets/CMPL/18.jpg",
       "yaw_inicio": 90,
       "contexto_ia": "Esta escena muestra un área del laboratorio dedicada al procesamiento de muestras bajo condiciones controladas. A la izquierda se observa una mesa con material de vidrio y equipos auxiliares, mientras que en el centro un analista trabaja frente a un equipo de centrifugado de gran capacidad. A la derecha se encuentra la campana de extracción, utilizada para manipular reactivos y procesos que requieren ventilación localizada, junto a incubadoras y otros instrumentos de apoyo. Al fondo se aprecia una puerta que conecta con el exterior y forma parte de la ruta de evacuación del laboratorio, reforzando las medidas de seguridad del LaNDACBio.",
       "equipos_destacados": [],
@@ -162,7 +162,7 @@
     },
     "19": {
       "titulo": "Laboratorio (espectrometría y caracterización elemental)",
-      "imagen_url": "/visor_v2/assets/CMPL/19.webp",
+      "imagen_url": "/visor_v2/assets/CMPL/19.jpg",
       "yaw_inicio": 90,
       "contexto_ia": "Esta escena corresponde al área de análisis instrumental del LaNDACBio, donde se concentran equipos de alta precisión para la caracterización de aguas, suelos y muestras industriales. A lo largo de las mesas se observan sistemas de cromatografía, espectrometría y otros analizadores acoplados a computadoras de control, así como campanas y ductos de extracción que garantizan una operación segura con reactivos y vapores. Las ventanas permiten la entrada de luz natural y comunicación visual con otras zonas del laboratorio, mientras que la distribución del mobiliario facilita el flujo de trabajo entre preparación de muestras, corrida de análisis y procesamiento de resultados, apoyando las actividades de investigación y servicios en producción más limpia.",
       "equipos_destacados": [],
