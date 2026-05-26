@@ -44,7 +44,8 @@ async def manejador_amigable_rate_limit(request: Request, exc: RateLimitExceeded
 origenes_permitidos = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "https://visor.siis.ipn.mx"
+    "https://visor.siis.ipn.mx",
+    "https://www.visor.siis.ipn.mx"
 ]
 
 app.add_middleware(
