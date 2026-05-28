@@ -109,7 +109,7 @@
     },
     "mainTemp": {
       "titulo": "Calibración de Temperatura",
-      "imagen_url": "/visor_v2/assets/ESFM/antLabTemp_mainLabTemp.webp",
+      "imagen_url": "/visor_v2/assets/ESFM/11.jpg",
       "yaw_inicio": 180,
       "contexto_ia": "Área principal de calibración térmica. El personal técnico realiza aquí procedimientos asegurando la trazabilidad de las mediciones.",
       "equipos_destacados": [
@@ -135,7 +135,7 @@
     },
     "labGal": {
       "titulo": "Laboratorio de Gravedad",
-      "imagen_url": "/visor_v2/assets/ESFM/antLabGrav_labGrav.webp",
+      "imagen_url": "/visor_v2/assets/ESFM/12.jpg",
       "yaw_inicio": 190,
       "contexto_ia": "Este es el Laboratorio de Gravedad, dedicado a la calibración de balanzas, pesas patrón y sistemas de medición de masa con trazabilidad al Sistema Internacional de Unidades.",
       "equipos_destacados": [

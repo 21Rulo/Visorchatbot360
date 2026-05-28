@@ -24,5 +24,5 @@ class SharedResources:
     def get_groq_client(cls) -> AsyncGroq:
         """Devuelve una única instancia del cliente Groq para toda la app"""
         if cls._groq_client is None:
-            cls._groq_client = AsyncGroq(api_key=settings.GROQ_API_KEY)
+            cls._groq_client = AsyncGroq(api_key=settings.GROQ_API_KEY, timeout=30)
         return cls._groq_client

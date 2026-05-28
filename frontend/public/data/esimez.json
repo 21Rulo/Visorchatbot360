@@ -61,7 +61,7 @@
     "exterior": {
       "titulo": "Exterior LANTA",
       "yaw_inicio": -60,
-      "imagen_url": "/visor_v2/assets/LANTA/Exte_antenas.webp",
+      "imagen_url": "/visor_v2/assets/LANTA/Exte_antenas.jpg",
       "contexto_ia": "¡Hola! Soy Jasper. Nos encontramos en el exterior del Laboratorio Nacional de Telecomunicaciones y Antenas (LANTA).",
       "equipos_destacados": [],
       "hotspots": [
@@ -82,7 +82,7 @@
     },
     "oficina": {
       "titulo": "Oficina Técnica",
-      "imagen_url": "/visor_v2/assets/LANTA/Equipo_antenas.webp",
+      "imagen_url": "/visor_v2/assets/LANTA/Equipo_antenas.jpg",
       "yaw_inicio": 0,
       "contexto_ia": "Estás en la oficina técnica del laboratorio. Aquí el personal analiza datos y configura los equipos de medición.",
       "equipos_destacados": [
