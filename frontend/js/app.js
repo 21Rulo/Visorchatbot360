@@ -129,7 +129,66 @@ function toggleChat() {
     chatContainer.classList.toggle('oculto');
 }
 
-btnToggle.addEventListener('click', toggleChat);
+// --- MOTOR DE ARRASTRE MAGNÉTICO PARA JASPER ---
+let isDragging = false;
+let isDraggingAction = false; // Diferencia un click normal de un arrastre
+
+// 1. Cuando el usuario presiona el botón (mouse o dedo)
+btnToggle.addEventListener('pointerdown', (e) => {
+    isDragging = true;
+    isDraggingAction = false;
+    btnToggle.classList.add('arrastrando');
+    btnToggle.setPointerCapture(e.pointerId); // Mantiene el foco aunque el dedo salga del botón
+});
+
+// 2. Mientras mueve el mouse/dedo
+btnToggle.addEventListener('pointermove', (e) => {
+    if (!isDragging) return;
+    isDraggingAction = true; // Confirmamos que se está moviendo, no es un click
+    
+    // Centramos el botón en el cursor/dedo
+    btnToggle.style.left = (e.clientX - btnToggle.offsetWidth / 2) + 'px';
+    btnToggle.style.top = (e.clientY - btnToggle.offsetHeight / 2) + 'px';
+    btnToggle.style.right = 'auto'; // Liberamos el anclaje derecho original
+    btnToggle.style.bottom = 'auto'; // Liberamos el anclaje inferior original
+});
+
+// 3. Cuando suelta el botón
+btnToggle.addEventListener('pointerup', (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+    btnToggle.classList.remove('arrastrando');
+
+    // Calculamos si lo soltó en la mitad izquierda o derecha de la pantalla
+    const mitadPantalla = window.innerWidth / 2;
+    
+    if (e.clientX < mitadPantalla) {
+        // IMÁN A LA IZQUIERDA
+        btnToggle.style.left = '20px';
+        chatContainer.classList.add('anclado-izquierda');
+    } else {
+        // IMÁN A LA DERECHA
+        btnToggle.style.left = 'calc(100vw - 70px)'; // 70px es el ancho aprox del botón + margen
+        chatContainer.classList.remove('anclado-izquierda');
+    }
+
+    // El eje Y (arriba/abajo) lo dejamos donde lo soltó el usuario, 
+    // pero evitamos que se salga de la pantalla
+    const maxTop = window.innerHeight - btnToggle.offsetHeight - 20;
+    let finalTop = Math.max(20, Math.min(e.clientY, maxTop));
+    btnToggle.style.top = finalTop + 'px';
+});
+
+// 4. El manejador del Click (para abrir el chat)
+btnToggle.addEventListener('click', (e) => {
+    // Si fue un arrastre, ignoramos el click. Si fue un toque rápido, abrimos el chat.
+    if (isDraggingAction) {
+        e.preventDefault();
+    } else {
+        toggleChat();
+    }
+});
+
 btnClose.addEventListener('click', toggleChat);
 
 // --- CONTADOR GLOBAL PARA IDs ÚNICOS DE MENSAJES ---
@@ -287,7 +346,8 @@ btnToggleCarrusel.addEventListener('click', () => {
 // --- AUTO-CARGA DESDE LA URL ---
 document.addEventListener('DOMContentLoaded', () => {
     const parametros = new URLSearchParams(window.location.search);
-    const labRequerido = parametros.get('lab');
+    const labCrudo = parametros.get('lab');
+    const labRequerido = labCrudo ? labCrudo.replace(/[^a-zA-Z0-9-]/g, '') : null;
 
     if (labRequerido) {
         // 1. Ocultamos el menú de un golpe y sin animación

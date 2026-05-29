@@ -397,7 +397,7 @@ body {
             padding: 8px 12px;
             font-size: 12px;
         }
-    }
+      }
     /* ====== ARREGLO PARA EL CHAT EN HORIZONTAL ====== */
     
     /* Hacemos el botón flotante más pequeño para que no estorbe */
@@ -869,4 +869,26 @@ body {
         }
       }
 
+        /* --- MAGIA DEL CHAT FLOTANTE --- */
+
+    /* Hace que el botón se mueva suavemente cuando lo sueltas */
+      #btn-chat-toggle {
+        transition: all 0.3s ease;
+        touch-action: none; /* Evita que la pantalla haga scroll al arrastrar en celulares */
+      }
+
+    /* Apagamos la transición solo MIENTRAS el usuario lo tiene agarrado */
+      #btn-chat-toggle.arrastrando {
+        transition: none !important;
+        transform: scale(1.1); /* Efecto de que lo estás levantando */
+        cursor: grabbing;
+      }
+
+     /* Modificador para cuando el chat se abre del lado izquierdo */
+      @media (min-width: 481px) {
+          #chat-container.anclado-izquierda {
+                right: auto !important; 
+                left: 20px !important;  
+          }
+      }
       
