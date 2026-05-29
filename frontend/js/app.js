@@ -58,6 +58,12 @@ async function cargarRecorrido(nombreLab) {
     } catch (error) {
         console.error("Error al arrancar:", error);
         document.getElementById('titulo-ubicacion').innerText = "Error: Recorrido no encontrado";
+        document.documentElement.classList.remove('modo-iframe');
+        const menuInicio = document.getElementById('menu-inicio');
+        if (menuInicio) {
+            menuInicio.style.display = 'flex';
+            setTimeout(() => menuInicio.style.opacity = '1', 50);
+        }
     }
 }
 
@@ -274,5 +280,25 @@ btnToggleCarrusel.addEventListener('click', () => {
     } else {
         iconoCarrusel.innerText = 'expand_more'; // Flecha hacia abajo
         document.body.classList.add('carrusel-abierto');
+    }
+});
+
+
+// --- AUTO-CARGA DESDE LA URL ---
+document.addEventListener('DOMContentLoaded', () => {
+    const parametros = new URLSearchParams(window.location.search);
+    const labRequerido = parametros.get('lab');
+
+    if (labRequerido) {
+        // 1. Ocultamos el menú de un golpe y sin animación
+        const menuInicio = document.getElementById('menu-inicio');
+        if (menuInicio) {
+            menuInicio.style.transition = 'none'; // Apagamos animaciones
+            menuInicio.style.opacity = '0';
+            menuInicio.style.display = 'none';
+        }
+
+        // 2. Cargamos el recorrido
+        cargarRecorrido(labRequerido);
     }
 });
