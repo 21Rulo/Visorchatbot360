@@ -371,3 +371,21 @@ document.addEventListener('DOMContentLoaded', () => {
         cargarRecorrido(labRequerido);
     }
 });
+
+// --- RE-CÁLCULO AL GIRAR LA PANTALLA (RESIZE) ---
+window.addEventListener('resize', () => {
+    // Si la pantalla cambia de tamaño, aseguramos que Jasper no se quede fuera de los límites
+    const maxTop = window.innerHeight - btnToggle.offsetHeight - 20;
+    
+    // Obtenemos la posición actual (o usamos 20 por defecto)
+    let topActual = parseInt(btnToggle.style.top) || 20;
+    
+    // Lo forzamos a estar dentro del nuevo límite de altura
+    let finalTop = Math.max(20, Math.min(topActual, maxTop));
+    btnToggle.style.top = finalTop + 'px';
+
+    // Si estaba anclado a la derecha, recalculamos su posición exacta con el nuevo ancho
+    if (!chatContainer.classList.contains('anclado-izquierda')) {
+        btnToggle.style.left = 'calc(100vw - 70px)';
+    }
+});
