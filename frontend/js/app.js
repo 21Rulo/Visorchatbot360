@@ -164,6 +164,40 @@ btnToggle.addEventListener('pointermove', (e) => {
     }
 });
 
+// 3. Cuando suelta el botón (¡ESTO TE FALTABA!)
+btnToggle.addEventListener('pointerup', (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+    btnToggle.classList.remove('arrastrando');
+
+    // Calculamos si lo soltó en la mitad izquierda o derecha
+    const mitadPantalla = window.innerWidth / 2;
+    
+    if (e.clientX < mitadPantalla) {
+        // IMÁN A LA IZQUIERDA
+        btnToggle.style.left = '20px';
+        chatContainer.classList.add('anclado-izquierda');
+    } else {
+        // IMÁN A LA DERECHA
+        btnToggle.style.left = 'calc(100vw - 70px)'; 
+        chatContainer.classList.remove('anclado-izquierda');
+    }
+
+    // El eje Y (arriba/abajo) lo dejamos donde lo soltó
+    const maxTop = window.innerHeight - btnToggle.offsetHeight - 20;
+    let finalTop = Math.max(20, Math.min(e.clientY, maxTop));
+    btnToggle.style.top = finalTop + 'px';
+});
+
+// 4. El manejador del Click para abrir el chat (¡ESTO TAMBIÉN TE FALTABA!)
+btnToggle.addEventListener('click', (e) => {
+    // Si fue un arrastre, ignoramos el click. Si fue un toque rápido, abrimos el chat.
+    if (isDraggingAction) {
+        e.preventDefault();
+    } else {
+        toggleChat();
+    }
+});
 btnClose.addEventListener('click', toggleChat);
 
 // --- CONTADOR GLOBAL PARA IDs ÚNICOS DE MENSAJES ---
