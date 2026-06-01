@@ -75,6 +75,11 @@ export function iniciarVisor(mapa, onNodeChange) {
     const renderizador = new THREE.WebGLRenderer({ antialias: true });
     renderizador.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderizador.domElement);
+    const canvas = renderizador.domElement;
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.zIndex = '0'; 
 
     const controles = new OrbitControls(camara, renderizador.domElement);
     controles.enableZoom = false;
