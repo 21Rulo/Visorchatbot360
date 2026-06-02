@@ -20,7 +20,7 @@
         display: none !important;
       }
     </style>
-    
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   </head>
   <body>
     <div id="menu-inicio">
@@ -65,7 +65,7 @@
     <div id="cortinilla-transicion"></div>
     
     <div id="panel-controles">
-      <button class="btn-control" id="btn-home" title="Volver al Menú">
+      <button class="btn-control oculto" id="btn-home" title="Volver al Menú">
         <span class="material-symbols-outlined">home</span>
       </button>
       <div class="zoom-group">
@@ -81,7 +81,7 @@
       </div>
     </div>
       
-    <div id="contenedor-brujula">
+    <div id="contenedor-brujula" class="oculto">
         <span class="material-symbols-outlined" id="icono-brujula">explore</span>
     </div>
 
@@ -94,7 +94,14 @@
 
     <script type="module" src="./js/app.js"></script>
     <button id="btn-chat-toggle" class="btn-control">
-        <span class="material-symbols-outlined" id="icono-chat">chat</span>
+        <lottie-player 
+            src="./assets/src/chatbot.json" 
+            background="transparent" 
+            speed="1" 
+            style="width: 100%; height: 100%;" 
+            loop 
+            autoplay>
+        </lottie-player>
     </button>
 
     <div id="chat-container" class="oculto">

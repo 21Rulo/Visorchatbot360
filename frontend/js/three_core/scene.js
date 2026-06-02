@@ -12,60 +12,43 @@ function gradosACoordenadas(pitch, yaw, radio) {
     return new THREE.Vector3(x, y, z);
 }
 
-// --- FLECHAS DE BORDE ---
-function crearFlechaBorde() {
-    const el = document.createElement('div');
-    el.style.cssText = `
+// --- CREACIÓN DEL OVERLAY DE AYUDA AL INICIO ---
+function crearOverlayAyuda() {
+    const overlay = document.createElement('div');
+    overlay.id = 'overlay-ayuda';
+    // Estilos inline básicos, la animación va en CSS
+    overlay.style.cssText = `
         position: fixed;
-        width: 0;
-        height: 0;
-        pointer-events: none;
+        top: 0; left: 0; width: 100vw; height: 100vh;
+        background: rgba(0, 0, 0, 0.4);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
         opacity: 0;
-        transition: opacity 0.2s ease;
-        z-index: 40;
-        filter: drop-shadow(0 0 6px rgba(97, 203, 53, 0.9));
+        pointer-events: none;
+        transition: opacity 0.5s ease-in-out;
     `;
-    document.body.appendChild(el);
-    return el;
+
+    // Icono SVG animado (sirve para PC y móvil visualmente)
+    overlay.innerHTML = `
+    <div class="animacion-arrastre">
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 8l-4 4 4 4"></path>
+            <path d="M16 8l4 4-4 4"></path>
+            <path d="M4 12h16"></path>
+        </svg>
+    </div>
+    <p style="color: white; font-family: sans-serif; margin-top: 15px; text-align: center; text-shadow: 1px 1px 3px black;">
+        ${window.innerWidth > 1024 ? 'Haz clic y arrastra para mirar' : 'Desliza para explorar'}
+    </p>
+    `;
+
+    document.body.appendChild(overlay);
+    return overlay;
 }
 
-function estilizarFlecha(el, direccion) {
-    const color = 'rgba(97, 203, 53, 0.95)';
-    const size = '20px';
-    const pad = '18px';
-
-    // Limpiar estilos anteriores
-    el.style.borderTop = el.style.borderBottom = el.style.borderLeft = el.style.borderRight = 'none';
-    el.style.top = el.style.bottom = el.style.left = el.style.right = '';
-    el.style.transform = '';
-
-    switch (direccion) {
-        case 'derecha':
-            el.style.borderTop    = `${size} solid transparent`;
-            el.style.borderBottom = `${size} solid transparent`;
-            el.style.borderLeft   = `${size} solid ${color}`;
-            el.style.right = pad;
-            break;
-        case 'izquierda':
-            el.style.borderTop    = `${size} solid transparent`;
-            el.style.borderBottom = `${size} solid transparent`;
-            el.style.borderRight  = `${size} solid ${color}`;
-            el.style.left = pad;
-            break;
-        case 'arriba':
-            el.style.borderLeft   = `${size} solid transparent`;
-            el.style.borderRight  = `${size} solid transparent`;
-            el.style.borderBottom = `${size} solid ${color}`;
-            el.style.top = pad;
-            break;
-        case 'abajo':
-            el.style.borderLeft   = `${size} solid transparent`;
-            el.style.borderRight  = `${size} solid transparent`;
-            el.style.borderTop    = `${size} solid ${color}`;
-            el.style.bottom = pad;
-            break;
-    }
-}
 
 export function iniciarVisor(mapa, onNodeChange) {
     const escena = new THREE.Scene();
@@ -108,22 +91,37 @@ export function iniciarVisor(mapa, onNodeChange) {
     escena.add(grupoHotspots);
 
     let fovObjetivo = 75;
+    let ultimoHotspotTocado = null;
+    
+    // --- LÓGICA DE INACTIVIDAD ---
+    const overlayAyuda = crearOverlayAyuda();
+    let temporizadorInactividad;
+    const TIEMPO_INACTIVIDAD = 30000; // 30 segundos
 
-    // --- POOL DE FLECHAS DE BORDE ---
-    const MAX_FLECHAS = 8;
-    const poolFlechas = Array.from({ length: MAX_FLECHAS }, () => crearFlechaBorde());
+    function resetearInactividad() {
+        // Ocultar el overlay si estaba visible
+        if (overlayAyuda.style.opacity === '1') {
+            overlayAyuda.style.opacity = '0';
+            overlayAyuda.style.pointerEvents = 'none';
+        }
 
-    function ocultarTodasFlechas() {
-        poolFlechas.forEach(f => { f.style.opacity = '0'; });
+        // Limpiar el temporizador anterior
+        clearTimeout(temporizadorInactividad);
+
+        // Iniciar un nuevo temporizador
+        temporizadorInactividad = setTimeout(() => {
+            overlayAyuda.style.opacity = '1';
+            // Permitir clics a través del overlay para que al tocar desaparezca inmediatamente
+            overlayAyuda.style.pointerEvents = 'none'; 
+        }, TIEMPO_INACTIVIDAD);
     }
 
-
-    let ultimoHotspotTocado = null;
     // --- RAYCASTER ---
     const raycaster = new THREE.Raycaster();
     const mouse = new THREE.Vector2();
 
     const onMouseMove = (event) => {
+        resetearInactividad(); // Reset al mover ratón
         mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
         mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
         raycaster.setFromCamera(mouse, camara);
@@ -149,6 +147,7 @@ export function iniciarVisor(mapa, onNodeChange) {
     };
 
     const onClick = (event) => {
+        resetearInactividad(); // Reset al hacer clic
         mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
         mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
         raycaster.setFromCamera(mouse, camara);
@@ -166,14 +165,12 @@ export function iniciarVisor(mapa, onNodeChange) {
                 cargarNodo(idDestino, yawLlegada);
                 ultimoHotspotTocado = null;
             } else {
-                // Primer toque en móvil: mostramos el tooltip
                 ultimoHotspotTocado = hotspotTocado;
                 tooltipUI.innerText = hotspotTocado.userData.texto;
                 tooltipUI.style.left = `${event.clientX}px`;
                 tooltipUI.style.top = `${event.clientY - 40}px`;
                 tooltipUI.classList.remove('oculto');
                 
-                // Si el usuario toca otra parte de la pantalla, se limpia el rastro
                 setTimeout(() => {
                     if (ultimoHotspotTocado === hotspotTocado) ultimoHotspotTocado = null;
                 }, 3000);
@@ -182,37 +179,30 @@ export function iniciarVisor(mapa, onNodeChange) {
         }
         tooltipUI.classList.add('oculto');
         ultimoHotspotTocado = null;
-
-        /*if (event.ctrlKey) {
-            const interseccionEsfera = raycaster.intersectObject(esfera);
-            if (interseccionEsfera.length > 0) {
-                const punto = interseccionEsfera[0].point;
-                const radioV = punto.length();
-                const pitch = Math.asin(punto.y / radioV) * (180 / Math.PI);
-                const yaw = Math.atan2(punto.x, -punto.z) * (180 / Math.PI);
-
-                console.log("%c📍 Coordenadas capturadas:", "color: #00ff00; font-weight: bold; font-size: 14px;");
-                console.log(`
-        {
-          "destino": "ID_DEL_DESTINO",
-          "texto": "Ir a...",
-          "pitch": ${pitch.toFixed(2)},
-          "yaw": ${yaw.toFixed(2)}
-        }`);
-                alert(`Coordenadas: Pitch ${pitch.toFixed(2)}, Yaw ${yaw.toFixed(2)}`);
-            }
-        }*/
     };
 
     const onResize = () => {
         camara.aspect = window.innerWidth / window.innerHeight;
         camara.updateProjectionMatrix();
         renderizador.setSize(window.innerWidth, window.innerHeight);
+        
+        // Actualizar texto del overlay si cambia de horizontal a vertical
+        const pAyuda = overlayAyuda.querySelector('p');
+        if(pAyuda) {
+            pAyuda.innerText = window.innerWidth > 1024 ? 'Haz clic y arrastra para mirar alrededor' : 'Desliza para mirar alrededor';
+        }
     };
 
+    // Escuchamos más eventos para detectar interacción genuina
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('click', onClick);
+    window.addEventListener('touchstart', resetearInactividad, {passive: true}); // Para móviles
+    window.addEventListener('touchmove', resetearInactividad, {passive: true}); // Para móviles
+    window.addEventListener('wheel', resetearInactividad, {passive: true});
     window.addEventListener('resize', onResize);
+
+    // Iniciar temporizador la primera vez
+    resetearInactividad();
 
     // --- FUNCIÓN PARA CARGAR UN NODO ---
     function cargarNodo(idNodo, yawLlegada = null) {
@@ -242,7 +232,6 @@ export function iniciarVisor(mapa, onNodeChange) {
                 grupoHotspots.rotation.y = 0;
 
                 grupoHotspots.clear();
-                ocultarTodasFlechas();
 
                 nodoData.hotspots.forEach(hs => {
                     const materialSprite = new THREE.SpriteMaterial({ 
@@ -305,60 +294,6 @@ export function iniciarVisor(mapa, onNodeChange) {
             hs.scale.set(nuevaEscala, nuevaEscala, 1);
         });
 
-        // --- INDICADORES DE BORDE ---
-        const menuInicio = document.getElementById('menu-inicio');
-        const menuVisible = menuInicio && menuInicio.style.display !== 'none';
-
-        if (menuVisible) {
-            ocultarTodasFlechas();
-        } else {
-            ocultarTodasFlechas();
-            let indiceFlechaActual = 0;
-
-            grupoHotspots.children.forEach(hs => {
-                if (indiceFlechaActual >= MAX_FLECHAS) return;
-
-                const vector = hs.position.clone();
-                vector.project(camara);
-
-                const detras = vector.z > 1;
-                const fueraX = vector.x > 1 || vector.x < -1;
-                const fueraY = vector.y > 1 || vector.y < -1;
-                const estaFuera = detras || fueraX || fueraY;
-
-                if (!estaFuera) return;
-
-                const flecha = poolFlechas[indiceFlechaActual];
-                indiceFlechaActual++;
-
-                let direccion;
-                if (detras) {
-                    direccion = vector.x >= 0 ? 'izquierda' : 'derecha';
-                } else {
-                    const absX = Math.abs(vector.x);
-                    const absY = Math.abs(vector.y);
-                    if (absX >= absY) {
-                        direccion = vector.x > 0 ? 'derecha' : 'izquierda';
-                    } else {
-                        direccion = vector.y > 0 ? 'arriba' : 'abajo';
-                    }
-                }
-
-                estilizarFlecha(flecha, direccion);
-
-                if (direccion === 'derecha' || direccion === 'izquierda') {
-                    flecha.style.top = '50%';
-                    flecha.style.transform = 'translateY(-50%)';
-                } else {
-                    flecha.style.left = '50%';
-                    flecha.style.transform = 'translateX(-50%)';
-                }
-
-                const pulsoOpacidad = 0.6 + Math.sin(tiempo * 2) * 0.4;
-                flecha.style.opacity = String(pulsoOpacidad);
-            });
-        }
-
         // --- ZOOM SUAVE (via FOV) ---
         if (Math.abs(camara.fov - fovObjetivo) > 0.1) {
             camara.fov += (fovObjetivo - camara.fov) * 0.1;
@@ -391,10 +326,6 @@ export function iniciarVisor(mapa, onNodeChange) {
         window.removeEventListener('mousemove', onMouseMove);
         window.removeEventListener('click', onClick);
         window.removeEventListener('resize', onResize);
-
-        poolFlechas.forEach(f => {
-            if (f.parentNode) f.parentNode.removeChild(f);
-        });
 
         if (renderizador.domElement.parentNode) {
             renderizador.domElement.parentNode.removeChild(renderizador.domElement);
