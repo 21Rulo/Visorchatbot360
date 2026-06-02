@@ -219,6 +219,7 @@ body {
           pointer-events: none;
           max-width: calc(100% - 100px);
           box-sizing: border-box;
+          z-index: 15;
       }
 
       #contenedor-info-escena h1 {
