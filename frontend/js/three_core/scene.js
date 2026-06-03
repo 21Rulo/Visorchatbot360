@@ -55,7 +55,8 @@ export function iniciarVisor(mapa, onNodeChange) {
     const camara = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camara.position.set(0, 0, 0.1);
 
-    const renderizador = new THREE.WebGLRenderer({ antialias: true });
+    const renderizador = new THREE.WebGLRenderer({ antialias: false });
+    renderizador.setPixelRatio(Math.min(window.devicePixelRatio, 2)); 
     renderizador.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderizador.domElement);
     const canvas = renderizador.domElement;
@@ -71,7 +72,7 @@ export function iniciarVisor(mapa, onNodeChange) {
     controles.enableDamping = true;
     controles.dampingFactor = 0.05;
 
-    const geometria = new THREE.SphereGeometry(500, 60, 40);
+    const geometria = new THREE.SphereGeometry(500, 32, 32);
     geometria.scale(-1, 1, 1);
     const cargadorTextura = new THREE.TextureLoader();
     const mapaIcono = cargadorTextura.load('/visor_v2/assets/src/arrow1.png',
@@ -94,6 +95,7 @@ export function iniciarVisor(mapa, onNodeChange) {
     let posicionObjetivoCamara = new THREE.Vector3(0, 0, 0.1);
     let ultimoHotspotTocado = null;
     let esPrimerNodo = true;
+    let animandoPlaneta = false;
     
     // --- LÓGICA DE INACTIVIDAD ---
     const overlayAyuda = crearOverlayAyuda();
@@ -227,6 +229,8 @@ export function iniciarVisor(mapa, onNodeChange) {
                     esfera.material.map.dispose(); 
                 }
                 textura.colorSpace = THREE.SRGBColorSpace;
+                textura.generateMipmaps = false; 
+                textura.minFilter = THREE.LinearFilter;
                 esfera.material.map = textura;
                 esfera.material.needsUpdate = true;
 
@@ -274,6 +278,7 @@ export function iniciarVisor(mapa, onNodeChange) {
                     
                     // Apagamos la resistencia del ratón temporalmente para que la cámara pueda animarse
                     controles.enableDamping = false; 
+                    animandoPlaneta = true;
                     
                     // Usamos 0.001 en Z para evitar el "Gimbal Lock" (bloqueo matemático) de Three.js
                     camara.position.set(0, 400, 0.001); 
@@ -328,12 +333,15 @@ export function iniciarVisor(mapa, onNodeChange) {
             camara.updateProjectionMatrix();
         }
 
-        // Levanta la mirada suavemente desde el suelo hacia el horizonte
-        if (camara.position.distanceTo(posicionObjetivoCamara) > 0.001) {
-            camara.position.lerp(posicionObjetivoCamara, 0.08);
-        } else if (!controles.enableDamping) {
-            // ¡MAGIA! Cuando la cámara termina de levantarse, volvemos a encender el control suave
-            controles.enableDamping = true;
+        if (animandoPlaneta) {
+            if (camara.position.distanceTo(posicionObjetivoCamara) > 0.01) {
+                // Sigue cayendo hacia el centro
+                camara.position.lerp(posicionObjetivoCamara, 0.08);
+            } else {
+                // ¡Aterrizó! Apagamos la animación y devolvemos el control suave al usuario
+                animandoPlaneta = false;
+                controles.enableDamping = true;
+            }
         }
 
         // --- BRÚJULA ---
