@@ -114,9 +114,20 @@ export function iniciarVisor(mapa, onNodeChange) {
 
         // Iniciar un nuevo temporizador
         temporizadorInactividad = setTimeout(() => {
-            overlayAyuda.style.opacity = '1';
-            // Permitir clics a través del overlay para que al tocar desaparezca inmediatamente
-            overlayAyuda.style.pointerEvents = 'none'; 
+            // VERIFICACIÓN: Revisamos si el menú principal está en pantalla
+            const menuInicio = document.getElementById('menu-inicio');
+            
+            // Verificamos de forma segura si el menú no tiene "display: none" o "opacity: 0"
+            const menuVisible = menuInicio && 
+                                window.getComputedStyle(menuInicio).display !== 'none' && 
+                                menuInicio.style.opacity !== '0' &&
+                                !menuInicio.classList.contains('oculto');
+
+            // Solo mostramos la ayuda de arrastre si el menú está cerrado
+            if (!menuVisible) {
+                overlayAyuda.style.opacity = '1';
+                overlayAyuda.style.pointerEvents = 'none'; 
+            }
         }, TIEMPO_INACTIVIDAD);
     }
 
