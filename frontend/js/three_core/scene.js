@@ -91,7 +91,9 @@ export function iniciarVisor(mapa, onNodeChange) {
     escena.add(grupoHotspots);
 
     let fovObjetivo = 75;
+    let posicionObjetivoCamara = new THREE.Vector3(0, 0, 0.1);
     let ultimoHotspotTocado = null;
+    let esPrimerNodo = true;
     
     // --- LÓGICA DE INACTIVIDAD ---
     const overlayAyuda = crearOverlayAyuda();
@@ -263,7 +265,33 @@ export function iniciarVisor(mapa, onNodeChange) {
                 esfera.rotation.y = -rotacionRadianes;
                 grupoHotspots.rotation.y = -rotacionRadianes;
 
-                controles.reset();
+                // 1. MOVER ARRIBA: Reseteamos los controles ANTES de aplicar el efecto
+                controles.reset(); 
+
+                // --- LÓGICA DEL LITTLE PLANET ---
+                if (esPrimerNodo) {
+                    camara.fov = 140; 
+                    
+                    // Apagamos la resistencia del ratón temporalmente para que la cámara pueda animarse
+                    controles.enableDamping = false; 
+                    
+                    // Usamos 0.001 en Z para evitar el "Gimbal Lock" (bloqueo matemático) de Three.js
+                    camara.position.set(0, 400, 0.001); 
+                    posicionObjetivoCamara.set(0, 0, 0.1); 
+                    
+                    camara.updateProjectionMatrix();
+                    fovObjetivo = 75; 
+                    esPrimerNodo = false; 
+                } else {
+                    camara.fov = 75;
+                    fovObjetivo = 75;
+                    camara.position.set(0, 0, 0.1); 
+                    posicionObjetivoCamara.set(0, 0, 0.1);
+                    camara.updateProjectionMatrix();
+                }
+
+                // 2. Forzamos a los controles a reconocer la nueva posición
+                controles.update(); 
                 telon.style.opacity = '0';
                 if (onNodeChange) onNodeChange(idNodo);
             });
@@ -294,10 +322,18 @@ export function iniciarVisor(mapa, onNodeChange) {
             hs.scale.set(nuevaEscala, nuevaEscala, 1);
         });
 
-        // --- ZOOM SUAVE (via FOV) ---
+        // --- EFECTO TINY PLANET Y ZOOM SUAVE ---
         if (Math.abs(camara.fov - fovObjetivo) > 0.1) {
-            camara.fov += (fovObjetivo - camara.fov) * 0.1;
+            camara.fov += (fovObjetivo - camara.fov) * 0.08; 
             camara.updateProjectionMatrix();
+        }
+
+        // Levanta la mirada suavemente desde el suelo hacia el horizonte
+        if (camara.position.distanceTo(posicionObjetivoCamara) > 0.001) {
+            camara.position.lerp(posicionObjetivoCamara, 0.08);
+        } else if (!controles.enableDamping) {
+            // ¡MAGIA! Cuando la cámara termina de levantarse, volvemos a encender el control suave
+            controles.enableDamping = true;
         }
 
         // --- BRÚJULA ---
