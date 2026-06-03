@@ -104,12 +104,9 @@ export function iniciarVisor(mapa, onNodeChange) {
 
     function resetearInactividad() {
         // Ocultar el overlay si estaba visible
-        if (overlayAyuda.style.opacity === '1') {
-            overlayAyuda.style.opacity = '0';
-            overlayAyuda.style.pointerEvents = 'none';
-        }
+        overlayAyuda.style.opacity = '0';
+        overlayAyuda.style.pointerEvents = 'none';
 
-        // Limpiar el temporizador anterior
         clearTimeout(temporizadorInactividad);
 
         // Iniciar un nuevo temporizador
@@ -377,11 +374,18 @@ export function iniciarVisor(mapa, onNodeChange) {
     // --- DESTRUIR VISOR ---
     function destruirVisor() {
         cancelAnimationFrame(idAnimacion);
+        clearTimeout(temporizadorInactividad);
 
         window.removeEventListener('mousemove', onMouseMove);
         window.removeEventListener('click', onClick);
         window.removeEventListener('resize', onResize);
+        window.removeEventListener('touchstart', resetearInactividad);
+        window.removeEventListener('touchmove', resetearInactividad);
+        window.removeEventListener('wheel', resetearInactividad);
 
+        if (overlayAyuda && overlayAyuda.parentNode) {
+            overlayAyuda.parentNode.removeChild(overlayAyuda);
+        }
         if (renderizador.domElement.parentNode) {
             renderizador.domElement.parentNode.removeChild(renderizador.domElement);
         }
