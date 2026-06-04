@@ -164,28 +164,41 @@ btnToggle.addEventListener('pointermove', (e) => {
     }
 });
 
-// 3. Cuando suelta el botón (¡ESTO TE FALTABA!)
+// 3. Cuando suelta el botón
 btnToggle.addEventListener('pointerup', (e) => {
     if (!isDragging) return;
     isDragging = false;
     btnToggle.classList.remove('arrastrando');
 
-    // Calculamos si lo soltó en la mitad izquierda o derecha
     const mitadPantalla = window.innerWidth / 2;
+    // Leemos los estilos reales del panel izquierdo
+    const panelControles = document.getElementById('panel-controles');
+    const estilosPanel = window.getComputedStyle(panelControles);
     
     if (e.clientX < mitadPantalla) {
         // IMÁN A LA IZQUIERDA
-        btnToggle.style.left = '20px';
+        btnToggle.style.left = estilosPanel.left;
+        btnToggle.style.right = 'auto'; 
         chatContainer.classList.add('anclado-izquierda');
     } else {
         // IMÁN A LA DERECHA
-        btnToggle.style.left = 'calc(100vw - 70px)'; 
+        btnToggle.style.left = 'auto';
+        btnToggle.style.right = ''; 
         chatContainer.classList.remove('anclado-izquierda');
     }
 
-    // El eje Y (arriba/abajo) lo dejamos donde lo soltó
-    const maxTop = window.innerHeight - btnToggle.offsetHeight - 20;
-    let finalTop = Math.max(20, Math.min(e.clientY, maxTop));
+    // Leemos el "top" real (así sabe si es 20px en PC o 12px en móvil)
+    const topeMinimo = parseInt(estilosPanel.top) || 20;
+    const maxTop = window.innerHeight - btnToggle.offsetHeight - topeMinimo;
+    
+    // Limitamos para que no se salga de la pantalla por arriba o por abajo
+    let finalTop = Math.max(topeMinimo, Math.min(e.clientY, maxTop));
+    
+    // IMÁN VERTICAL: Si lo suelta muy cerca de la altura del panel (ej. sobre el botón de Home)
+    if (Math.abs(finalTop - topeMinimo) < 25) {
+        finalTop = topeMinimo; // Alineación matemática perfecta
+    }
+
     btnToggle.style.top = finalTop + 'px';
 });
 
@@ -374,18 +387,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // --- RE-CÁLCULO AL GIRAR LA PANTALLA (RESIZE) ---
 window.addEventListener('resize', () => {
-    // Si la pantalla cambia de tamaño, aseguramos que Jasper no se quede fuera de los límites
-    const maxTop = window.innerHeight - btnToggle.offsetHeight - 20;
-    
-    // Obtenemos la posición actual (o usamos 20 por defecto)
-    let topActual = parseInt(btnToggle.style.top) || 20;
-    
-    // Lo forzamos a estar dentro del nuevo límite de altura
-    let finalTop = Math.max(20, Math.min(topActual, maxTop));
+    const panelControles = document.getElementById('panel-controles');
+    const estilosPanel = window.getComputedStyle(panelControles);
+    const topeMinimo = parseInt(estilosPanel.top) || 20;
+
+    const maxTop = window.innerHeight - btnToggle.offsetHeight - topeMinimo;
+    let topActual = parseInt(btnToggle.style.top) || topeMinimo;
+    let finalTop = Math.max(topeMinimo, Math.min(topActual, maxTop));
     btnToggle.style.top = finalTop + 'px';
 
-    // Si estaba anclado a la derecha, recalculamos su posición exacta con el nuevo ancho
+    // Repetimos la magia de alineación si el usuario voltea el teléfono
     if (!chatContainer.classList.contains('anclado-izquierda')) {
-        btnToggle.style.left = 'calc(100vw - 70px)';
+        btnToggle.style.left = 'auto';
+        btnToggle.style.right = '';
+    } else {
+        btnToggle.style.left = estilosPanel.left;
+        btnToggle.style.right = 'auto';
     }
 });

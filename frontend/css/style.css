@@ -176,6 +176,10 @@ body {
         backdrop-filter: blur(4px);
         transition: background 0.2s;
         font-family: 'Montserrat', sans-serif;
+        box-sizing: border-box;
+        padding: 0;
+        -webkit-appearance: none;
+        appearance: none;
       }
 
       .btn-control:active {
@@ -272,6 +276,7 @@ body {
           display: flex;
           justify-content: center;
           align-items: center;
+          box-sizing: border-box;
       }
 
       #icono-chat {
@@ -869,9 +874,20 @@ body {
         }
 
         .btn-control {
-            width: 35px;
-            height: 35px;
+            width: 35px !important;
+            height: 35px !important;
             font-size: 16px;
+        }
+
+        /* OPCIÓN NUCLEAR: Blindaje total contra JS y animaciones */
+        #btn-chat-toggle {
+            width: 35px !important;
+            height: 35px !important;
+            min-width: 35px !important;
+            max-width: 35px !important;
+            min-height: 35px !important;
+            max-height: 35px !important;
+            padding: 0 !important;
         }
       }
 
