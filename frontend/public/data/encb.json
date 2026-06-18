@@ -194,8 +194,8 @@
         {
           "destino": "labiofis_21",
           "texto": "Atrás",
-          "pitch": -10,
-          "yaw": -100,
+          "pitch": -2,
+          "yaw": -128,
           "yaw_llegada": -45
         }
       ]
@@ -279,8 +279,8 @@
         {
           "destino": "labiofis_25",
           "texto": "Atrás",
-          "pitch": 0,
-          "yaw": -90,
+          "pitch": -5,
+          "yaw": -93,
           "yaw_llegada": 45
         }
       ]
