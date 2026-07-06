@@ -173,7 +173,7 @@
     },
     "20": {
       "titulo": "Laboratorio (espectrometría y caracterización elemental)",
-      "imagen_url": "/visor_v2/assets/CMPL/20.webp",
+      "imagen_url": "/visor_v2/assets/CMPL/20.jpg",
       "yaw_inicio": 90,
       "contexto_ia": "Esta escena muestra el área de espectrometría del LaNDACBio, donde se operan equipos especializados para la determinación de metales y otros elementos traza en aguas, residuos y muestras industriales. A lo largo de la mesa se observan distintos analizadores acoplados a computadoras de control y sistemas de inyección automática de muestras, mientras un especialista supervisa una corrida analítica frente a una de las pantallas. Las ventanas permiten la entrada de luz natural y la ventilación hacia el exterior, complementada por campanas y ductos de extracción para el manejo seguro de gases y vapores. En este espacio se generan datos clave para evaluar el cumplimiento normativo y apoyar proyectos de producción más limpia y control de contaminación.",
       "equipos_destacados": [],
